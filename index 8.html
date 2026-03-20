@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en" class="dark" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will Del Valle | AI Operations & Evaluation Lead</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        surface: '#070b14', 
+                        'surface-container-low': '#0d1322',
+                        'surface-container': '#151d30',
+                        'surface-container-highest': '#232f4a',
+                        primary: '#93c5fd', 
+                        'primary-container': '#3b82f6',
+                        secondary: '#6ee7b7', 
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Manrope', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;700&family=Manrope:wght@600;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+
+    <style>
+        body { background-color: #070b14; color: #e2e8f0; overflow-x: hidden; }
+        
+        .glass-panel {
+            background: rgba(21, 29, 48, 0.4);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .glass-panel:hover {
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        .snap-x-mandatory { scroll-snap-type: x mandatory; }
+        .snap-start { scroll-snap-align: start; }
+
+        .carousel-card {
+            opacity: 0.3;
+            transform: scale(0.95);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .carousel-card.in-focus {
+            opacity: 1 !important;
+            transform: scale(1) !important;
+            background: rgba(35, 47, 74, 0.4);
+        }
+
+        .glow-dot {
+            position: absolute; width: 400px; height: 400px; background: radial-gradient(circle, rgba(59,130,246,0.08) 0%, rgba(0,0,0,0) 70%); border-radius: 50%; z-index: -1; pointer-events: none;
+        }
+
+        .stack-tag {
+            background: rgba(35, 47, 74, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 0.35rem 0.85rem;
+            border-radius: 0.25rem;
+            font-size: 0.75rem; 
+            color: #9ca3af;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .imposing-card {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Form Inputs Styling */
+        .form-input {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 0.375rem;
+            padding: 0.75rem 1rem;
+            color: white;
+            font-size: 0.875rem;
+            transition: all 0.3s ease;
+        }
+        .form-input:focus {
+            outline: none;
+            border-color: #3b82f6;
+            background: rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen selection:bg-primary-container selection:text-white">
+    
+    <div class="glow-dot" style="top: -150px; left: -100px;"></div>
+    <div class="glow-dot" style="top: 30%; right: -150px; background: radial-gradient(circle, rgba(110,231,183,0.04) 0%, rgba(0,0,0,0) 70%);"></div>
+
+    <nav class="glass-panel sticky top-0 z-50 rounded-none border-t-0 border-l-0 border-r-0 border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <i data-lucide="command" class="text-primary w-5 h-5"></i>
+                <span class="font-display font-bold text-lg tracking-widest text-white uppercase">Will Del Valle</span>
+            </div>
+            
+            <div class="flex items-center gap-6">
+                <div class="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/5">
+                    <div class="w-2 h-2 rounded-full bg-secondary animate-pulse"></div>
+                    <span class="font-mono text-xs uppercase tracking-widest text-gray-400" data-i18n="status">System Online</span>
+                </div>
+                <button onclick="toggleLanguage()" class="flex items-center gap-2 px-3 py-1.5 rounded text-sm font-mono font-bold text-gray-300 hover:text-white hover:bg-white/10 transition-all border border-transparent hover:border-white/10">
+                    <i data-lucide="globe" class="w-4 h-4"></i>
+                    <span id="lang-indicator">EN</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="py-24 space-y-40">
+        
+        <section class="max-w-7xl mx-auto px-6">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/5 text-primary font-mono text-xs uppercase tracking-widest mb-10 border border-primary/10">
+                <i data-lucide="cpu" class="w-3 h-3"></i>
+                <span data-i18n="hero_tag">Global Operations Hub</span>
+            </div>
+            <h1 class="font-display text-5xl md:text-7xl font-extrabold leading-tight mb-6 text-white tracking-tight">
+                <span data-i18n="hero_title">AI Operations & Evaluation Lead</span>
+            </h1>
+            <p class="font-mono text-sm md:text-base text-primary/80 uppercase tracking-widest mb-8" data-i18n="hero_slogan">
+                LLM Pipelines | Human-in-the-Loop Systems | Technical Program Delivery
+            </p>
+            <p class="text-lg md:text-xl text-gray-400 font-light leading-relaxed max-w-3xl mb-12" data-i18n="hero_desc">
+                20+ years of experience in Technology Operations & Infrastructure. Leading high-stakes AI architectures with sovereign precision. I transform complex evaluation guidelines and operational bottlenecks into scalable, deterministic Human-in-the-Loop pipelines for Top-Tier AI Labs.
+            </p>
+            <div class="flex gap-4">
+                <a href="#telemetry" class="bg-white text-black px-8 py-4 rounded font-bold hover:bg-gray-200 transition-colors flex items-center gap-2 text-sm uppercase tracking-wider">
+                    <i data-lucide="activity" class="w-4 h-4"></i> <span data-i18n="btn_explore">View Telemetry</span>
+                </a>
+                <a href="#terminal" class="glass-panel text-white px-8 py-4 rounded font-bold hover:bg-white/10 transition-colors flex items-center gap-2 text-sm uppercase tracking-wider">
+                    <i data-lucide="terminal" class="w-4 h-4"></i> <span data-i18n="btn_contact">Init Contact</span>
+                </a>
+            </div>
+        </section>
+
+        <section id="telemetry" class="relative max-w-7xl mx-auto px-6">
+            <div class="flex items-center justify-between mb-10">
+                <h2 class="font-mono text-sm text-gray-500 uppercase tracking-widest" data-i18n="kpi_title">Live Telemetry Feed</h2>
+                <div class="flex gap-2">
+                    <button onclick="userControlCarousel('telemetry-track', -1)" class="p-3 rounded-full glass-panel hover:bg-white/10 transition"><i data-lucide="chevron-left" class="w-4 h-4 text-gray-400"></i></button>
+                    <button onclick="userControlCarousel('telemetry-track', 1)" class="p-3 rounded-full glass-panel hover:bg-white/10 transition"><i data-lucide="chevron-right" class="w-4 h-4 text-gray-400"></i></button>
+                </div>
+            </div>
+
+            <div class="w-full relative">
+                <div id="telemetry-track" class="flex overflow-x-auto hide-scrollbar snap-x-mandatory gap-6 pb-8 scroll-smooth w-full">
+                    
+                    <div class="carousel-card snap-start shrink-0 w-[320px] md:w-[400px] h-[400px] md:h-[460px] imposing-card glass-panel p-10 justify-center group rounded-2xl">
+                        <i data-lucide="target" class="absolute top-10 right-10 w-40 h-40 text-white opacity-[0.02] transition-opacity duration-500 pointer-events-none"></i>
+                        <div class="font-mono text-xs text-primary uppercase tracking-widest mb-6">[SYS_ACCURACY]</div>
+                        <div class="font-display text-6xl font-bold text-white mb-4">< 5%</div>
+                        <div class="font-semibold text-xl text-gray-200 mb-4" data-i18n="t1_title">Model Alignment Variance</div>
+                        <p class="text-sm md:text-base text-gray-400 font-light leading-relaxed" data-i18n="t1_desc">Rigorous maintenance of prompt discrepancy rates (PDR) in global RLHF and adversarial benchmarking, ensuring absolute fidelity in model fine-tuning.</p>
+                    </div>
+
+                    <div class="carousel-card snap-start shrink-0 w-[320px] md:w-[400px] h-[400px] md:h-[460px] imposing-card glass-panel p-10 justify-center group rounded-2xl">
+                        <i data-lucide="layers" class="absolute top-10 right-10 w-40 h-40 text-white opacity-[0.02] transition-opacity duration-500 pointer-events-none"></i>
+                        <div class="font-mono text-xs text-secondary uppercase tracking-widest mb-6">[ARCH_COMPLEXITY]</div>
+                        <div class="font-display text-6xl font-bold text-white mb-4">30+</div>
+                        <div class="font-semibold text-xl text-gray-200 mb-4" data-i18n="t2_title">Project Typologies Mastered</div>
+                        <p class="text-sm md:text-base text-gray-400 font-light leading-relaxed" data-i18n="t2_desc">Governing deep-tier evaluations including complex Rubrics that require multi-hour task validation across SMEs, QA engineers, taxonomy teams, and platform infrastructure.</p>
+                    </div>
+
+                    <div class="carousel-card snap-start shrink-0 w-[320px] md:w-[400px] h-[400px] md:h-[460px] imposing-card glass-panel p-10 justify-center group rounded-2xl">
+                        <i data-lucide="network" class="absolute top-10 right-10 w-40 h-40 text-white opacity-[0.02] transition-opacity duration-500 pointer-events-none"></i>
+                        <div class="font-mono text-xs text-purple-400 uppercase tracking-widest mb-6">[OPS_SCALE]</div>
+                        <div class="font-display text-6xl font-bold text-white mb-4">2.4M+</div>
+                        <div class="font-semibold text-xl text-gray-200 mb-4" data-i18n="t3_title">High-Cognitive Throughput</div>
+                        <p class="text-sm md:text-base text-gray-400 font-light leading-relaxed" data-i18n="t3_desc">Orchestration of massive, multi-turn fine-tuning tasks through distributed infrastructures, processing millions of complex data points without SLA breaches.</p>
+                    </div>
+
+                    <div class="carousel-card snap-start shrink-0 w-[320px] md:w-[400px] h-[400px] md:h-[460px] imposing-card glass-panel p-10 justify-center group rounded-2xl">
+                        <i data-lucide="shield-check" class="absolute top-10 right-10 w-40 h-40 text-white opacity-[0.02] transition-opacity duration-500 pointer-events-none"></i>
+                        <div class="font-mono text-xs text-red-400 uppercase tracking-widest mb-6">[GLOBAL_COMPLIANCE]</div>
+                        <div class="font-display text-5xl font-bold text-white mb-4">Tier-1</div>
+                        <div class="font-semibold text-xl text-gray-200 mb-4" data-i18n="t4_title">Enterprise Policy Alignment</div>
+                        <p class="text-sm md:text-base text-gray-400 font-light leading-relaxed" data-i18n="t4_desc">Strict adherence to complex documentation from major Big Techs and governmental guidelines, ensuring multi-jurisdictional compliance in AI safety operations.</p>
+                    </div>
+
+                    <div class="carousel-card snap-start shrink-0 w-[320px] md:w-[400px] h-[400px] md:h-[460px] imposing-card glass-panel p-10 justify-center group rounded-2xl">
+                        <i data-lucide="cpu" class="absolute top-10 right-10 w-40 h-40 text-white opacity-[0.02] transition-opacity duration-500 pointer-events-none"></i>
+                        <div class="font-mono text-xs text-yellow-400 uppercase tracking-widest mb-6">[DS_VERIFIERS]</div>
+                        <div class="font-display text-4xl font-bold text-white mb-4">Deterministic</div>
+                        <div class="font-semibold text-xl text-gray-200 mb-4" data-i18n="t5_title">Difficulty Calibration</div>
+                        <p class="text-sm md:text-base text-gray-400 font-light leading-relaxed" data-i18n="t5_desc">Engineering objective Data Science verifiers to guarantee precise difficulty distributions for autonomous agents, moving beyond subjective human evaluation.</p>
+                    </div>
+
+                    <div class="carousel-card snap-start shrink-0 w-[320px] md:w-[400px] h-[400px] md:h-[460px] imposing-card glass-panel p-10 justify-center group rounded-2xl">
+                        <i data-lucide="award" class="absolute top-10 right-10 w-40 h-40 text-white opacity-[0.02] transition-opacity duration-500 pointer-events-none"></i>
+                        <div class="font-mono text-xs text-blue-400 uppercase tracking-widest mb-6">[GOVERNANCE]</div>
+                        <div class="font-display text-6xl font-bold text-white mb-4">35+</div>
+                        <div class="font-semibold text-xl text-gray-200 mb-4" data-i18n="t6_title">Advanced AI Accreditations</div>
+                        <p class="text-sm md:text-base text-gray-400 font-light leading-relaxed" data-i18n="t6_desc">Proven track record with >95% Pass Rate across rigorous technical modules in Quality Management, Auditing, and AI Operations Leadership.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="operations" class="relative max-w-7xl mx-auto px-6">
+            <div class="flex items-end justify-between mb-10">
+                <div>
+                    <h2 class="font-display text-3xl font-bold text-white mb-2" data-i18n="gallery_title">Executive Case Studies</h2>
+                    <span class="font-mono text-xs text-gray-500 uppercase tracking-widest" data-i18n="gallery_subtitle">Operations & Architecture / 2024-Present</span>
+                </div>
+                <div class="flex gap-2">
+                    <button onclick="userControlCarousel('gallery-track', -1)" class="p-3 rounded-full glass-panel hover:bg-white/10 transition"><i data-lucide="chevron-left" class="w-4 h-4 text-gray-400"></i></button>
+                    <button onclick="userControlCarousel('gallery-track', 1)" class="p-3 rounded-full glass-panel hover:bg-white/10 transition"><i data-lucide="chevron-right" class="w-4 h-4 text-gray-400"></i></button>
+                </div>
+            </div>
+            
+            <div class="w-full relative">
+                <div id="gallery-track" class="flex overflow-x-auto hide-scrollbar snap-x-mandatory gap-6 pb-8 scroll-smooth w-full">
+                    
+                    <div class="carousel-card snap-start shrink-0 w-[340px] md:w-[460px] lg:w-[500px] h-[540px] md:h-[600px] imposing-card glass-panel p-10 justify-center group rounded-2xl">
+                        <i data-lucide="eye" class="absolute top-12 right-12 w-48 h-48 text-white opacity-[0.02] transition-opacity duration-500 pointer-events-none"></i>
+                        <div class="font-mono text-xs text-gray-400 uppercase tracking-widest mb-4">Case 01 / Tier-1 LLM Provider</div>
+                        <h3 class="font-display text-3xl font-bold text-white mb-8" data-i18n="c1_title">Multimodal Safety & Adversarial Testing</h3>
+                        <div class="space-y-6">
+                            <div>
+                                <h4 class="font-mono text-xs text-primary uppercase tracking-widest mb-2" data-i18n="lbl_challenge">Challenge</h4>
+                                <p class="text-sm md:text-base text-gray-400 font-light leading-relaxed" data-i18n="c1_challenge">Orchestrating complex, multi-turn evaluations (Audio/Video) to identify critical policy violations (P0/P1) and mitigate deep multimodal conflicts without relying on trivial jailbreaks.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-mono text-xs text-primary uppercase tracking-widest mb-2" data-i18n="lbl_solution">Solution</h4>
+                                <p class="text-sm md:text-base text-gray-400 font-light leading-relaxed" data-i18n="c1_solution">Translated abstract Big Tech safety guidelines into scalable workflows. Designed a war-room execution model cross-referencing visual and audio fan-out risks.</p>
+                            </div>
+                            <div class="border-t border-white/5 pt-5">
+                                <h4 class="font-mono text-xs text-secondary uppercase tracking-widest mb-2" data-i18n="lbl_impact">Impact</h4>
+                                <p class="text-sm md:text-base text-white font-light leading-relaxed" data-i18n="c1_impact">Sustained extreme Submission Fidelity Rates, ensuring highly accurate detection of Regenerative and Generative failures at massive scale.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-card snap-start shrink-0 w-[340px] md:w-[460px] lg:w-[500px] h-[540px] md:h-[600px] imposing-card glass-panel p-10 justify-center group rounded-2xl">
+                        <i data-lucide="bot" class="absolute top-12 right-12 w-48 h-48 text-white opacity-[0.02] transition-opacity duration-500 pointer-events-none"></i>
+                        <div class="font-mono text-xs text-gray-400 uppercase tracking-widest mb-4">Case 02 / Global AI Research Lab</div>
+                        <h3 class="font-display text-3xl font-bold text-white mb-8" data-i18n="c2_title">Deterministic Autonomous Agents</h3>
+                        <div class="space-y-6">
+                            <div>
+                                <h4 class="font-mono text-xs text-primary uppercase tracking-widest mb-2" data-i18n="lbl_challenge">Challenge</h4>
+                                <p class="text-sm md:text-base text-gray-400 font-light leading-relaxed" data-i18n="c2_challenge">Shifting operations from subjective human evaluation to engineering multi-step Data Science tasks governed by deterministic verifiers under strict difficulty distributions.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-mono text-xs text-primary uppercase tracking-widest mb-2" data-i18n="lbl_solution">Solution</h4>
+                                <p class="text-sm md:text-base text-gray-400 font-light leading-relaxed" data-i18n="c2_solution">Directed complex operational cadence across nested orchestrators (Jupyter, Taiga, Forte). Implemented strict version control for algorithmic difficulty calibration.</p>
+                            </div>
+                            <div class="border-t border-white/5 pt-5">
+                                <h4 class="font-mono text-xs text-secondary uppercase tracking-widest mb-2" data-i18n="lbl_impact">Impact</h4>
+                                <p class="text-sm md:text-base text-white font-light leading-relaxed" data-i18n="c2_impact">Established a robust flow where AI models are tested in ideal difficulty zones, ensuring absolute validity of the programmatic verifiers.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-card snap-start shrink-0 w-[340px] md:w-[460px] lg:w-[500px] h-[540px] md:h-[600px] imposing-card glass-panel p-10 justify-center group rounded-2xl">
+                        <i data-lucide="scale" class="absolute top-12 right-12 w-48 h-48 text-white opacity-[0.02] transition-opacity duration-500 pointer-events-none"></i>
+                        <div class="font-mono text-xs text-gray-400 uppercase tracking-widest mb-4">Case 03 / Enterprise AI Solutions</div>
+                        <h3 class="font-display text-3xl font-bold text-white mb-8" data-i18n="c3_title">Enterprise Compliance Verticals</h3>
+                        <div class="space-y-6">
+                            <div>
+                                <h4 class="font-mono text-xs text-primary uppercase tracking-widest mb-2" data-i18n="lbl_challenge">Challenge</h4>
+                                <p class="text-sm md:text-base text-gray-400 font-light leading-relaxed" data-i18n="c3_challenge">Structuring Legal workflows operating under severe technical restrictions (offline-by-default environments) and strict enterprise data licensing limitations.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-mono text-xs text-primary uppercase tracking-widest mb-2" data-i18n="lbl_solution">Solution</h4>
+                                <p class="text-sm md:text-base text-gray-400 font-light leading-relaxed" data-i18n="c3_solution">Led scope readiness mapping over 150 workflows. Tactically unblocked enterprise data sources while aligning rigid natural language grading guidelines.</p>
+                            </div>
+                            <div class="border-t border-white/5 pt-5">
+                                <h4 class="font-mono text-xs text-secondary uppercase tracking-widest mb-2" data-i18n="lbl_impact">Impact</h4>
+                                <p class="text-sm md:text-base text-white font-light leading-relaxed" data-i18n="c3_impact">Successfully transitioned abstract legal requirements into instrumentable operational dashboards, setting the foundation for high-stakes enterprise deployment.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-card snap-start shrink-0 w-[340px] md:w-[460px] lg:w-[500px] h-[540px] md:h-[600px] imposing-card glass-panel p-10 justify-center group rounded-2xl">
+                        <i data-lucide="globe-2" class="absolute top-12 right-12 w-48 h-48 text-white opacity-[0.02] transition-opacity duration-500 pointer-events-none"></i>
+                        <div class="font-mono text-xs text-gray-400 uppercase tracking-widest mb-4">Case 04 / Tier-1 LLM Provider</div>
+                        <h3 class="font-display text-3xl font-bold text-white mb-8" data-i18n="c4_title">High-Fidelity RLHF & Linguistic Governance</h3>
+                        <div class="space-y-6">
+                            <div>
+                                <h4 class="font-mono text-xs text-primary uppercase tracking-widest mb-2" data-i18n="lbl_challenge">Challenge</h4>
+                                <p class="text-sm md:text-base text-gray-400 font-light leading-relaxed" data-i18n="c4_challenge">Systemic quality risks caused by flawed third-party grammar standards, threatening contract continuity in massive cross-lingual fine-tuning pipelines.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-mono text-xs text-primary uppercase tracking-widest mb-2" data-i18n="lbl_solution">Solution</h4>
+                                <p class="text-sm md:text-base text-gray-400 font-light leading-relaxed" data-i18n="c4_solution">Executed root-cause analysis and enforced authoritative linguistic validation to override flawed benchmarks. Presented evidence-based turnaround reports.</p>
+                            </div>
+                            <div class="border-t border-white/5 pt-5">
+                                <h4 class="font-mono text-xs text-secondary uppercase tracking-widest mb-2" data-i18n="lbl_impact">Impact</h4>
+                                <p class="text-sm md:text-base text-white font-light leading-relaxed" data-i18n="c4_impact">Inefficient vendor models replaced. Immediate rebound in pipeline quality, restoring trust to scale the project across multiple global markets.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="stack" class="pt-16 border-t border-white/5 max-w-7xl mx-auto px-6">
+            <h2 class="font-mono text-sm text-gray-500 uppercase tracking-widest mb-16 text-center" data-i18n="stack_title">Operational Architecture & Stack Mapping</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-12 max-w-5xl mx-auto">
+                <div>
+                    <h4 class="font-mono text-xs text-white uppercase tracking-widest mb-5">AI Evaluation & Model Execution</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="stack-tag">Orchestrator</span>
+                        <span class="stack-tag">Taiga</span>
+                        <span class="stack-tag">Agentic Graders</span>
+                        <span class="stack-tag">Jupyter</span>
+                        <span class="stack-tag">Python</span>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-mono text-xs text-white uppercase tracking-widest mb-5">AI Ops & Analytics</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="stack-tag">Forte</span>
+                        <span class="stack-tag">Outlier</span>
+                        <span class="stack-tag">Redash</span>
+                        <span class="stack-tag">Metabase</span>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-mono text-xs text-white uppercase tracking-widest mb-5">Program Mgmt & Support</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="stack-tag">Linear</span>
+                        <span class="stack-tag">Zendesk</span>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-mono text-xs text-white uppercase tracking-widest mb-5">Communication & Documentation</h4>
+                    <div class="flex flex-wrap gap-2 mb-3">
+                        <span class="stack-tag">Slack</span>
+                        <span class="stack-tag">Discourse</span>
+                        <span class="stack-tag">Google Workspace</span>
+                    </div>
+                    <p class="text-xs font-mono text-gray-500 leading-relaxed">Docs, Sheets, Drive, Meet, Calendar</p>
+                </div>
+                <div>
+                    <h4 class="font-mono text-xs text-white uppercase tracking-widest mb-5">Visual Planning & Design</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="stack-tag">Miro</span>
+                        <span class="stack-tag">Canva</span>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-mono text-xs text-white uppercase tracking-widest mb-5">Internal / Proprietary Systems</h4>
+                    <p class="text-sm font-mono text-gray-400 leading-relaxed">Remote execution environments, VPN orchestration, review pipelines, internal verification tooling.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="terminal" class="border-t border-white/5 bg-[#05080e] mt-32">
+        <div class="max-w-7xl mx-auto px-6 py-24 grid grid-cols-1 lg:grid-cols-2 gap-16">
+            
+            <div>
+                <div class="font-mono text-xs text-gray-500 uppercase tracking-widest mb-4" data-i18n="terminal_tag">Direct Channel</div>
+                <h2 class="font-display text-4xl font-bold text-white mb-6" data-i18n="terminal_title">Initialize Contact</h2>
+                
+                <p class="text-base text-gray-300 font-light leading-relaxed mb-8" data-i18n="terminal_desc">
+                    Open to discussing executive roles, high-stakes AI program management, and scalable data operations.
+                </p>
+                
+                <form action="https://formsubmit.co/willan.delvalle@gmail.com" method="POST" class="space-y-4 max-w-lg mb-12">
+                    <input type="hidden" name="_subject" value="New Executive Briefing from WDV.AI Portfolio">
+                    <input type="hidden" name="_captcha" value="false">
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <input type="text" name="name" id="ph_name" placeholder="Name" required class="form-input">
+                        <input type="email" name="email" id="ph_email" placeholder="Email" required class="form-input">
+                    </div>
+                    <input type="text" name="subject" id="ph_subject" placeholder="Subject" required class="form-input">
+                    <textarea name="message" id="ph_message" rows="4" placeholder="Executive Briefing / Message..." required class="form-input resize-none"></textarea>
+                    
+                    <button type="submit" class="w-full inline-flex justify-center items-center gap-3 bg-white text-black px-8 py-4 rounded font-bold hover:bg-gray-200 transition-colors text-sm uppercase tracking-wider">
+                        <i data-lucide="send" class="w-4 h-4"></i> <span data-i18n="btn_briefing">Send Briefing</span>
+                    </button>
+                </form>
+
+                <div class="border-l-2 border-primary/30 pl-4">
+                    <p class="text-[15px] text-gray-400 font-light leading-relaxed" data-i18n="terminal_disclaimer">
+                        Site independently designed and developed by Will Del Valle. Tier-1 Big Tech clients and project names are strictly omitted in compliance with NDAs and global security policies. Official certificates and personal performance data available upon executive request.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="flex lg:justify-end items-start pt-8">
+                <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="willdelvalle" data-version="v1">
+                    <a class="badge-base__link LI-simple-link" href="https://br.linkedin.com/in/willdelvalle?trk=profile-badge">Will Del Valle</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="border-t border-white/5 max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <span class="font-mono text-xs text-gray-600 uppercase tracking-widest">Est. 2004 — Will Del Valle // Global AI Operations</span>
+            <span class="font-mono text-xs text-gray-600 uppercase tracking-widest">v.5.1.0 // Executive Build</span>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        const observerOptions = {
+            root: null, 
+            rootMargin: '0px -10% 0px -5%',
+            threshold: 0.6 
+        };
+
+        const carouselObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-focus');
+                } else {
+                    entry.target.classList.remove('in-focus');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.carousel-card').forEach(card => {
+            carouselObserver.observe(card);
+        });
+
+        function userControlCarousel(id, direction) {
+            const container = document.getElementById(id);
+            const card = container.querySelector('.carousel-card');
+            const scrollAmount = card ? card.clientWidth + 24 : container.clientWidth / 2;
+            container.scrollBy({ left: scrollAmount * direction, behavior: 'smooth' });
+        }
+
+        // ---- TRANSLATION DICTIONARY ----
+        const translations = {
+            'en': {
+                'status': 'System Online',
+                'hero_tag': 'Global Operations Hub',
+                'hero_title': 'AI Operations & Evaluation Lead',
+                'hero_slogan': 'LLM Pipelines | Human-in-the-Loop Systems | Technical Program Delivery',
+                'hero_desc': '20+ years of experience in Technology Operations & Infrastructure. Leading high-stakes AI architectures with sovereign precision. I transform complex evaluation guidelines and operational bottlenecks into scalable, deterministic Human-in-the-Loop pipelines for Top-Tier AI Labs.',
+                'btn_explore': 'View Telemetry',
+                'btn_contact': 'Init Contact',
+                'kpi_title': 'Live Telemetry Feed',
+                't1_title': 'Model Alignment Variance',
+                't1_desc': 'Rigorous maintenance of prompt discrepancy rates (PDR) in global RLHF and adversarial benchmarking, ensuring absolute fidelity in model fine-tuning.',
+                't2_title': 'Project Typologies Mastered',
+                't2_desc': 'Governing deep-tier evaluations including complex Rubrics that require multi-hour task validation across SMEs, QA engineers, taxonomy teams, and platform infrastructure.',
+                't3_title': 'High-Cognitive Throughput',
+                't3_desc': 'Orchestration of massive, multi-turn fine-tuning tasks through distributed infrastructures, processing millions of complex data points without SLA breaches.',
+                't4_title': 'Enterprise Policy Alignment',
+                't4_desc': 'Strict adherence to complex documentation from major Big Techs and governmental guidelines, ensuring multi-jurisdictional compliance in AI safety operations.',
+                't5_title': 'Difficulty Calibration',
+                't5_desc': 'Engineering objective Data Science verifiers to guarantee precise difficulty distributions for autonomous agents, moving beyond subjective human evaluation.',
+                't6_title': 'Advanced AI Accreditations',
+                't6_desc': 'Proven track record with >95% Pass Rate across rigorous technical modules in Quality Management, Auditing, and AI Operations Leadership.',
+                'gallery_title': 'Executive Case Studies',
+                'gallery_subtitle': 'Operations & Architecture / 2024-Present',
+                'lbl_challenge': 'Challenge',
+                'lbl_solution': 'Solution',
+                'lbl_impact': 'Impact',
+                'c1_title': 'Multimodal Safety & Adversarial Testing',
+                'c1_challenge': 'Orchestrating complex, multi-turn evaluations (Audio/Video) to identify critical policy violations (P0/P1) and mitigate deep multimodal conflicts without relying on trivial jailbreaks.',
+                'c1_solution': 'Translated abstract Big Tech safety guidelines into scalable workflows. Designed a war-room execution model cross-referencing visual and audio fan-out risks.',
+                'c1_impact': 'Sustained extreme Submission Fidelity Rates, ensuring highly accurate detection of Regenerative and Generative failures at massive scale.',
+                'c2_title': 'Deterministic Autonomous Agents',
+                'c2_challenge': 'Shifting operations from subjective human evaluation to engineering multi-step Data Science tasks governed by deterministic verifiers under strict difficulty distributions.',
+                'c2_solution': 'Directed complex operational cadence across nested orchestrators (Jupyter, Taiga, Forte). Implemented strict version control for algorithmic difficulty calibration.',
+                'c2_impact': 'Established a robust flow where AI models are tested in ideal difficulty zones, ensuring absolute validity of the programmatic verifiers.',
+                'c3_title': 'Enterprise Compliance Verticals',
+                'c3_challenge': 'Structuring Legal workflows operating under severe technical restrictions (offline-by-default environments) and strict enterprise data licensing limitations.',
+                'c3_solution': 'Led scope readiness mapping over 150 workflows. Tactically unblocked enterprise data sources while aligning rigid natural language grading guidelines.',
+                'c3_impact': 'Successfully transitioned abstract legal requirements into instrumentable operational dashboards, setting the foundation for high-stakes enterprise deployment.',
+                'c4_title': 'High-Fidelity RLHF & Linguistic Governance',
+                'c4_challenge': 'Systemic quality risks caused by flawed third-party grammar standards, threatening contract continuity in massive cross-lingual fine-tuning pipelines.',
+                'c4_solution': 'Executed root-cause analysis and enforced authoritative linguistic validation to override flawed benchmarks. Presented evidence-based turnaround reports.',
+                'c4_impact': 'Inefficient vendor models replaced. Immediate rebound in pipeline quality, restoring trust to scale the project across multiple global markets.',
+                'stack_title': 'Operational Architecture & Stack Mapping',
+                'terminal_tag': 'Direct Channel',
+                'terminal_title': 'Initialize Contact',
+                'terminal_desc': 'Open to discussing executive roles, high-stakes AI program management, and scalable data operations.',
+                'terminal_disclaimer': 'Site independently designed and developed by Will Del Valle. Tier-1 Big Tech clients and project names are strictly omitted in compliance with NDAs and global security policies. Official certificates and personal performance data available upon executive request.',
+                'btn_briefing': 'Send Briefing',
+                'ph_name': 'Name',
+                'ph_email': 'Email',
+                'ph_subject': 'Subject',
+                'ph_message': 'Executive Briefing / Message...'
+            },
+            'pt': {
+                'status': 'Sistema Online',
+                'hero_tag': 'Hub Global de Operações',
+                'hero_title': 'Head de Operações de IA',
+                'hero_slogan': 'Pipelines de LLM | Sistemas Human-in-the-Loop | Delivery Técnico',
+                'hero_desc': '+20 anos de experiência em Operações de TI e Infraestrutura. Liderando arquiteturas de IA de alto risco com precisão e governança. Transformo diretrizes complexas de avaliação e gargalos operacionais em pipelines Human-in-the-Loop escaláveis e determinísticos para os maiores AI Labs globais.',
+                'btn_explore': 'Ver Telemetria',
+                'btn_contact': 'Iniciar Contato',
+                'kpi_title': 'Feed de Telemetria Ao Vivo',
+                't1_title': 'Variância de Alinhamento (Modelo)',
+                't1_desc': 'Manutenção rigorosa de discrepância de prompts (PDR) em fluxos globais de RLHF, garantindo fidelidade absoluta no fine-tuning de modelos.',
+                't2_title': 'Domínio em Tipologias de Projetos',
+                't2_desc': 'Governança sobre +30 tipos de avaliação, incluindo Rubricas complexas que exigem QAs, SMEs, engenharia e infraestrutura de plataformas.',
+                't3_title': 'Throughput de Alta Carga Cognitiva',
+                't3_desc': 'Orquestração de tarefas massivas de fine-tuning multi-turnos, processando milhões de dados em infraestruturas distribuídas sem quebras de SLA.',
+                't4_title': 'Alinhamento de Políticas Enterprise',
+                't4_desc': 'Adesão estrita a documentações complexas de Big Techs e diretrizes governamentais, garantindo compliance em operações de AI Safety.',
+                't5_title': 'Calibração de Dificuldade',
+                't5_desc': 'Engenharia de verificadores objetivos de Data Science para garantir distribuições de dificuldade precisas para agentes autônomos.',
+                't6_title': 'Acreditações Avançadas em IA',
+                't6_desc': 'Histórico comprovado com >95% de Pass Rate em rigorosos módulos técnicos de Gestão da Qualidade, Auditoria e Liderança de Operações em IA.',
+                'gallery_title': 'Estudos de Caso Executivos',
+                'gallery_subtitle': 'Operações & Arquitetura / 2024-Presente',
+                'lbl_challenge': 'Desafio',
+                'lbl_solution': 'Solução',
+                'lbl_impact': 'Impacto',
+                'c1_title': 'Segurança Multimodal & Red Teaming',
+                'c1_challenge': 'Orquestrar avaliações complexas (Áudio/Vídeo) para identificar violações críticas de política (P0/P1) sem depender de jailbreaks triviais.',
+                'c1_solution': 'Tradução de diretrizes abstratas de Big Techs em workflows escaláveis. Design de um modelo war-room cruzando riscos visuais e de áudio.',
+                'c1_impact': 'Sustentação de taxas extremas de fidelidade na submissão, garantindo a detecção altamente precisa de falhas Gerativas/Regenerativas em massa.',
+                'c2_title': 'Agentes Autônomos Determinísticos',
+                'c2_challenge': 'Afastamento da avaliação humana subjetiva para criar tarefas de Data Science com verificadores programáticos sob rígidas distribuições de dificuldade.',
+                'c2_solution': 'Direcionamento da cadência entre orquestradores (Jupyter, Taiga, Forte). Implementação de controle de versão para calibração de dificuldade.',
+                'c2_impact': 'Estabelecimento de um fluxo onde a IA é testada em zonas de dificuldade ideais, garantindo a validade absoluta dos verificadores programáticos.',
+                'c3_title': 'Vertical de Compliance Enterprise',
+                'c3_challenge': 'Estruturar workflows Jurídicos operando sob restrições técnicas severas (ambientes offline) e limitações rigorosas de licenciamento de dados.',
+                'c3_solution': 'Liderança no mapeamento de mais de 150 workflows. Desbloqueio tático de fontes de dados corporativos e alinhamento de diretrizes de correção.',
+                'c3_impact': 'Conversão bem-sucedida de requisitos abstratos em painéis operacionais instrumentáveis, preparando a fundação para IA corporativa de alto risco.',
+                'c4_title': 'RLHF High-Fidelity & Governança Linguística',
+                'c4_challenge': 'Riscos sistêmicos de qualidade causados por padrões gramaticais falhos, ameaçando a continuidade em pipelines massivos de fine-tuning multilíngue.',
+                'c4_solution': 'Execução de análise de causa raiz e imposição de validação linguística autoritativa. Apresentação de relatórios baseados em evidências à liderança.',
+                'c4_impact': 'Substituição de fornecedores ineficientes. Recuperação imediata da qualidade, restaurando a confiança para escalar o projeto globalmente.',
+                'stack_title': 'Mapeamento de Arquitetura & Stack Operacional',
+                'terminal_tag': 'Canal Direto',
+                'terminal_title': 'Iniciar Contato',
+                'terminal_desc': 'Aberto a discutir posições executivas, gestão de programas de IA de alto risco e operações de dados escaláveis.',
+                'terminal_disclaimer': 'Site projetado e desenvolvido de forma independente por Will Del Valle. Clientes Big Tech Tier-1 e nomes de projetos estritamente omitidos em conformidade com NDAs e políticas de segurança globais. Certificações oficiais e dados de desempenho pessoal disponíveis sob pedido.',
+                'btn_briefing': 'Enviar Briefing',
+                'ph_name': 'Nome',
+                'ph_email': 'E-mail',
+                'ph_subject': 'Assunto',
+                'ph_message': 'Briefing Executivo / Mensagem...'
+            }
+        };
+
+        let currentLang = 'en';
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'pt' : 'en';
+            document.getElementById('lang-indicator').innerText = currentLang.toUpperCase();
+            
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[currentLang][key]) {
+                    element.childNodes.forEach(child => {
+                        if(child.nodeType === Node.TEXT_NODE && child.textContent.trim().length > 0) {
+                            child.textContent = translations[currentLang][key];
+                        }
+                    });
+                    if(element.childNodes.length === 1 || !element.querySelector('i')) {
+                        element.innerText = translations[currentLang][key];
+                    }
+                }
+            });
+
+            document.getElementById('ph_name').placeholder = translations[currentLang]['ph_name'];
+            document.getElementById('ph_email').placeholder = translations[currentLang]['ph_email'];
+            document.getElementById('ph_subject').placeholder = translations[currentLang]['ph_subject'];
+            document.getElementById('ph_message').placeholder = translations[currentLang]['ph_message'];
+        }
+    </script>
+</body>
+</html>
