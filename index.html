@@ -129,7 +129,7 @@
         </div>
     </nav>
 
-    <main class="py-24 space-y-40">
+    <main class="py-24 space-y-32 md:space-y-40">
         
         <section class="max-w-7xl mx-auto px-6">
             <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/5 text-primary font-mono text-xs uppercase tracking-widest mb-10 border border-primary/10">
@@ -145,18 +145,18 @@
             <p class="text-lg md:text-xl text-gray-400 font-light leading-relaxed max-w-3xl mb-12" data-i18n="hero_desc">
                 20+ years of experience in Technology Operations & Infrastructure. Leading high-stakes AI architectures with sovereign precision. I transform complex evaluation guidelines and operational bottlenecks into scalable, deterministic Human-in-the-Loop pipelines for Top-Tier AI Labs.
             </p>
-            <div class="flex gap-4">
-                <a href="#telemetry" class="bg-white text-black px-8 py-4 rounded font-bold hover:bg-gray-200 transition-colors flex items-center gap-2 text-sm uppercase tracking-wider">
+            <div class="flex flex-col sm:flex-row gap-4">
+                <a href="#telemetry" class="bg-white text-black px-8 py-4 rounded font-bold hover:bg-gray-200 transition-colors flex items-center justify-center gap-2 text-sm uppercase tracking-wider">
                     <i data-lucide="activity" class="w-4 h-4"></i> <span data-i18n="btn_explore">View Telemetry</span>
                 </a>
-                <a href="#terminal" class="glass-panel text-white px-8 py-4 rounded font-bold hover:bg-white/10 transition-colors flex items-center gap-2 text-sm uppercase tracking-wider">
+                <a href="#terminal" class="glass-panel text-white px-8 py-4 rounded font-bold hover:bg-white/10 transition-colors flex items-center justify-center gap-2 text-sm uppercase tracking-wider">
                     <i data-lucide="terminal" class="w-4 h-4"></i> <span data-i18n="btn_contact">Init Contact</span>
                 </a>
             </div>
         </section>
 
         <section id="telemetry" class="relative max-w-7xl mx-auto px-6">
-            <div class="flex items-center justify-between mb-10">
+            <div class="flex items-center justify-between mb-8 md:mb-10">
                 <h2 class="font-mono text-sm text-gray-500 uppercase tracking-widest" data-i18n="kpi_title">Live Telemetry Feed</h2>
                 <div class="flex gap-2">
                     <button onclick="userControlCarousel('telemetry-track', -1)" class="p-3 rounded-full glass-panel hover:bg-white/10 transition"><i data-lucide="chevron-left" class="w-4 h-4 text-gray-400"></i></button>
@@ -165,53 +165,53 @@
             </div>
 
             <div class="w-full relative">
-                <div id="telemetry-track" class="flex overflow-x-auto hide-scrollbar snap-x-mandatory gap-6 pb-8 scroll-smooth w-full">
+                <div id="telemetry-track" class="flex items-stretch overflow-x-auto hide-scrollbar snap-x-mandatory gap-6 pb-8 scroll-smooth w-full">
                     
-                    <div class="carousel-card snap-start shrink-0 w-[320px] md:w-[400px] h-[400px] md:h-[460px] imposing-card glass-panel p-10 justify-center group rounded-2xl">
-                        <i data-lucide="target" class="absolute top-10 right-10 w-40 h-40 text-white opacity-[0.02] transition-opacity duration-500 pointer-events-none"></i>
+                    <div class="carousel-card snap-start shrink-0 w-[300px] sm:w-[320px] md:w-[400px] min-h-[400px] md:min-h-[460px] h-auto imposing-card glass-panel p-8 md:p-10 justify-center group rounded-2xl">
+                        <i data-lucide="target" class="absolute top-8 right-8 md:top-10 md:right-10 w-32 h-32 md:w-40 md:h-40 text-white opacity-[0.02] transition-opacity duration-500 pointer-events-none"></i>
                         <div class="font-mono text-xs text-primary uppercase tracking-widest mb-6">[SYS_ACCURACY]</div>
-                        <div class="font-display text-6xl font-bold text-white mb-4">< 5%</div>
-                        <div class="font-semibold text-xl text-gray-200 mb-4" data-i18n="t1_title">Model Alignment Variance</div>
+                        <div class="font-display text-5xl md:text-6xl font-bold text-white mb-4">< 5%</div>
+                        <div class="font-semibold text-lg md:text-xl text-gray-200 mb-4" data-i18n="t1_title">Model Alignment Variance</div>
                         <p class="text-sm md:text-base text-gray-400 font-light leading-relaxed" data-i18n="t1_desc">Rigorous maintenance of prompt discrepancy rates (PDR) in global RLHF and adversarial benchmarking, ensuring absolute fidelity in model fine-tuning.</p>
                     </div>
 
-                    <div class="carousel-card snap-start shrink-0 w-[320px] md:w-[400px] h-[400px] md:h-[460px] imposing-card glass-panel p-10 justify-center group rounded-2xl">
-                        <i data-lucide="layers" class="absolute top-10 right-10 w-40 h-40 text-white opacity-[0.02] transition-opacity duration-500 pointer-events-none"></i>
+                    <div class="carousel-card snap-start shrink-0 w-[300px] sm:w-[320px] md:w-[400px] min-h-[400px] md:min-h-[460px] h-auto imposing-card glass-panel p-8 md:p-10 justify-center group rounded-2xl">
+                        <i data-lucide="layers" class="absolute top-8 right-8 md:top-10 md:right-10 w-32 h-32 md:w-40 md:h-40 text-white opacity-[0.02] transition-opacity duration-500 pointer-events-none"></i>
                         <div class="font-mono text-xs text-secondary uppercase tracking-widest mb-6">[ARCH_COMPLEXITY]</div>
-                        <div class="font-display text-6xl font-bold text-white mb-4">30+</div>
-                        <div class="font-semibold text-xl text-gray-200 mb-4" data-i18n="t2_title">Project Typologies Mastered</div>
+                        <div class="font-display text-5xl md:text-6xl font-bold text-white mb-4">30+</div>
+                        <div class="font-semibold text-lg md:text-xl text-gray-200 mb-4" data-i18n="t2_title">Project Typologies Mastered</div>
                         <p class="text-sm md:text-base text-gray-400 font-light leading-relaxed" data-i18n="t2_desc">Governing deep-tier evaluations including complex Rubrics that require multi-hour task validation across SMEs, QA engineers, taxonomy teams, and platform infrastructure.</p>
                     </div>
 
-                    <div class="carousel-card snap-start shrink-0 w-[320px] md:w-[400px] h-[400px] md:h-[460px] imposing-card glass-panel p-10 justify-center group rounded-2xl">
-                        <i data-lucide="network" class="absolute top-10 right-10 w-40 h-40 text-white opacity-[0.02] transition-opacity duration-500 pointer-events-none"></i>
+                    <div class="carousel-card snap-start shrink-0 w-[300px] sm:w-[320px] md:w-[400px] min-h-[400px] md:min-h-[460px] h-auto imposing-card glass-panel p-8 md:p-10 justify-center group rounded-2xl">
+                        <i data-lucide="network" class="absolute top-8 right-8 md:top-10 md:right-10 w-32 h-32 md:w-40 md:h-40 text-white opacity-[0.02] transition-opacity duration-500 pointer-events-none"></i>
                         <div class="font-mono text-xs text-purple-400 uppercase tracking-widest mb-6">[OPS_SCALE]</div>
-                        <div class="font-display text-6xl font-bold text-white mb-4">2.4M+</div>
-                        <div class="font-semibold text-xl text-gray-200 mb-4" data-i18n="t3_title">High-Cognitive Throughput</div>
+                        <div class="font-display text-5xl md:text-6xl font-bold text-white mb-4">2.4M+</div>
+                        <div class="font-semibold text-lg md:text-xl text-gray-200 mb-4" data-i18n="t3_title">High-Cognitive Throughput</div>
                         <p class="text-sm md:text-base text-gray-400 font-light leading-relaxed" data-i18n="t3_desc">Orchestration of massive, multi-turn fine-tuning tasks through distributed infrastructures, processing millions of complex data points without SLA breaches.</p>
                     </div>
 
-                    <div class="carousel-card snap-start shrink-0 w-[320px] md:w-[400px] h-[400px] md:h-[460px] imposing-card glass-panel p-10 justify-center group rounded-2xl">
-                        <i data-lucide="shield-check" class="absolute top-10 right-10 w-40 h-40 text-white opacity-[0.02] transition-opacity duration-500 pointer-events-none"></i>
+                    <div class="carousel-card snap-start shrink-0 w-[300px] sm:w-[320px] md:w-[400px] min-h-[400px] md:min-h-[460px] h-auto imposing-card glass-panel p-8 md:p-10 justify-center group rounded-2xl">
+                        <i data-lucide="shield-check" class="absolute top-8 right-8 md:top-10 md:right-10 w-32 h-32 md:w-40 md:h-40 text-white opacity-[0.02] transition-opacity duration-500 pointer-events-none"></i>
                         <div class="font-mono text-xs text-red-400 uppercase tracking-widest mb-6">[GLOBAL_COMPLIANCE]</div>
-                        <div class="font-display text-5xl font-bold text-white mb-4">Tier-1</div>
-                        <div class="font-semibold text-xl text-gray-200 mb-4" data-i18n="t4_title">Enterprise Policy Alignment</div>
+                        <div class="font-display text-4xl md:text-5xl font-bold text-white mb-4">Tier-1</div>
+                        <div class="font-semibold text-lg md:text-xl text-gray-200 mb-4" data-i18n="t4_title">Enterprise Policy Alignment</div>
                         <p class="text-sm md:text-base text-gray-400 font-light leading-relaxed" data-i18n="t4_desc">Strict adherence to complex documentation from major Big Techs and governmental guidelines, ensuring multi-jurisdictional compliance in AI safety operations.</p>
                     </div>
 
-                    <div class="carousel-card snap-start shrink-0 w-[320px] md:w-[400px] h-[400px] md:h-[460px] imposing-card glass-panel p-10 justify-center group rounded-2xl">
-                        <i data-lucide="cpu" class="absolute top-10 right-10 w-40 h-40 text-white opacity-[0.02] transition-opacity duration-500 pointer-events-none"></i>
+                    <div class="carousel-card snap-start shrink-0 w-[300px] sm:w-[320px] md:w-[400px] min-h-[400px] md:min-h-[460px] h-auto imposing-card glass-panel p-8 md:p-10 justify-center group rounded-2xl">
+                        <i data-lucide="cpu" class="absolute top-8 right-8 md:top-10 md:right-10 w-32 h-32 md:w-40 md:h-40 text-white opacity-[0.02] transition-opacity duration-500 pointer-events-none"></i>
                         <div class="font-mono text-xs text-yellow-400 uppercase tracking-widest mb-6">[DS_VERIFIERS]</div>
-                        <div class="font-display text-4xl font-bold text-white mb-4">Deterministic</div>
-                        <div class="font-semibold text-xl text-gray-200 mb-4" data-i18n="t5_title">Difficulty Calibration</div>
+                        <div class="font-display text-3xl md:text-4xl font-bold text-white mb-4">Deterministic</div>
+                        <div class="font-semibold text-lg md:text-xl text-gray-200 mb-4" data-i18n="t5_title">Difficulty Calibration</div>
                         <p class="text-sm md:text-base text-gray-400 font-light leading-relaxed" data-i18n="t5_desc">Engineering objective Data Science verifiers to guarantee precise difficulty distributions for autonomous agents, moving beyond subjective human evaluation.</p>
                     </div>
 
-                    <div class="carousel-card snap-start shrink-0 w-[320px] md:w-[400px] h-[400px] md:h-[460px] imposing-card glass-panel p-10 justify-center group rounded-2xl">
-                        <i data-lucide="award" class="absolute top-10 right-10 w-40 h-40 text-white opacity-[0.02] transition-opacity duration-500 pointer-events-none"></i>
+                    <div class="carousel-card snap-start shrink-0 w-[300px] sm:w-[320px] md:w-[400px] min-h-[400px] md:min-h-[460px] h-auto imposing-card glass-panel p-8 md:p-10 justify-center group rounded-2xl">
+                        <i data-lucide="award" class="absolute top-8 right-8 md:top-10 md:right-10 w-32 h-32 md:w-40 md:h-40 text-white opacity-[0.02] transition-opacity duration-500 pointer-events-none"></i>
                         <div class="font-mono text-xs text-blue-400 uppercase tracking-widest mb-6">[GOVERNANCE]</div>
-                        <div class="font-display text-6xl font-bold text-white mb-4">35+</div>
-                        <div class="font-semibold text-xl text-gray-200 mb-4" data-i18n="t6_title">Advanced AI Accreditations</div>
+                        <div class="font-display text-5xl md:text-6xl font-bold text-white mb-4">35+</div>
+                        <div class="font-semibold text-lg md:text-xl text-gray-200 mb-4" data-i18n="t6_title">Advanced AI Accreditations</div>
                         <p class="text-sm md:text-base text-gray-400 font-light leading-relaxed" data-i18n="t6_desc">Proven track record with >95% Pass Rate across rigorous technical modules in Quality Management, Auditing, and AI Operations Leadership.</p>
                     </div>
 
@@ -220,9 +220,9 @@
         </section>
 
         <section id="operations" class="relative max-w-7xl mx-auto px-6">
-            <div class="flex items-end justify-between mb-10">
+            <div class="flex items-end justify-between mb-8 md:mb-10">
                 <div>
-                    <h2 class="font-display text-3xl font-bold text-white mb-2" data-i18n="gallery_title">Executive Case Studies</h2>
+                    <h2 class="font-display text-2xl md:text-3xl font-bold text-white mb-2" data-i18n="gallery_title">Executive Case Studies</h2>
                     <span class="font-mono text-xs text-gray-500 uppercase tracking-widest" data-i18n="gallery_subtitle">Operations & Architecture / 2024-Present</span>
                 </div>
                 <div class="flex gap-2">
@@ -232,83 +232,83 @@
             </div>
             
             <div class="w-full relative">
-                <div id="gallery-track" class="flex overflow-x-auto hide-scrollbar snap-x-mandatory gap-6 pb-8 scroll-smooth w-full">
+                <div id="gallery-track" class="flex items-stretch overflow-x-auto hide-scrollbar snap-x-mandatory gap-6 pb-8 scroll-smooth w-full">
                     
-                    <div class="carousel-card snap-start shrink-0 w-[340px] md:w-[460px] lg:w-[500px] h-[540px] md:h-[600px] imposing-card glass-panel p-10 justify-center group rounded-2xl">
-                        <i data-lucide="eye" class="absolute top-12 right-12 w-48 h-48 text-white opacity-[0.02] transition-opacity duration-500 pointer-events-none"></i>
+                    <div class="carousel-card snap-start shrink-0 w-[320px] sm:w-[340px] md:w-[460px] lg:w-[500px] min-h-[500px] md:min-h-[580px] h-auto imposing-card glass-panel p-8 md:p-10 justify-center group rounded-2xl">
+                        <i data-lucide="eye" class="absolute top-8 right-8 md:top-12 md:right-12 w-32 h-32 md:w-48 md:h-48 text-white opacity-[0.02] transition-opacity duration-500 pointer-events-none"></i>
                         <div class="font-mono text-xs text-gray-400 uppercase tracking-widest mb-4">Case 01 / Tier-1 LLM Provider</div>
-                        <h3 class="font-display text-3xl font-bold text-white mb-8" data-i18n="c1_title">Multimodal Safety & Adversarial Testing</h3>
-                        <div class="space-y-6">
+                        <h3 class="font-display text-2xl md:text-3xl font-bold text-white mb-6 md:mb-8" data-i18n="c1_title">Multimodal Safety & Adversarial Testing</h3>
+                        <div class="space-y-5 md:space-y-6">
                             <div>
-                                <h4 class="font-mono text-xs text-primary uppercase tracking-widest mb-2" data-i18n="lbl_challenge">Challenge</h4>
+                                <h4 class="font-mono text-xs text-primary uppercase tracking-widest mb-1 md:mb-2" data-i18n="lbl_challenge">Challenge</h4>
                                 <p class="text-sm md:text-base text-gray-400 font-light leading-relaxed" data-i18n="c1_challenge">Orchestrating complex, multi-turn evaluations (Audio/Video) to identify critical policy violations (P0/P1) and mitigate deep multimodal conflicts without relying on trivial jailbreaks.</p>
                             </div>
                             <div>
-                                <h4 class="font-mono text-xs text-primary uppercase tracking-widest mb-2" data-i18n="lbl_solution">Solution</h4>
+                                <h4 class="font-mono text-xs text-primary uppercase tracking-widest mb-1 md:mb-2" data-i18n="lbl_solution">Solution</h4>
                                 <p class="text-sm md:text-base text-gray-400 font-light leading-relaxed" data-i18n="c1_solution">Translated abstract Big Tech safety guidelines into scalable workflows. Designed a war-room execution model cross-referencing visual and audio fan-out risks.</p>
                             </div>
-                            <div class="border-t border-white/5 pt-5">
-                                <h4 class="font-mono text-xs text-secondary uppercase tracking-widest mb-2" data-i18n="lbl_impact">Impact</h4>
+                            <div class="border-t border-white/5 pt-4 md:pt-5">
+                                <h4 class="font-mono text-xs text-secondary uppercase tracking-widest mb-1 md:mb-2" data-i18n="lbl_impact">Impact</h4>
                                 <p class="text-sm md:text-base text-white font-light leading-relaxed" data-i18n="c1_impact">Sustained extreme Submission Fidelity Rates, ensuring highly accurate detection of Regenerative and Generative failures at massive scale.</p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="carousel-card snap-start shrink-0 w-[340px] md:w-[460px] lg:w-[500px] h-[540px] md:h-[600px] imposing-card glass-panel p-10 justify-center group rounded-2xl">
-                        <i data-lucide="bot" class="absolute top-12 right-12 w-48 h-48 text-white opacity-[0.02] transition-opacity duration-500 pointer-events-none"></i>
+                    <div class="carousel-card snap-start shrink-0 w-[320px] sm:w-[340px] md:w-[460px] lg:w-[500px] min-h-[500px] md:min-h-[580px] h-auto imposing-card glass-panel p-8 md:p-10 justify-center group rounded-2xl">
+                        <i data-lucide="bot" class="absolute top-8 right-8 md:top-12 md:right-12 w-32 h-32 md:w-48 md:h-48 text-white opacity-[0.02] transition-opacity duration-500 pointer-events-none"></i>
                         <div class="font-mono text-xs text-gray-400 uppercase tracking-widest mb-4">Case 02 / Global AI Research Lab</div>
-                        <h3 class="font-display text-3xl font-bold text-white mb-8" data-i18n="c2_title">Deterministic Autonomous Agents</h3>
-                        <div class="space-y-6">
+                        <h3 class="font-display text-2xl md:text-3xl font-bold text-white mb-6 md:mb-8" data-i18n="c2_title">Deterministic Autonomous Agents</h3>
+                        <div class="space-y-5 md:space-y-6">
                             <div>
-                                <h4 class="font-mono text-xs text-primary uppercase tracking-widest mb-2" data-i18n="lbl_challenge">Challenge</h4>
+                                <h4 class="font-mono text-xs text-primary uppercase tracking-widest mb-1 md:mb-2" data-i18n="lbl_challenge">Challenge</h4>
                                 <p class="text-sm md:text-base text-gray-400 font-light leading-relaxed" data-i18n="c2_challenge">Shifting operations from subjective human evaluation to engineering multi-step Data Science tasks governed by deterministic verifiers under strict difficulty distributions.</p>
                             </div>
                             <div>
-                                <h4 class="font-mono text-xs text-primary uppercase tracking-widest mb-2" data-i18n="lbl_solution">Solution</h4>
+                                <h4 class="font-mono text-xs text-primary uppercase tracking-widest mb-1 md:mb-2" data-i18n="lbl_solution">Solution</h4>
                                 <p class="text-sm md:text-base text-gray-400 font-light leading-relaxed" data-i18n="c2_solution">Directed complex operational cadence across nested orchestrators (Jupyter, Taiga, Forte). Implemented strict version control for algorithmic difficulty calibration.</p>
                             </div>
-                            <div class="border-t border-white/5 pt-5">
-                                <h4 class="font-mono text-xs text-secondary uppercase tracking-widest mb-2" data-i18n="lbl_impact">Impact</h4>
+                            <div class="border-t border-white/5 pt-4 md:pt-5">
+                                <h4 class="font-mono text-xs text-secondary uppercase tracking-widest mb-1 md:mb-2" data-i18n="lbl_impact">Impact</h4>
                                 <p class="text-sm md:text-base text-white font-light leading-relaxed" data-i18n="c2_impact">Established a robust flow where AI models are tested in ideal difficulty zones, ensuring absolute validity of the programmatic verifiers.</p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="carousel-card snap-start shrink-0 w-[340px] md:w-[460px] lg:w-[500px] h-[540px] md:h-[600px] imposing-card glass-panel p-10 justify-center group rounded-2xl">
-                        <i data-lucide="scale" class="absolute top-12 right-12 w-48 h-48 text-white opacity-[0.02] transition-opacity duration-500 pointer-events-none"></i>
+                    <div class="carousel-card snap-start shrink-0 w-[320px] sm:w-[340px] md:w-[460px] lg:w-[500px] min-h-[500px] md:min-h-[580px] h-auto imposing-card glass-panel p-8 md:p-10 justify-center group rounded-2xl">
+                        <i data-lucide="scale" class="absolute top-8 right-8 md:top-12 md:right-12 w-32 h-32 md:w-48 md:h-48 text-white opacity-[0.02] transition-opacity duration-500 pointer-events-none"></i>
                         <div class="font-mono text-xs text-gray-400 uppercase tracking-widest mb-4">Case 03 / Enterprise AI Solutions</div>
-                        <h3 class="font-display text-3xl font-bold text-white mb-8" data-i18n="c3_title">Enterprise Compliance Verticals</h3>
-                        <div class="space-y-6">
+                        <h3 class="font-display text-2xl md:text-3xl font-bold text-white mb-6 md:mb-8" data-i18n="c3_title">Enterprise Compliance Verticals</h3>
+                        <div class="space-y-5 md:space-y-6">
                             <div>
-                                <h4 class="font-mono text-xs text-primary uppercase tracking-widest mb-2" data-i18n="lbl_challenge">Challenge</h4>
+                                <h4 class="font-mono text-xs text-primary uppercase tracking-widest mb-1 md:mb-2" data-i18n="lbl_challenge">Challenge</h4>
                                 <p class="text-sm md:text-base text-gray-400 font-light leading-relaxed" data-i18n="c3_challenge">Structuring Legal workflows operating under severe technical restrictions (offline-by-default environments) and strict enterprise data licensing limitations.</p>
                             </div>
                             <div>
-                                <h4 class="font-mono text-xs text-primary uppercase tracking-widest mb-2" data-i18n="lbl_solution">Solution</h4>
+                                <h4 class="font-mono text-xs text-primary uppercase tracking-widest mb-1 md:mb-2" data-i18n="lbl_solution">Solution</h4>
                                 <p class="text-sm md:text-base text-gray-400 font-light leading-relaxed" data-i18n="c3_solution">Led scope readiness mapping over 150 workflows. Tactically unblocked enterprise data sources while aligning rigid natural language grading guidelines.</p>
                             </div>
-                            <div class="border-t border-white/5 pt-5">
-                                <h4 class="font-mono text-xs text-secondary uppercase tracking-widest mb-2" data-i18n="lbl_impact">Impact</h4>
+                            <div class="border-t border-white/5 pt-4 md:pt-5">
+                                <h4 class="font-mono text-xs text-secondary uppercase tracking-widest mb-1 md:mb-2" data-i18n="lbl_impact">Impact</h4>
                                 <p class="text-sm md:text-base text-white font-light leading-relaxed" data-i18n="c3_impact">Successfully transitioned abstract legal requirements into instrumentable operational dashboards, setting the foundation for high-stakes enterprise deployment.</p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="carousel-card snap-start shrink-0 w-[340px] md:w-[460px] lg:w-[500px] h-[540px] md:h-[600px] imposing-card glass-panel p-10 justify-center group rounded-2xl">
-                        <i data-lucide="globe-2" class="absolute top-12 right-12 w-48 h-48 text-white opacity-[0.02] transition-opacity duration-500 pointer-events-none"></i>
+                    <div class="carousel-card snap-start shrink-0 w-[320px] sm:w-[340px] md:w-[460px] lg:w-[500px] min-h-[500px] md:min-h-[580px] h-auto imposing-card glass-panel p-8 md:p-10 justify-center group rounded-2xl">
+                        <i data-lucide="globe-2" class="absolute top-8 right-8 md:top-12 md:right-12 w-32 h-32 md:w-48 md:h-48 text-white opacity-[0.02] transition-opacity duration-500 pointer-events-none"></i>
                         <div class="font-mono text-xs text-gray-400 uppercase tracking-widest mb-4">Case 04 / Tier-1 LLM Provider</div>
-                        <h3 class="font-display text-3xl font-bold text-white mb-8" data-i18n="c4_title">High-Fidelity RLHF & Linguistic Governance</h3>
-                        <div class="space-y-6">
+                        <h3 class="font-display text-2xl md:text-3xl font-bold text-white mb-6 md:mb-8" data-i18n="c4_title">High-Fidelity RLHF & Linguistic Governance</h3>
+                        <div class="space-y-5 md:space-y-6">
                             <div>
-                                <h4 class="font-mono text-xs text-primary uppercase tracking-widest mb-2" data-i18n="lbl_challenge">Challenge</h4>
+                                <h4 class="font-mono text-xs text-primary uppercase tracking-widest mb-1 md:mb-2" data-i18n="lbl_challenge">Challenge</h4>
                                 <p class="text-sm md:text-base text-gray-400 font-light leading-relaxed" data-i18n="c4_challenge">Systemic quality risks caused by flawed third-party grammar standards, threatening contract continuity in massive cross-lingual fine-tuning pipelines.</p>
                             </div>
                             <div>
-                                <h4 class="font-mono text-xs text-primary uppercase tracking-widest mb-2" data-i18n="lbl_solution">Solution</h4>
+                                <h4 class="font-mono text-xs text-primary uppercase tracking-widest mb-1 md:mb-2" data-i18n="lbl_solution">Solution</h4>
                                 <p class="text-sm md:text-base text-gray-400 font-light leading-relaxed" data-i18n="c4_solution">Executed root-cause analysis and enforced authoritative linguistic validation to override flawed benchmarks. Presented evidence-based turnaround reports.</p>
                             </div>
-                            <div class="border-t border-white/5 pt-5">
-                                <h4 class="font-mono text-xs text-secondary uppercase tracking-widest mb-2" data-i18n="lbl_impact">Impact</h4>
+                            <div class="border-t border-white/5 pt-4 md:pt-5">
+                                <h4 class="font-mono text-xs text-secondary uppercase tracking-widest mb-1 md:mb-2" data-i18n="lbl_impact">Impact</h4>
                                 <p class="text-sm md:text-base text-white font-light leading-relaxed" data-i18n="c4_impact">Inefficient vendor models replaced. Immediate rebound in pipeline quality, restoring trust to scale the project across multiple global markets.</p>
                             </div>
                         </div>
@@ -319,9 +319,9 @@
         </section>
 
         <section id="stack" class="pt-16 border-t border-white/5 max-w-7xl mx-auto px-6">
-            <h2 class="font-mono text-sm text-gray-500 uppercase tracking-widest mb-16 text-center" data-i18n="stack_title">Operational Architecture & Stack Mapping</h2>
+            <h2 class="font-mono text-sm text-gray-500 uppercase tracking-widest mb-12 md:mb-16 text-center" data-i18n="stack_title">Operational Architecture & Stack Mapping</h2>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-12 max-w-5xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-12 md:gap-y-16 gap-x-12 max-w-5xl mx-auto">
                 <div>
                     <h4 class="font-mono text-xs text-white uppercase tracking-widest mb-5">AI Evaluation & Model Execution</h4>
                     <div class="flex flex-wrap gap-2">
@@ -374,7 +374,7 @@
     </main>
 
     <footer id="terminal" class="border-t border-white/5 bg-[#05080e] mt-32">
-        <div class="max-w-7xl mx-auto px-6 py-24 grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div class="max-w-7xl mx-auto px-6 py-16 md:py-24 grid grid-cols-1 lg:grid-cols-2 gap-16">
             
             <div>
                 <div class="font-mono text-xs text-gray-500 uppercase tracking-widest mb-4" data-i18n="terminal_tag">Direct Channel</div>
@@ -414,9 +414,9 @@
             </div>
         </div>
         
-        <div class="border-t border-white/5 max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="border-t border-white/5 max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
             <span class="font-mono text-xs text-gray-600 uppercase tracking-widest">Est. 2004 — Will Del Valle // Global AI Operations</span>
-            <span class="font-mono text-xs text-gray-600 uppercase tracking-widest">v.5.1.0 // Executive Build</span>
+            <span class="font-mono text-xs text-gray-600 uppercase tracking-widest">v.5.2.0 // Mobile Ready</span>
         </div>
     </footer>
 
