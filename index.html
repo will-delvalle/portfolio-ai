@@ -485,62 +485,123 @@
         }
 
         /* Contact */
+        #contact {
+            background: linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.4) 40%, rgba(255, 255, 255, 1) 100%);
+            padding-top: 6rem;
+            padding-bottom: 8rem;
+            position: relative;
+        }
+
         .contact-section {
-            background: linear-gradient(135deg, #F4F9FF 0%, #FFFFFF 100%);
-            border: 1px solid rgba(0, 102, 204, 0.15);
-            border-radius: 32px;
-            padding: 5rem 3rem;
-            text-align: center;
-            box-shadow: var(--shadow-md);
-            margin: 0 auto 2rem auto;
-            max-width: 1000px;
-            transition: var(--transition);
+            max-width: 1100px;
+            margin: 0 auto;
         }
 
-        .contact-section:hover {
-            box-shadow: 0 20px 40px rgba(0,0,0,0.06);
-            transform: translateY(-2px);
-        }
-
-        .contact-section h2 {
-            color: var(--text-primary);
-        }
-
-        .contact-section p {
-            color: var(--text-secondary);
-            margin: 0 auto 3rem auto;
-            max-width: 600px;
-            font-size: 1.15rem;
-        }
-
-        .contact-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2.5rem;
+        .contact-grid-layout {
+            display: grid;
+            grid-template-columns: 1fr 0.8fr;
+            gap: 5rem;
             align-items: center;
+        }
+
+        @media (max-width: 900px) {
+            .contact-grid-layout {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+                text-align: center;
+            }
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: relative;
+            z-index: 2;
+        }
+
+        @media (max-width: 900px) {
+            .contact-info { align-items: center; }
+        }
+
+        .contact-info h2 {
+            font-size: 3.5rem;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+        }
+
+        .contact-info .main-desc {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            line-height: 1.6;
+        }
+
+        .disclaimer {
+            border-left: 2px solid rgba(0, 102, 204, 0.2);
+            padding-left: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        @media (max-width: 900px) {
+            .disclaimer {
+                border-left: none;
+                padding-left: 0;
+            }
+        }
+
+        .disclaimer p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            opacity: 0.8;
+            line-height: 1.6;
+            text-align: left;
+        }
+
+        @media (max-width: 900px) {
+            .disclaimer p { text-align: center; }
         }
 
         .btn-primary {
             background: var(--accent-color);
             color: #FFFFFF;
-            padding: 1rem 2rem;
-            border-radius: 30px;
+            padding: 1.2rem 2.8rem;
+            border-radius: 40px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 1.05rem;
             transition: var(--transition);
-            box-shadow: 0 4px 14px rgba(0, 102, 204, 0.25);
+            box-shadow: 0 8px 24px rgba(0, 102, 204, 0.25);
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.75rem;
         }
 
         .btn-primary:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(0, 102, 204, 0.35);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(0, 102, 204, 0.35);
             background: #005bb5;
             color: #FFFFFF;
+        }
+
+        .linkedin-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .LI-profile-badge {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        @media (max-width: 768px) {
+            .contact-info h2 { font-size: 2.5rem; }
         }
 
         /* Animations */
@@ -881,29 +942,37 @@
     </section>
 
     <!-- Contact -->
-    <section id="contact" style="padding-bottom: 4rem;">
+    <section id="contact">
         <div class="container fade-in">
             <div class="contact-section">
-                <h2 class="lang-pt" style="font-size: 2.8rem; margin-bottom: 1rem;">Vamos escalar juntos.</h2>
-                <h2 class="lang-en" style="font-size: 2.8rem; margin-bottom: 1rem;">Let's scale together.</h2>
-                
-                <p class="lang-pt">A combinação certa de rigor infraestrutural e agilidade em IA.<br>Entre em contato para transformar fluxos complexos em operações previsíveis.</p>
-                <p class="lang-en">The right blend of infrastructural rigor and AI agility.<br>Reach out to transform complex workflows into predictable operations.</p>
+                <div class="contact-grid-layout">
+                    <div class="contact-info">
+                        <h2 class="lang-pt">Iniciar Contato</h2>
+                        <h2 class="lang-en">Get in Touch</h2>
 
-                <div class="contact-grid">
-                    <a href="mailto:willan.delvalle@gmail.com" class="btn btn-primary lang-pt">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top:-2px;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                        Falar por E-mail
-                    </a>
-                    <a href="mailto:willan.delvalle@gmail.com" class="btn btn-primary lang-en">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top:-2px;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                        Get in Touch
-                    </a>
-                    
-                    <!-- LinkedIn Profile Badge -->
-                    <div style="background: transparent; padding: 0; display: inline-block;">
-                        <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="light" data-type="VERTICAL" data-vanity="willdelvalle" data-version="v1">
-                            <!-- Link removed to avoid redundancy as requested -->
+                        <p class="lang-pt main-desc">Aberto a discutir posições executivas, gestão de programas de IA de alto risco e operações de dados escaláveis.</p>
+                        <p class="lang-en main-desc">Open to discuss executive positions, high-risk AI program management, and scalable data operations.</p>
+                        
+                        <div class="disclaimer">
+                            <p class="lang-pt">Site projetado e desenvolvido de forma independente por Will Del Valle. Clientes Big Tech Tier-1 e nomes de projetos estritamente omitidos em conformidade com NDAs e políticas de segurança globais. Certificações oficiais e dados de desempenho pessoal disponíveis sob pedido.</p>
+                            <p class="lang-en">Site independently designed and developed by Will Del Valle. Tier-1 Big Tech clients and project names are strictly omitted in compliance with NDAs and global security policies. Official certificates and personal performance data available upon executive request.</p>
+                        </div>
+
+                        <a href="mailto:willan.delvalle@gmail.com" class="btn btn-primary lang-pt">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top:-2px;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            Enviar Briefing
+                        </a>
+                        <a href="mailto:willan.delvalle@gmail.com" class="btn btn-primary lang-en">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top:-2px;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            Get in Touch
+                        </a>
+                    </div>
+
+                    <div class="contact-social">
+                        <div class="linkedin-wrapper">
+                            <!-- LinkedIn Profile Badge -->
+                            <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="light" data-type="VERTICAL" data-vanity="willdelvalle" data-version="v1">
+                            </div>
                         </div>
                     </div>
                 </div>
