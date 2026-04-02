@@ -6,6 +6,9 @@
     <title>Will Del Valle | AI Program Manager</title>
     <meta name="description" content="Portfolio of Will Del Valle, AI Program Manager & Operations Leader bridging 20 years of critical infrastructure with advanced AI workflows.">
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%230066CC' d='M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a3 3 0 0 1 3 3h1a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-1v1a3 3 0 0 1-3 3H9a3 3 0 0 1-3-3v-1H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h1a3 3 0 0 1 3-3h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2M9 13a2 2 0 0 0-2 2a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2a2 2 0 0 0-2-2zM9 9a1 1 0 0 0-1 1a1 1 0 0 0 1 1a1 1 0 0 0 1-1a1 1 0 0 0-1-1m6 0a1 1 0 0 0-1 1a1 1 0 0 0 1 1a1 1 0 0 0 1-1a1 1 0 0 0-1-1Z'/%3E%3C/svg%3E">
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -105,7 +108,7 @@
         .logo {
             font-weight: 700;
             font-size: 1.2rem;
-            color: var(--text-primary);
+            color: var(--accent-color);
             text-decoration: none;
             letter-spacing: -0.01em;
         }
@@ -581,7 +584,7 @@
                 <a href="#contact" class="lang-en">Contact</a>
             </div>
             <button id="langToggle" class="lang-toggle-btn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px; color: var(--accent-color);"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
                 <span id="langToggleText">PT</span>
             </button>
         </div>
@@ -680,42 +683,102 @@
                 
                 <!-- Project 1 -->
                 <div class="project-card">
-                    <span class="project-tag lang-pt">Lançamento de Alta Pressão</span>
-                    <span class="project-tag lang-en">High-Stakes Rollout</span>
-                    <h3 class="lang-pt">July Launch & Multilingual Cobertura</h3>
-                    <h3 class="lang-en">July Launch & Multilingual Coverage</h3>
-                    <p class="lang-pt">Coordenação de um lançamento global multilíngue sob pressão de tempo extrema. Através de controle rígido e comunicação ágil, o time superou as expectativas de throughput mantendo alinhamento de qualidade ao redor de múltiplos fusos horários e contextos culturais.</p>
-                    <p class="lang-en">Coordination of a global multi-language rollout under extreme time pressure. Through rigid control and agile communication, the team exceeded throughput expectations while maintaining quality alignment across multiple timezones and cultural contexts.</p>
+                    <span class="project-tag lang-pt">Mitigação de Alucinações em LLMs</span>
+                    <span class="project-tag lang-en">Hallucination Mitigation Pipelines</span>
+                    <h3 class="lang-pt">AVALIAÇÃO DE FATUALIDADE</h3>
+                    <h3 class="lang-en">FACTUALITY & GROUNDING</h3>
+                    <p class="lang-pt">Estruturei fluxos de avaliação focados em medir e penalizar alucinações em modelos de fundação. Implementei camadas de controle onde anotadores auditavam respostas contra fontes verificáveis, garantindo o máximo de precisão factual.</p>
+                    <p class="lang-en">Structured evaluation workflows to measure and penalize model hallucinations. Designed quality control layers where human annotators audited responses against verifiable sources, ensuring high-fidelity factual alignment and reliability for frontier LLMs.</p>
                 </div>
 
                 <!-- Project 2 -->
                 <div class="project-card">
-                    <span class="project-tag lang-pt">Escala & Assertividade</span>
-                    <span class="project-tag lang-en">Scale & Accuracy</span>
-                    <h3 class="lang-pt">Ranqueamento de Preferências (RLHF)</h3>
-                    <h3 class="lang-en">Preference Ranking (RLHF)</h3>
-                    <p class="lang-pt">Estruturação de fluxos de ranqueamento de alta complexidade em larga escala. Traduzindo diretrizes não refinadas em orientações aplicáveis na prática, alinhando anotadores humanos para gerar sinais puros para a camada de RLHF do modelo.</p>
-                    <p class="lang-en">Structuring highly complex ranking flows at scale. Translating raw guidelines into actionable directives, aligning human annotators to generate pristine quality signals for the model's RLHF layer.</p>
+                    <span class="project-tag lang-pt">Ranqueamento de Preferências em Escala</span>
+                    <span class="project-tag lang-en">High-Volume Preference Ranking</span>
+                    <h3 class="lang-pt">RLHF E ALINHAMENTO</h3>
+                    <h3 class="lang-en">RLHF & ALIGNMENT</h3>
+                    <p class="lang-pt">Orquestrei a coleta massiva de dados de preferência humana para alinhar as respostas dos modelos. Traduzi diretrizes complexas em instruções acionáveis, gerenciando a produtividade e a qualidade na geração de sinais precisos de treinamento.</p>
+                    <p class="lang-en">Orchestrated large-scale human preference data collection to align model outputs with human intent. Managed throughput and strict quality controls across complex ranking flows, translating raw guidelines into actionable directives for expert annotators.</p>
                 </div>
 
                 <!-- Project 3 -->
                 <div class="project-card">
-                    <span class="project-tag lang-pt">Treinamento Seguro</span>
-                    <span class="project-tag lang-en">Safety Training</span>
-                    <h3 class="lang-pt">Trust & Safety Multi-Mercado</h3>
-                    <h3 class="lang-en">Multi-Market Trust & Safety</h3>
-                    <p class="lang-pt">Gerenciamento envolvendo Yonder e tópicos de alto foco. Implementação de QA para múltiplos mercados, garantindo precisão em rubricas abrangentes. Foquei na identificação de vetores de falha adversariais específicos de idiomas para blindar o ambiente produtivo.</p>
-                    <p class="lang-en">Management involving Yonder and High Focus Topics. Implemented QA for multiple markets ensuring precision across comprehensive rubrics. Focused on identifying language-specific adversarial failure vectors to harden the production environment.</p>
+                    <span class="project-tag lang-pt">Operações Globais de Red Teaming</span>
+                    <span class="project-tag lang-en">Adversarial Red Teaming Operations</span>
+                    <h3 class="lang-pt">IA RESPONSÁVEL E SAFETY</h3>
+                    <h3 class="lang-en">AI SAFETY & TRUST</h3>
+                    <p class="lang-pt">Liderei avaliações de segurança em múltiplos mercados para mapear e corrigir vulnerabilidades. Coordenei testes de estresse contra vieses e respostas nocivas, fortalecendo a robustez de modelos gerativos antes de irem para produção.</p>
+                    <p class="lang-en">Led comprehensive safety evaluations across multiple markets to identify and patch failure vectors. Coordinated stress-testing for bias, toxicity, and harmful responses, hardening production environments for top-tier generative models.</p>
                 </div>
 
                 <!-- Project 4 -->
                 <div class="project-card">
-                    <span class="project-tag lang-pt">Desenvolvimento Sintético Avançado</span>
-                    <span class="project-tag lang-en">Advanced Synthetic Development</span>
-                    <h3 class="lang-pt">Curadoria de IA com Expertise Profunda</h3>
-                    <h3 class="lang-en">Deep Expert AI Curation</h3>
-                    <p class="lang-pt">Liderança em desenvolvimento de dados finos (FDD) com especialistas. Envolvendo prompts sintéticos e domínios rigorosos como Ciência de Dados (Agate) e Legal (Andalusite). Aprimoramento proativo de diretrizes e mediação entre auditores e QAs das Big Techs.</p>
-                    <p class="lang-en">Leadership in fine-tuned data development (FDD) with subject experts. Covering synthetic prompts and rigorous domains like Data Science (Agate) and Legal (Andalusite). Proactively improved instructions and mediated issues between frontline auditors and Big Tech QAs.</p>
+                    <span class="project-tag lang-pt">Localização Multilíngue de Modelos</span>
+                    <span class="project-tag lang-en">Multilingual Model Localizations</span>
+                    <h3 class="lang-pt">ESCALABILIDADE GLOBAL</h3>
+                    <h3 class="lang-en">GLOBAL SCALABILITY</h3>
+                    <p class="lang-pt">Executei lançamentos críticos de avaliação multilíngue sob alta pressão de tempo. Mantive taxas de erro abaixo de 5% enquanto escalava fluxos de testes e geração de respostas em diversos fusos horários e contextos culturais.</p>
+                    <p class="lang-en">Executed high-stakes, cross-lingual evaluation rollouts under extreme time pressure. Maintained sub-5% error rates while scaling prompt evaluation and response generation pipelines across multiple time zones and cultural contexts.</p>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card">
+                    <span class="project-tag lang-pt">Curadoria de Dados por Especialistas</span>
+                    <span class="project-tag lang-en">Expert-Led Data Annotation</span>
+                    <h3 class="lang-pt">SFT ESPECIALIZADO</h3>
+                    <h3 class="lang-en">DOMAIN-SPECIFIC SFT</h3>
+                    <p class="lang-pt">Gerenciei a integração e a operação de profissionais de altíssimo nível, como advogados e cientistas de dados. Criei estruturas paralelas de controle de qualidade para garantir avaliações tecnicamente impecáveis em fluxos de raciocínio lógico.</p>
+                    <p class="lang-en">Supported the onboarding and execution of highly specialized cohorts, including legal professionals and data scientists. Built parallel QA structures to ensure domain-accurate evaluations for complex coding and legal reasoning tasks.</p>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card">
+                    <span class="project-tag lang-pt">Pipelines de Treinamento Cross-Modal</span>
+                    <span class="project-tag lang-en">Cross-Modality Training Pipelines</span>
+                    <h3 class="lang-pt">AVALIAÇÕES MULTIMODAIS</h3>
+                    <h3 class="lang-en">MULTIMODAL EVALS</h3>
+                    <p class="lang-pt">Conduzi a execução de projetos voltados para a melhoria de capacidades multimodais, abrangendo fluxos de imagem, áudio e vídeo. Otimizei a eficiência operacional da equipe, mantendo rigorosa precisão técnica nas entregas.</p>
+                    <p class="lang-en">Directed operational execution for multi-modal model improvements, spanning image generation, video analysis, and audio workflows. Optimized contributor efficiency and reduced average handling time while maintaining strict adherence to complex formatting guidelines.</p>
+                </div>
+
+                <!-- Project 7 -->
+                <div class="project-card">
+                    <span class="project-tag lang-pt">Testes A/B e Comparação Estática</span>
+                    <span class="project-tag lang-en">Static Comparison & A/B Testing</span>
+                    <h3 class="lang-pt">BENCHMARKING DE MODELOS</h3>
+                    <h3 class="lang-en">MODEL BENCHMARKING</h3>
+                    <p class="lang-pt">Entreguei dados estruturados de comparação direta entre modelos para estabelecer baselines competitivos. Monitorei filas em tempo real, assegurando que o Human-in-the-Loop (HITL) fornecesse sinais limpos para atualizações algorítmicas.</p>
+                    <p class="lang-en">Delivered head-to-head model comparison data to establish competitive baselines. Monitored queues and tracked failure modes in real time, ensuring human-in-the-loop (HITL) evaluations provided clean, unbiased signals for algorithm updates.</p>
+                </div>
+
+                <!-- Project 8 -->
+                <div class="project-card">
+                    <span class="project-tag lang-pt">Geração de Prompts Sintéticos</span>
+                    <span class="project-tag lang-en">Synthetic Prompt Generation</span>
+                    <h3 class="lang-pt">DESENVOLVIMENTO DE DADOS</h3>
+                    <h3 class="lang-en">DATA DEVELOPMENT</h3>
+                    <p class="lang-pt">Gerenciei fluxos de criação de dados sintéticos para expandir datasets de treinamento. Apliquei ciclos de feedback curtos e treinamentos focados para guiar os anotadores na produção de cenários complexos de uso (edge cases).</p>
+                    <p class="lang-en">Managed fine-tuned data development workflows to expand training datasets. Implemented tight feedback loops and focused training interventions, guiding contributors to produce highly specific, edge-case synthetic prompts for model refinement.</p>
+                </div>
+
+                <!-- Project 9 -->
+                <div class="project-card">
+                    <span class="project-tag lang-pt">Calibragem Avançada de Rúbricas</span>
+                    <span class="project-tag lang-en">Advanced Rubric Calibration</span>
+                    <h3 class="lang-pt">ARQUITETURA DE WORKFLOWS</h3>
+                    <h3 class="lang-en">WORKFLOW ARCHITECTURE</h3>
+                    <p class="lang-pt">Transformei requisitos técnicos ambíguos em operações estruturadas. Escalei inconsistências em regras de avaliação e desenvolvi documentação de apoio prático para aumentar a precisão dos anotadores em tarefas de alta complexidade.</p>
+                    <p class="lang-en">Translated ambiguous, fast-changing project requirements into structured operations. Escalated recurring edge cases to align grading criteria, building supplemental documentation to improve annotator precision across generalized and specialized tasks.</p>
+                </div>
+
+                <!-- Project 10 -->
+                <div class="project-card">
+                    <span class="project-tag lang-pt">Otimização de Qualidade e Auditoria</span>
+                    <span class="project-tag lang-en">Pipeline Optimization & QA Auditing</span>
+                    <h3 class="lang-pt">MLOPS E EFICIÊNCIA</h3>
+                    <h3 class="lang-en">MLOPS & EFFICIENCY</h3>
+                    <p class="lang-pt">Apliquei princípios de operações em escala para resolver gargalos sistêmicos de avaliação. Ao auditar entregas iniciais e criar rastreamento próprio de QA, identifiquei falhas em processos externos, recuperando valor financeiro e acelerando o pipeline.</p>
+                    <p class="lang-en">Applied MLOps principles to identify and resolve systemic external evaluation inconsistencies. By actively auditing early outputs and building custom QA tracking, recovered significant delivery value and accelerated overall pipeline throughput.</p>
                 </div>
 
                     </div>
