@@ -635,6 +635,74 @@
             }
         }
 
+        /* Stack Mapping Marquee */
+        .marquee-container {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            margin: 4rem auto 0 auto;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            /* Fade masks */
+            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+            mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+        }
+
+        .marquee-track {
+            --gap: 4rem;
+            display: flex;
+            gap: var(--gap);
+            padding: 1rem 0 2rem 0;
+            width: max-content;
+        }
+
+        .marquee-content {
+            display: flex;
+            gap: var(--gap);
+            flex-shrink: 0;
+            animation: scroll-marquee 40s linear infinite;
+        }
+
+        .marquee-track:hover .marquee-content {
+            animation-play-state: paused;
+        }
+
+        .tool-text {
+            color: #6B7280;
+            font-size: 1.25rem;
+            font-weight: 600;
+            white-space: nowrap;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: default;
+            letter-spacing: 0.02em;
+        }
+
+        .tool-text:hover {
+            color: var(--text-primary);
+        }
+
+        @keyframes scroll-marquee {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(calc(-100% - var(--gap)));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .marquee-track {
+                --gap: 2.5rem;
+            }
+            .tool-text {
+                font-size: 1rem;
+            }
+        }
+
         /* Animations */
         .fade-in {
             opacity: 0;
@@ -673,13 +741,16 @@
     <!-- Header -->
     <header>
         <div class="container nav-content">
-            <a href="#" class="logo">Will Del Valle</a>
+            <a href="index.html#" class="logo">Will Del Valle</a>
             <div class="nav-links">
                 <a href="#about" class="lang-pt">Abordagem</a>
                 <a href="#about" class="lang-en">Approach</a>
 
                 <a href="#portfolio" class="lang-pt">Portfólio de IA</a>
                 <a href="#portfolio" class="lang-en">AI Portfolio</a>
+
+                <a href="education.html" class="lang-pt">Formação</a>
+                <a href="education.html" class="lang-en">Education</a>
 
                 <a href="#experience" class="lang-pt">Trajetória</a>
                 <a href="#experience" class="lang-en">Experience</a>
@@ -792,14 +863,16 @@
                             <p class="lang-en">Recurring Error Rate</p>
                 </div>
                 <div class="stat-item">
-                    <h4>400+</h4>
+                    <h4>1k+</h4>
                     <p class="lang-pt">Especialistas Orquestrados</p>
                     <p class="lang-en">Experts Orchestrated</p>
                 </div>
-                <div class="stat-item">
-                    <h4>30+</h4>
-                    <p class="lang-pt">Certificações Técnicas IA</p>
-                    <p class="lang-en">AI Technical Certifications</p>
+                <div class="stat-item" style="cursor: pointer;">
+                    <a href="education.html" style="text-decoration: none; color: inherit; display: block; transition: var(--transition);" onmouseover="this.style.opacity='0.7'; this.style.transform='translateY(-3px)';" onmouseout="this.style.opacity='1'; this.style.transform='translateY(0)';">
+                        <h4>40+</h4>
+                        <p class="lang-pt" style="color: var(--text-secondary);">Certificações Técnicas IA</p>
+                        <p class="lang-en" style="color: var(--text-secondary);">AI Technical Certifications</p>
+                    </a>
                 </div>
             </div>
 
@@ -1162,6 +1235,77 @@
         </div>
     </section>
 
+    <!-- Stack Mapping -->
+    <section id="stack" style="background: var(--surface-color);">
+        <div class="container fade-in">
+            <h2 class="section-title">Operational Architecture & Stack Mapping</h2>
+            
+            <div class="marquee-container">
+                <div class="marquee-track">
+                    <div class="marquee-content">
+                        <span class="tool-text">Agentic Graders</span>
+                        <span class="tool-text">Jupyter</span>
+                        <span class="tool-text">Python</span>
+                        <span class="tool-text">GitHub</span>
+                        <span class="tool-text">Forte | Pareto AI</span>
+                        <span class="tool-text">Outlier | Scale AI</span>
+                        <span class="tool-text">Orchestrator</span>
+                        <span class="tool-text">Anthropic Taiga</span>
+                        <span class="tool-text">Meta SRT</span>
+                        <span class="tool-text">Redash</span>
+                        <span class="tool-text">Airtable</span>
+                        <span class="tool-text">AWS</span>
+                        <span class="tool-text">AZURE</span>
+                        <span class="tool-text">VPN</span>
+                        <span class="tool-text">VNC</span>
+                        <span class="tool-text">Metabase</span>
+                        <span class="tool-text">Linear</span>
+                        <span class="tool-text">Zendesk</span>
+                        <span class="tool-text">Slack</span>
+                        <span class="tool-text">Discourse</span>
+                        <span class="tool-text">Google Workspace</span>
+                        <span class="tool-text">Coda</span>
+                        <span class="tool-text">Loom</span>
+                        <span class="tool-text">tl;dv</span>
+                        <span class="tool-text">Zoom</span>
+                        <span class="tool-text">Miro</span>
+                        <span class="tool-text">Canva</span>
+                    </div>
+                    <!-- Duplicate for infinite smooth scroll -->
+                    <div class="marquee-content" aria-hidden="true">
+                        <span class="tool-text">Agentic Graders</span>
+                        <span class="tool-text">Jupyter</span>
+                        <span class="tool-text">Python</span>
+                        <span class="tool-text">GitHub</span>
+                        <span class="tool-text">Forte | Pareto AI</span>
+                        <span class="tool-text">Outlier | Scale AI</span>
+                        <span class="tool-text">Orchestrator</span>
+                        <span class="tool-text">Anthropic Taiga</span>
+                        <span class="tool-text">Meta SRT</span>
+                        <span class="tool-text">Redash</span>
+                        <span class="tool-text">Airtable</span>
+                        <span class="tool-text">AWS</span>
+                        <span class="tool-text">AZURE</span>
+                        <span class="tool-text">VPN</span>
+                        <span class="tool-text">VNC</span>
+                        <span class="tool-text">Metabase</span>
+                        <span class="tool-text">Linear</span>
+                        <span class="tool-text">Zendesk</span>
+                        <span class="tool-text">Slack</span>
+                        <span class="tool-text">Discourse</span>
+                        <span class="tool-text">Google Workspace</span>
+                        <span class="tool-text">Coda</span>
+                        <span class="tool-text">Loom</span>
+                        <span class="tool-text">tl;dv</span>
+                        <span class="tool-text">Zoom</span>
+                        <span class="tool-text">Miro</span>
+                        <span class="tool-text">Canva</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact -->
     <section id="contact">
         <div class="container fade-in">
@@ -1171,10 +1315,8 @@
                         <h2 class="lang-pt">Iniciar Contato</h2>
                         <h2 class="lang-en">Get in Touch</h2>
 
-                        <p class="lang-pt main-desc">Aberto a discutir posições executivas, gestão de programas de IA de
-                            alto risco e operações de dados escaláveis.</p>
-                        <p class="lang-en main-desc">Open to discuss executive positions, high-risk AI program
-                            management, and scalable data operations.</p>
+                        <p class="lang-pt main-desc">Baseado na América Latina (UTC-3), com forte sobreposição nos fusos ET, PT e CET. Aberto a discutir posições executivas, gestão de programas de IA de alto risco e operações de dados em escala.</p>
+                        <p class="lang-en main-desc">Based in Latin America (UTC-3), with strong overlap across ET, PT, and CET. Open to discuss executive positions, high-risk AI program management, and scalable data operations.</p>
 
                         <div class="disclaimer">
                             <p class="lang-pt">Site projetado e desenvolvido de forma independente por Will Del Valle.
@@ -1257,6 +1399,11 @@
 
         document.querySelectorAll('.fade-in').forEach(elem => {
             observer.observe(elem);
+            // Pre-calculate to avoid visibility bug at the top of the viewport
+            const rect = elem.getBoundingClientRect();
+            if (rect.top <= (window.innerHeight || document.documentElement.clientHeight)) {
+                elem.classList.add('visible');
+            }
         });
 
         // Smooth Scroll for anchored links
