@@ -424,7 +424,7 @@
             bottom: 0;
             left: 24px;
             width: 2px;
-            background: linear-gradient(to bottom, var(--accent-color) 0%, rgba(0, 102, 204, 0.1) 100%);
+            background: linear-gradient(to bottom, transparent 0px, var(--accent-color) 100px, var(--accent-color) calc(100% - 100px), transparent 100%);
         }
 
         .timeline-item {
@@ -560,7 +560,7 @@
         }
 
         .contact-info .main-desc {
-            font-size: 1.25rem;
+            font-size: 1.15rem;
             color: var(--text-secondary);
             margin-bottom: 3rem;
             line-height: 1.6;
