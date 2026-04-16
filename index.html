@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+<!-- LinkedIn badge script moved to end of body for reliable DOM-ready init -->
 <style>
 :root {
   --bg-color: #FAFAFA;
@@ -160,8 +160,8 @@ header{position:fixed;top:0;width:100%;background:rgba(250,250,250,0.88);backdro
 .disclaimer p{font-size:0.85rem;color:var(--text-secondary);opacity:0.8;line-height:1.6;max-width:100%;text-align:left}
 .contact-btn{background:var(--accent-color);color:#FFFFFF;padding:1.1rem 2.5rem;border-radius:40px;text-decoration:none;font-weight:600;font-size:1rem;transition:var(--transition);box-shadow:0 8px 24px rgba(0,85,179,0.25);display:inline-flex;align-items:center;gap:0.6rem}
 .contact-btn:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(0,85,179,0.35);background:#0048A0;color:#FFFFFF}
-.linkedin-wrapper{display:flex;justify-content:center;align-items:center}
-.LI-profile-badge{width:100%;display:flex;justify-content:center}
+.linkedin-wrapper{display:flex;justify-content:center;align-items:flex-start;min-height:300px}
+.linkedin-wrapper .LI-profile-badge{min-width:200px}
 @media(max-width:900px){
   .contact-grid-layout{grid-template-columns:1fr;gap:3rem;text-align:center}
   .contact-info{align-items:center}
@@ -180,6 +180,22 @@ header{position:fixed;top:0;width:100%;background:rgba(250,250,250,0.88);backdro
   section{padding:4.5rem 0}
   .section-title{font-size:2rem}
   .section-subtitle{font-size:1rem;margin-bottom:2.5rem}
+}
+@media(max-width:480px){
+  .hero h1{font-size:2rem;line-height:1.12}
+  .hero p{font-size:0.98rem}
+  .btn-primary,.btn-ghost{padding:0.85rem 1.6rem;font-size:0.93rem}
+  .stat-item h4{font-size:2.4rem}
+  .contact-info h2{font-size:2rem}
+  .contact-btn{padding:1rem 1.8rem;font-size:0.95rem}
+  .carousel-btn{width:38px;height:38px}
+  .carousel-btn svg{width:18px;height:18px}
+  .timeline-item{padding:1.25rem 1.1rem;margin-left:44px}
+  .timeline-item::before{left:-30px;top:1.25rem;width:13px;height:13px}
+  .timeline::before{left:19px}
+  .feature-card{padding:1.75rem 1.5rem}
+  .section-title{font-size:1.8rem}
+  .linkedin-wrapper{min-height:260px}
 }
 </style>
 </head>
@@ -685,6 +701,19 @@ document.addEventListener('DOMContentLoaded', () => {
   renderDots();
   setTimeout(update, 100);
 });
+</script>
+<!-- LinkedIn Badge: loaded last to ensure DOM is ready before init scan -->
+<script>
+(function(){
+  var s = document.createElement('script');
+  s.src = 'https://platform.linkedin.com/badges/js/profile.js';
+  s.async = true;
+  s.onload = function(){
+    // Re-trigger badge init if LI object exposes it
+    if(window.LI && typeof window.LI.init === 'function') window.LI.init();
+  };
+  document.body.appendChild(s);
+})();
 </script>
 </body>
 </html>
