@@ -132,34 +132,34 @@ header{position:fixed;top:0;width:100%;background:rgba(250,250,250,0.88);backdro
 
 <!-- Mobile Nav Overlay -->
 <nav class="mobile-nav" id="mobileNav">
-  <a href="V10.html#about" class="lang-en mobile-nav-link">Approach</a>
-  <a href="V10.html#about" class="lang-pt mobile-nav-link">Abordagem</a>
-  <a href="V10.html#portfolio" class="lang-en mobile-nav-link">AI Portfolio</a>
-  <a href="V10.html#portfolio" class="lang-pt mobile-nav-link">Portfólio IA</a>
-  <a href="education.html" class="lang-en mobile-nav-link">Education</a>
-  <a href="education.html" class="lang-pt mobile-nav-link">Formação</a>
-  <a href="V10.html#experience" class="lang-en mobile-nav-link">Experience</a>
-  <a href="V10.html#experience" class="lang-pt mobile-nav-link">Trajetória</a>
-  <a href="#contact" class="lang-en mobile-nav-link">Contact</a>
-  <a href="#contact" class="lang-pt mobile-nav-link">Contato</a>
+  <a href="/#about" class="lang-en mobile-nav-link">Approach</a>
+  <a href="/#about" class="lang-pt mobile-nav-link">Abordagem</a>
+  <a href="/#portfolio" class="lang-en mobile-nav-link">AI Portfolio</a>
+  <a href="/#portfolio" class="lang-pt mobile-nav-link">Portfólio IA</a>
+  <a href="/education.html" class="lang-en mobile-nav-link">Education</a>
+  <a href="/education.html" class="lang-pt mobile-nav-link">Formação</a>
+  <a href="/#experience" class="lang-en mobile-nav-link">Experience</a>
+  <a href="/#experience" class="lang-pt mobile-nav-link">Trajetória</a>
+  <a href="/#contact" class="lang-en mobile-nav-link">Contact</a>
+  <a href="/#contact" class="lang-pt mobile-nav-link">Contato</a>
 </nav>
 
 <!-- Header -->
 <header>
   <div class="container nav-content">
-    <a href="V10.html" class="logo">Will Del Valle</a>
+    <a href="/" class="logo">Will Del Valle</a>
     <div class="nav-right">
       <nav class="nav-links">
-        <a href="V10.html#about" class="lang-en">Approach</a>
-        <a href="V10.html#about" class="lang-pt">Abordagem</a>
-        <a href="V10.html#portfolio" class="lang-en">AI Portfolio</a>
-        <a href="V10.html#portfolio" class="lang-pt">Portfólio IA</a>
-        <a href="education.html" class="lang-en active">Education</a>
-        <a href="education.html" class="lang-pt active">Formação</a>
-        <a href="V10.html#experience" class="lang-en">Experience</a>
-        <a href="V10.html#experience" class="lang-pt">Trajetória</a>
-        <a href="#contact" class="lang-en">Contact</a>
-        <a href="#contact" class="lang-pt">Contato</a>
+        <a href="/#about" class="lang-en">Approach</a>
+        <a href="/#about" class="lang-pt">Abordagem</a>
+        <a href="/#portfolio" class="lang-en">AI Portfolio</a>
+        <a href="/#portfolio" class="lang-pt">Portfólio IA</a>
+        <a href="/education.html" class="lang-en active">Education</a>
+        <a href="/education.html" class="lang-pt active">Formação</a>
+        <a href="/#experience" class="lang-en">Experience</a>
+        <a href="/#experience" class="lang-pt">Trajetória</a>
+        <a href="/#contact" class="lang-en">Contact</a>
+        <a href="/#contact" class="lang-pt">Contato</a>
       </nav>
       <button id="langToggle" class="lang-toggle-btn" aria-label="Toggle language">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-color)"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
@@ -484,10 +484,9 @@ function setLang(lang) {
   localStorage.setItem('lang', lang);
   const txt = document.getElementById('langToggleText');
   if (txt) txt.innerText = lang === 'en' ? 'PT' : 'EN';
-  // Propagate lang param to main page links
-  document.querySelectorAll('a[href^="V10.html"]').forEach(a => {
-    const base = a.getAttribute('href').split('?')[0];
-    a.href = base + '?lang=' + lang;
+  // Keep /education.html self-link in sync with lang param
+  document.querySelectorAll('a[href^="/education.html"]').forEach(a => {
+    a.href = '/education.html?lang=' + lang;
   });
 }
 setLang(getLang());
