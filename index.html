@@ -741,22 +741,22 @@
     <!-- Header -->
     <header>
         <div class="container nav-content">
-            <a href="index.html#" class="logo">Will Del Valle</a>
+            <a href="/" class="logo">Will Del Valle</a>
             <div class="nav-links">
-                <a href="#about" class="lang-pt">Abordagem</a>
-                <a href="#about" class="lang-en">Approach</a>
+                <a href="/#about" class="lang-pt">Abordagem</a>
+                <a href="/#about" class="lang-en">Approach</a>
 
-                <a href="#portfolio" class="lang-pt">Portfólio de IA</a>
-                <a href="#portfolio" class="lang-en">AI Portfolio</a>
+                <a href="/#portfolio" class="lang-pt">Portfólio de IA</a>
+                <a href="/#portfolio" class="lang-en">AI Portfolio</a>
 
-                <a href="education.html" class="lang-pt">Formação</a>
-                <a href="education.html" class="lang-en">Education</a>
+                <a href="/education.html" class="lang-pt">Formação</a>
+                <a href="/education.html" class="lang-en">Education</a>
 
-                <a href="#experience" class="lang-pt">Trajetória</a>
-                <a href="#experience" class="lang-en">Experience</a>
+                <a href="/#experience" class="lang-pt">Trajetória</a>
+                <a href="/#experience" class="lang-en">Experience</a>
 
-                <a href="#contact" class="lang-pt">Contato</a>
-                <a href="#contact" class="lang-en">Contact</a>
+                <a href="/#contact" class="lang-pt">Contato</a>
+                <a href="/#contact" class="lang-en">Contact</a>
             </div>
             <button id="langToggle" class="lang-toggle-btn">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -789,8 +789,8 @@
                 mission-critical infrastructure experience to scale Generative AI operations with absolute reliability.
             </p>
 
-            <a href="#portfolio" class="btn lang-pt">Ver Portfólio de IA</a>
-            <a href="#portfolio" class="btn lang-en">View AI Portfolio</a>
+            <a href="/#portfolio" class="btn lang-pt">Ver Portfólio de IA</a>
+            <a href="/#portfolio" class="btn lang-en">View AI Portfolio</a>
         </div>
     </section>
 
@@ -1407,12 +1407,23 @@
         });
 
         // Smooth Scroll for anchored links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        document.querySelectorAll('a[href^="/#"], a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                let href = this.getAttribute('href');
+                let targetHash = href.startsWith('/#') ? href.replace('/', '') : href;
+                
+                // Identify if user is on the main landing page
+                const isHome = window.location.pathname === '/' || window.location.pathname === '/index.html' || window.location.pathname.endsWith('V9.html') || window.location.pathname.endsWith('V8.html');
+                
+                if (isHome) {
+                    const targetElement = document.querySelector(targetHash);
+                    if (targetElement) {
+                        e.preventDefault();
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                }
             });
         });
 
