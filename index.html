@@ -1,1527 +1,666 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Will Del Valle | AI Program Manager</title>
-    <meta name="description"
-        content="Portfolio of Will Del Valle, AI Program Manager & Operations Leader bridging 20 years of critical infrastructure with advanced AI workflows.">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml"
-        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%230066CC' d='M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a3 3 0 0 1 3 3h1a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-1v1a3 3 0 0 1-3 3H9a3 3 0 0 1-3-3v-1H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h1a3 3 0 0 1 3-3h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2M9 13a2 2 0 0 0-2 2a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2a2 2 0 0 0-2-2zM9 9a1 1 0 0 0-1 1a1 1 0 0 0 1 1a1 1 0 0 0 1-1a1 1 0 0 0-1-1m6 0a1 1 0 0 0-1 1a1 1 0 0 0 1 1a1 1 0 0 0 1-1a1 1 0 0 0-1-1Z'/%3E%3C/svg%3E">
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- LinkedIn Badge Script -->
-    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
-
-    <style>
-        /* CSS Reset & Variables */
-        :root {
-            --bg-color: #FBFBFD;
-            --surface-color: #FFFFFF;
-            --text-primary: #1D1D1F;
-            --text-secondary: #86868B;
-            --accent-color: #0066CC;
-            --border-color: rgba(0, 0, 0, 0.08);
-            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
-            --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.08);
-            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: var(--font-family);
-            background-color: var(--bg-color);
-            color: var(--text-primary);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        /* Language Toggle System */
-        body.pt .lang-en {
-            display: none !important;
-        }
-
-        body.en .lang-pt {
-            display: none !important;
-        }
-
-        /* Typography */
-        h1,
-        h2,
-        h3,
-        h4 {
-            font-weight: 600;
-            letter-spacing: -0.02em;
-        }
-
-        p {
-            color: var(--text-secondary);
-            font-size: 1.1rem;
-            max-width: 800px;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            margin: 0 auto 4rem auto;
-            font-size: 1.25rem;
-        }
-
-        /* Layout */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        section {
-            padding: 8rem 0;
-        }
-
-        /* Navbar */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(251, 251, 253, 0.8);
-            backdrop-filter: saturate(180%) blur(20px);
-            -webkit-backdrop-filter: saturate(180%) blur(20px);
-            border-bottom: 1px solid var(--border-color);
-            z-index: 1000;
-            padding: 1rem 0;
-        }
-
-        .nav-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-weight: 700;
-            font-size: 1.2rem;
-            color: var(--accent-color);
-            text-decoration: none;
-            letter-spacing: -0.01em;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover {
-            color: var(--text-primary);
-        }
-
-        .lang-toggle-btn {
-            background: rgba(0, 0, 0, 0.05);
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 30px;
-            cursor: pointer;
-            font-family: inherit;
-            font-weight: 600;
-            font-size: 0.8rem;
-            color: var(--text-primary);
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-        }
-
-        .lang-toggle-btn:hover {
-            background: rgba(0, 0, 0, 0.1);
-            transform: scale(1.05);
-        }
-
-        /* Hero */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding-top: 6rem;
-        }
-
-        .badge {
-            background: rgba(0, 102, 204, 0.1);
-            color: var(--accent-color);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            display: inline-block;
-        }
-
-        .hero h1 {
-            font-size: 4.5rem;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            max-width: 1100px;
-            letter-spacing: -0.02em;
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            margin: 0 auto 2.5rem auto;
-            max-width: 800px;
-            color: var(--text-secondary);
-        }
-
-        .btn {
-            display: inline-block;
-            background: var(--text-primary);
-            color: var(--surface-color);
-            padding: 1rem 2rem;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: var(--transition);
-        }
-
-        .btn:hover {
-            transform: scale(1.05);
-            box-shadow: var(--shadow-md);
-        }
-
-        /* Philosophy / Approach */
-        .philosophy-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .feature-card {
-            background: var(--surface-color);
-            padding: 3rem 2rem;
-            border-radius: 24px;
-            box-shadow: var(--shadow-sm);
-            border: 1px solid var(--border-color);
-            transition: var(--transition);
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .feature-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-        }
-
-        /* Portfolio */
-        .portfolio-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-bottom: 4rem;
-            text-align: center;
-        }
-
-        .stat-item h4 {
-            font-size: 3rem;
-            color: var(--text-primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-item p {
-            margin: 0 auto;
-            font-size: 1rem;
-        }
-
-        .projects-carousel-wrapper {
-            width: 100%;
-            position: relative;
-        }
-
-        .projects-viewport {
-            overflow: hidden;
-            width: 100%;
-            padding: 1rem 1rem 2rem 1rem;
-            margin: -1rem -1rem -2rem -1rem;
-        }
-
-        .carousel-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(8px);
-            border: 1px solid var(--border-color);
-            border-radius: 50%;
-            width: 48px;
-            height: 48px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: var(--shadow-md);
-            color: var(--text-primary);
-            z-index: 10;
-            opacity: 0;
-            pointer-events: none;
-            transition: var(--transition);
-        }
-
-        .carousel-btn:hover {
-            background: var(--surface-color);
-            transform: translateY(-50%) scale(1.1);
-            color: var(--accent-color);
-        }
-
-        .projects-carousel-wrapper.is-paused .carousel-btn {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .carousel-btn.prev {
-            left: -1.5rem;
-        }
-
-        .carousel-btn.next {
-            right: -1.5rem;
-        }
-
-        @media (max-width: 768px) {
-            .carousel-btn.prev {
-                left: -0.5rem;
-            }
-
-            .carousel-btn.next {
-                right: -0.5rem;
-            }
-        }
-
-        .carousel-btn svg {
-            width: 24px;
-            height: 24px;
-            stroke: currentColor;
-            stroke-width: 2;
-            fill: none;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-
-        .projects-track {
-            display: flex;
-            gap: 2rem;
-            transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
-        }
-
-        .project-card {
-            flex: 0 0 100%;
-            background: var(--surface-color);
-            border-radius: 20px;
-            padding: 2.5rem;
-            border: 1px solid var(--border-color);
-            position: relative;
-            overflow: hidden;
-            transition: var(--transition);
-            cursor: pointer;
-        }
-
-        @media (min-width: 768px) {
-            .project-card {
-                flex: 0 0 calc(50% - 1rem);
-                /* 2 per view on tablet */
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .project-card {
-                flex: 0 0 calc(33.333% - 1.333rem);
-                /* 3 per view on desktop */
-            }
-        }
-
-        .project-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .project-tag {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-weight: 700;
-            color: var(--accent-color);
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        .project-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .project-card p {
-            font-size: 1rem;
-        }
-
-        /* Timeline Sticky Layout */
-        .experience-layout {
-            display: flex;
-            gap: 4rem;
-            align-items: flex-start;
-        }
-
-        .experience-intro {
-            flex: 1;
-            position: sticky;
-            top: 120px;
-            max-width: 450px;
-        }
-
-        .experience-timeline {
-            flex: 1.8;
-            position: relative;
-            margin-top: 1rem;
-        }
-
-        .timeline {
-            position: relative;
-            margin: 0;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 24px;
-            width: 2px;
-            background: linear-gradient(to bottom, transparent 0px, var(--accent-color) 100px, var(--accent-color) calc(100% - 100px), transparent 100%);
-        }
-
-        .timeline-item {
-            position: relative;
-            padding-left: 0;
-            margin-left: 64px;
-            margin-bottom: 4rem;
-            background: var(--surface-color);
-            padding: 2.5rem;
-            border-radius: 24px;
-            box-shadow: var(--shadow-sm);
-            border: 1px solid var(--border-color);
-            transition: var(--transition);
-        }
-
-        .timeline-item:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -48px;
-            top: 3rem;
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background: var(--surface-color);
-            border: 3px solid var(--accent-color);
-            box-shadow: 0 0 0 4px rgba(0, 102, 204, 0.2);
-            z-index: 2;
-        }
-
-        .timeline-date {
-            font-size: 0.85rem;
-            font-weight: 700;
-            color: var(--accent-color);
-            margin-bottom: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .timeline-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-        }
-
-        .timeline-content {
-            font-size: 1rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
-        @media (max-width: 900px) {
-            .experience-layout {
-                flex-direction: column;
-                gap: 2rem;
-            }
-
-            .experience-intro {
-                position: relative;
-                top: 0;
-                max-width: 100%;
-                margin-bottom: 2rem;
-            }
-
-            .timeline-item {
-                padding: 1.5rem;
-                margin-left: 48px;
-            }
-
-            .timeline-item::before {
-                left: -32px;
-                top: 2rem;
-            }
-
-            .timeline::before {
-                left: 24px;
-            }
-        }
-
-        /* Contact */
-        #contact {
-            background: linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.4) 40%, rgba(255, 255, 255, 1) 100%);
-            padding-top: 6rem;
-            padding-bottom: 8rem;
-            position: relative;
-        }
-
-        .contact-section {
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .contact-grid-layout {
-            display: grid;
-            grid-template-columns: 1fr 0.8fr;
-            gap: 5rem;
-            align-items: center;
-        }
-
-        @media (max-width: 900px) {
-            .contact-grid-layout {
-                grid-template-columns: 1fr;
-                gap: 4rem;
-                text-align: center;
-            }
-        }
-
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            position: relative;
-            z-index: 2;
-        }
-
-        @media (max-width: 900px) {
-            .contact-info {
-                align-items: center;
-            }
-        }
-
-        .contact-info h2 {
-            font-size: 3.5rem;
-            color: var(--text-primary);
-            margin-bottom: 1rem;
-            line-height: 1.1;
-            letter-spacing: -0.03em;
-        }
-
-        .contact-info .main-desc {
-            font-size: 1.15rem;
-            color: var(--text-secondary);
-            margin-bottom: 3rem;
-            line-height: 1.6;
-        }
-
-        .disclaimer {
-            border-left: 2px solid rgba(0, 102, 204, 0.2);
-            padding-left: 1.5rem;
-            margin-bottom: 3rem;
-        }
-
-        @media (max-width: 900px) {
-            .disclaimer {
-                border-left: none;
-                padding-left: 0;
-            }
-        }
-
-        .disclaimer p {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            opacity: 0.8;
-            line-height: 1.6;
-            text-align: left;
-        }
-
-        @media (max-width: 900px) {
-            .disclaimer p {
-                text-align: center;
-            }
-        }
-
-        .btn-primary {
-            background: var(--accent-color);
-            color: #FFFFFF;
-            padding: 1.2rem 2.8rem;
-            border-radius: 40px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.05rem;
-            transition: var(--transition);
-            box-shadow: 0 8px 24px rgba(0, 102, 204, 0.25);
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 32px rgba(0, 102, 204, 0.35);
-            background: #005bb5;
-            color: #FFFFFF;
-        }
-
-        .linkedin-wrapper {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            z-index: 2;
-        }
-
-        .LI-profile-badge {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-        }
-
-        @media (max-width: 768px) {
-            .contact-info h2 {
-                font-size: 2.5rem;
-            }
-        }
-
-        /* Stack Mapping Marquee */
-        .marquee-container {
-            position: relative;
-            width: 100%;
-            max-width: 1200px;
-            margin: 4rem auto 0 auto;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            /* Fade masks */
-            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
-            mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
-        }
-
-        .marquee-track {
-            --gap: 4rem;
-            display: flex;
-            gap: var(--gap);
-            padding: 1rem 0 2rem 0;
-            width: max-content;
-        }
-
-        .marquee-content {
-            display: flex;
-            gap: var(--gap);
-            flex-shrink: 0;
-            animation: scroll-marquee 40s linear infinite;
-        }
-
-        .marquee-track:hover .marquee-content {
-            animation-play-state: paused;
-        }
-
-        .tool-text {
-            color: #6B7280;
-            font-size: 1.25rem;
-            font-weight: 600;
-            white-space: nowrap;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: default;
-            letter-spacing: 0.02em;
-        }
-
-        .tool-text:hover {
-            color: var(--text-primary);
-        }
-
-        @keyframes scroll-marquee {
-            from {
-                transform: translateX(0);
-            }
-            to {
-                transform: translateX(calc(-100% - var(--gap)));
-            }
-        }
-
-        @media (max-width: 768px) {
-            .marquee-track {
-                --gap: 2.5rem;
-            }
-            .tool-text {
-                font-size: 1rem;
-            }
-        }
-
-        /* Animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 3rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            section {
-                padding: 5rem 0;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Will Del Valle | AI Operations Leader</title>
+<meta name="description" content="Portfolio of Will Del Valle — AI Operations Leader bridging 20 years of mission-critical infrastructure with frontier AI program delivery.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%230055B3' d='M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a3 3 0 0 1 3 3h1a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-1v1a3 3 0 0 1-3 3H9a3 3 0 0 1-3-3v-1H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h1a3 3 0 0 1 3-3h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2M9 13a2 2 0 0 0-2 2a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2a2 2 0 0 0-2-2zM9 9a1 1 0 0 0-1 1a1 1 0 0 0 1 1a1 1 0 0 0 1-1a1 1 0 0 0-1-1m6 0a1 1 0 0 0-1 1a1 1 0 0 0 1 1a1 1 0 0 0 1-1a1 1 0 0 0-1-1Z'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+<style>
+:root {
+  --bg-color: #FAFAFA;
+  --surface-color: #FFFFFF;
+  --text-primary: #111111;
+  --text-secondary: #6B7280;
+  --accent-color: #0055B3;
+  --accent-light: rgba(0,85,179,0.08);
+  --accent-glow: rgba(0,85,179,0.15);
+  --warm-accent: #D97706;
+  --border-color: rgba(0,0,0,0.06);
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.02);
+  --shadow-md: 0 10px 25px rgba(0,0,0,0.06), 0 4px 10px rgba(0,0,0,0.04);
+  --shadow-lg: 0 20px 50px rgba(0,0,0,0.08);
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --transition: all 0.35s cubic-bezier(0.16,1,0.3,1);
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 28px;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-family);background-color:var(--bg-color);color:var(--text-primary);line-height:1.65;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+body.pt .lang-en{display:none!important}
+body.en .lang-pt{display:none!important}
+h1,h2,h3,h4{font-weight:600;letter-spacing:-0.02em}
+p{color:var(--text-secondary);font-size:1.1rem;line-height:1.65;max-width:800px}
+.section-title{font-size:2.5rem;margin-bottom:1rem;text-align:center}
+.section-subtitle{text-align:center;margin:0 auto 4rem auto;font-size:1.2rem;max-width:700px;color:var(--text-secondary)}
+.container{max-width:1200px;margin:0 auto;padding:0 2rem}
+section{padding:7rem 0}
+
+/* HEADER */
+header{position:fixed;top:0;width:100%;background:rgba(250,250,250,0.88);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--border-color);z-index:1000;padding:1rem 0}
+.nav-content{display:flex;justify-content:space-between;align-items:center}
+.logo{font-weight:700;font-size:1.15rem;color:var(--accent-color);text-decoration:none;letter-spacing:-0.01em}
+.nav-right{display:flex;align-items:center;gap:1.25rem}
+.nav-links{display:flex;gap:2rem;align-items:center}
+.nav-links a{text-decoration:none;color:var(--text-secondary);font-size:0.9rem;font-weight:500;transition:var(--transition)}
+.nav-links a:hover{color:var(--text-primary)}
+.lang-toggle-btn{background:rgba(0,0,0,0.05);border:none;padding:0.45rem 0.9rem;border-radius:30px;cursor:pointer;font-family:inherit;font-weight:600;font-size:0.8rem;color:var(--text-primary);transition:var(--transition);display:flex;align-items:center;gap:5px;white-space:nowrap}
+.lang-toggle-btn:hover{background:rgba(0,0,0,0.1);transform:scale(1.05)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{display:block;width:24px;height:2px;background:var(--text-primary);border-radius:2px;transition:var(--transition)}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* MOBILE NAV */
+.mobile-nav{display:none;position:fixed;top:0;right:0;width:100%;height:100%;background:rgba(8,8,8,0.97);backdrop-filter:blur(20px);z-index:999;flex-direction:column;justify-content:center;align-items:center;gap:2.5rem;transform:translateX(100%);transition:transform 0.4s cubic-bezier(0.16,1,0.3,1)}
+.mobile-nav.open{transform:translateX(0)}
+.mobile-nav a{text-decoration:none;color:#FFFFFF;font-size:1.75rem;font-weight:600;letter-spacing:-0.02em;opacity:0.85;transition:var(--transition)}
+.mobile-nav a:hover{opacity:1}
+@media(max-width:768px){
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .mobile-nav{display:flex}
+}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding-top:6rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 28% 38%, rgba(0,85,179,0.07) 0%, transparent 68%), radial-gradient(ellipse 55% 60% at 72% 62%, rgba(217,119,6,0.05) 0%, transparent 65%);pointer-events:none}
+.hero-content{position:relative;z-index:1}
+.hero h1{font-size:4.5rem;line-height:1.08;margin-bottom:1.5rem;max-width:900px;letter-spacing:-0.02em;color:var(--text-primary)}
+.hero p{font-size:1.25rem;margin:0 auto 2.5rem auto;max-width:680px;color:var(--text-secondary)}
+.hero-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn-primary{background:var(--accent-color);color:#FFFFFF;padding:1rem 2.2rem;border-radius:40px;text-decoration:none;font-weight:600;font-size:1rem;transition:var(--transition);box-shadow:0 8px 24px rgba(0,85,179,0.25);display:inline-flex;align-items:center;gap:0.5rem}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(0,85,179,0.35);background:#0048A0;color:#FFFFFF}
+.btn-ghost{background:transparent;color:var(--text-primary);padding:1rem 2.2rem;border-radius:40px;text-decoration:none;font-weight:600;font-size:1rem;border:2px solid var(--text-primary);transition:var(--transition);display:inline-flex;align-items:center;gap:0.5rem}
+.btn-ghost:hover{background:var(--text-primary);color:#FFFFFF;transform:translateY(-2px);box-shadow:var(--shadow-md)}
+@media(max-width:768px){
+  .hero h1{font-size:2.8rem}
+  .hero p{font-size:1.05rem}
+}
+
+/* APPROACH */
+#about{background:var(--surface-color)}
+.philosophy-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;margin-top:1rem}
+.feature-card{background:var(--bg-color);padding:2.5rem 2rem;border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);border:1px solid var(--border-color);border-left:1px solid var(--border-color);transition:var(--transition)}
+.feature-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);border-left:3px solid var(--accent-color)}
+.feature-card h3{font-size:1.35rem;margin-bottom:1rem;color:var(--text-primary)}
+
+/* PORTFOLIO */
+.portfolio-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:2rem;margin-bottom:4rem;text-align:center}
+.stat-item h4{font-size:3rem;color:var(--warm-accent);margin-bottom:0.4rem;letter-spacing:-0.03em}
+.stat-item p{margin:0 auto;font-size:0.95rem}
+.projects-carousel-wrapper{width:100%;position:relative}
+.projects-viewport{overflow:hidden;width:100%;padding:1rem 1rem 2rem 1rem;margin:-1rem -1rem -2rem -1rem}
+.carousel-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.95);backdrop-filter:blur(8px);border:1px solid var(--border-color);border-radius:50%;width:48px;height:48px;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:var(--shadow-md);color:var(--text-primary);z-index:10;transition:var(--transition)}
+.carousel-btn:hover{background:var(--surface-color);transform:translateY(-50%) scale(1.1);color:var(--accent-color);box-shadow:var(--shadow-lg)}
+.carousel-btn.prev{left:-1.5rem}
+.carousel-btn.next{right:-1.5rem}
+.carousel-btn svg{width:22px;height:22px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.projects-track{display:flex;gap:2rem;transition:transform 0.6s cubic-bezier(0.25,0.8,0.25,1)}
+.project-card{flex:0 0 100%;background:var(--surface-color);border-radius:var(--radius-md);padding:2.5rem;border:1px solid var(--border-color);border-left:1px solid var(--border-color);position:relative;transition:var(--transition)}
+@media(min-width:768px){.project-card{flex:0 0 calc(50% - 1rem)}}
+@media(min-width:1024px){.project-card{flex:0 0 calc(33.333% - 1.333rem)}}
+.project-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);border-left:3px solid var(--accent-color)}
+.project-tag{font-size:0.72rem;text-transform:uppercase;letter-spacing:0.06em;font-weight:700;color:var(--accent-color);margin-bottom:0.75rem;display:block}
+.project-card h3{font-size:1.3rem;margin-bottom:0.85rem;color:var(--text-primary)}
+.project-card p{font-size:0.97rem}
+.carousel-dots{display:none;justify-content:center;gap:8px;margin-top:1.75rem}
+@media(max-width:767px){.carousel-dots{display:flex}}
+.dot{width:8px;height:8px;border-radius:50%;background:rgba(0,0,0,0.12);border:none;cursor:pointer;transition:var(--transition);padding:0}
+.dot.active{background:var(--accent-color);transform:scale(1.2)}
+@media(max-width:768px){.carousel-btn.prev{left:-0.5rem}.carousel-btn.next{right:-0.5rem}}
+
+/* EXPERIENCE */
+.experience-layout{display:flex;gap:4rem;align-items:flex-start}
+.experience-intro{flex:1;position:sticky;top:120px;max-width:420px}
+.experience-timeline{flex:1.8;position:relative}
+.timeline{position:relative;margin:0}
+.timeline::before{content:'';position:absolute;top:0;bottom:0;left:24px;width:2px;background:linear-gradient(to bottom, transparent 0px, var(--accent-color) 80px, var(--accent-color) calc(100% - 80px), transparent 100%)}
+.timeline-item{position:relative;margin-left:64px;margin-bottom:3rem;background:var(--bg-color);padding:2.5rem;border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);border:1px solid var(--border-color);border-left:1px solid var(--border-color);transition:var(--transition)}
+.timeline-item:hover{transform:translateY(-5px);box-shadow:var(--shadow-md);border-left:3px solid var(--accent-color)}
+.timeline-item::before{content:'';position:absolute;left:-48px;top:3rem;width:16px;height:16px;border-radius:50%;background:var(--surface-color);border:3px solid var(--accent-color);box-shadow:0 0 0 4px var(--accent-glow);z-index:2}
+.timeline-item:first-child::before{animation:pulse-dot 2.5s ease-in-out infinite}
+@keyframes pulse-dot{0%,100%{box-shadow:0 0 0 4px var(--accent-glow)}50%{box-shadow:0 0 0 8px rgba(0,85,179,0.07),0 0 0 4px var(--accent-glow)}}
+.timeline-date{font-size:0.8rem;font-weight:700;color:var(--accent-color);margin-bottom:0.6rem;text-transform:uppercase;letter-spacing:0.06em}
+.timeline-title{font-size:1.15rem;font-weight:600;margin-bottom:0.85rem;color:var(--text-primary);letter-spacing:-0.01em}
+.timeline-content{font-size:0.97rem;color:var(--text-secondary);line-height:1.65;max-width:100%}
+@media(max-width:900px){
+  .experience-layout{flex-direction:column;gap:2rem}
+  .experience-intro{position:relative;top:0;max-width:100%}
+  .timeline-item{padding:1.75rem;margin-left:52px}
+  .timeline-item::before{left:-36px;top:1.75rem}
+}
+
+/* STACK */
+#stack{background:var(--bg-color)}
+.marquee-container{position:relative;width:100%;overflow:hidden;margin-top:3.5rem;-webkit-mask-image:linear-gradient(to right,transparent 0%,black 8%,black 92%,transparent 100%);mask-image:linear-gradient(to right,transparent 0%,black 8%,black 92%,transparent 100%)}
+.marquee-track{--gap:4rem;display:flex;gap:var(--gap);padding:0.5rem 0 1.5rem 0;width:max-content}
+.marquee-content{display:flex;gap:var(--gap);flex-shrink:0;animation:scroll-marquee 40s linear infinite}
+.marquee-track:hover .marquee-content{animation-play-state:paused}
+.tool-text{color:var(--text-secondary);font-size:1.15rem;font-weight:600;white-space:nowrap;cursor:default;letter-spacing:0.02em;transition:var(--transition)}
+.tool-text:hover{color:var(--text-primary)}
+@keyframes scroll-marquee{from{transform:translateX(0)}to{transform:translateX(calc(-100% - var(--gap)))}}
+@media(max-width:768px){.marquee-track{--gap:2.5rem}.tool-text{font-size:1rem}}
+
+/* CONTACT */
+#contact{background:linear-gradient(180deg,transparent 0%,rgba(255,255,255,0.5) 40%,rgba(255,255,255,1) 100%);padding-top:6rem;padding-bottom:8rem}
+.contact-section{max-width:1100px;margin:0 auto}
+.contact-grid-layout{display:grid;grid-template-columns:1fr 0.8fr;gap:5rem;align-items:center}
+.contact-info{display:flex;flex-direction:column;align-items:flex-start}
+.contact-info h2{font-size:3.5rem;color:var(--text-primary);margin-bottom:1rem;line-height:1.1;letter-spacing:-0.03em}
+.contact-info .main-desc{font-size:1.1rem;color:var(--text-secondary);margin-bottom:2.5rem;line-height:1.65;max-width:520px}
+.disclaimer{border-left:2px solid var(--accent-glow);padding-left:1.5rem;margin-bottom:2.5rem}
+.disclaimer p{font-size:0.85rem;color:var(--text-secondary);opacity:0.8;line-height:1.6;max-width:100%;text-align:left}
+.contact-btn{background:var(--accent-color);color:#FFFFFF;padding:1.1rem 2.5rem;border-radius:40px;text-decoration:none;font-weight:600;font-size:1rem;transition:var(--transition);box-shadow:0 8px 24px rgba(0,85,179,0.25);display:inline-flex;align-items:center;gap:0.6rem}
+.contact-btn:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(0,85,179,0.35);background:#0048A0;color:#FFFFFF}
+.linkedin-wrapper{display:flex;justify-content:center;align-items:center}
+.LI-profile-badge{width:100%;display:flex;justify-content:center}
+@media(max-width:900px){
+  .contact-grid-layout{grid-template-columns:1fr;gap:3rem;text-align:center}
+  .contact-info{align-items:center}
+  .contact-info h2{font-size:2.5rem}
+  .contact-info .main-desc{max-width:100%}
+  .disclaimer{border-left:none;padding-left:0}
+  .disclaimer p{text-align:center}
+}
+
+/* ANIMATIONS */
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity 0.8s ease-out,transform 0.8s ease-out}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  section{padding:4.5rem 0}
+  .section-title{font-size:2rem}
+  .section-subtitle{font-size:1rem;margin-bottom:2.5rem}
+}
+</style>
 </head>
-
 <body class="en">
 
-    <!-- Header -->
-    <header>
-        <div class="container nav-content">
-            <a href="/" class="logo">Will Del Valle</a>
-            <div class="nav-links">
-                <a href="/#about" class="lang-pt">Abordagem</a>
-                <a href="/#about" class="lang-en">Approach</a>
+<!-- Mobile Nav Overlay -->
+<nav class="mobile-nav" id="mobileNav">
+  <a href="#about" class="lang-en mobile-nav-link">Approach</a>
+  <a href="#about" class="lang-pt mobile-nav-link">Abordagem</a>
+  <a href="#portfolio" class="lang-en mobile-nav-link">AI Portfolio</a>
+  <a href="#portfolio" class="lang-pt mobile-nav-link">Portfólio IA</a>
+  <a href="education.html" class="lang-en mobile-nav-link edu-link">Education</a>
+  <a href="education.html" class="lang-pt mobile-nav-link edu-link">Formação</a>
+  <a href="#experience" class="lang-en mobile-nav-link">Experience</a>
+  <a href="#experience" class="lang-pt mobile-nav-link">Trajetória</a>
+  <a href="#contact" class="lang-en mobile-nav-link">Contact</a>
+  <a href="#contact" class="lang-pt mobile-nav-link">Contato</a>
+</nav>
 
-                <a href="/#portfolio" class="lang-pt">Portfólio de IA</a>
-                <a href="/#portfolio" class="lang-en">AI Portfolio</a>
+<!-- Header -->
+<header>
+  <div class="container nav-content">
+    <a href="#" class="logo">Will Del Valle</a>
+    <div class="nav-right">
+      <nav class="nav-links">
+        <a href="#about" class="lang-en">Approach</a>
+        <a href="#about" class="lang-pt">Abordagem</a>
+        <a href="#portfolio" class="lang-en">AI Portfolio</a>
+        <a href="#portfolio" class="lang-pt">Portfólio IA</a>
+        <a href="education.html" class="lang-en edu-link">Education</a>
+        <a href="education.html" class="lang-pt edu-link">Formação</a>
+        <a href="#experience" class="lang-en">Experience</a>
+        <a href="#experience" class="lang-pt">Trajetória</a>
+        <a href="#contact" class="lang-en">Contact</a>
+        <a href="#contact" class="lang-pt">Contato</a>
+      </nav>
+      <button id="langToggle" class="lang-toggle-btn" aria-label="Toggle language">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-color)"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+        <span id="langToggleText">PT</span>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
 
-                <a href="/education.html" class="lang-pt">Formação</a>
-                <a href="/education.html" class="lang-en">Education</a>
+<!-- Hero -->
+<section class="hero" id="hero">
+  <div class="hero-content container fade-in">
+    <h1 class="lang-en">Structured Execution<br>at Frontier Scale.</h1>
+    <h1 class="lang-pt">Execução Estruturada<br>em Escala de Fronteira.</h1>
+    <p class="lang-en">I turn ambiguous AI requirements into disciplined operations. Two decades of mission-critical infrastructure experience, now applied to scale Generative AI programs that deliver.</p>
+    <p class="lang-pt">Transformo requisitos ambíguos de IA em operações disciplinadas. Duas décadas de experiência em infraestrutura de missão crítica, agora aplicadas para escalar programas de IA Generativa que entregam.</p>
+    <div class="hero-buttons">
+      <a href="#portfolio" class="btn-primary lang-en">View AI Portfolio</a>
+      <a href="#portfolio" class="btn-primary lang-pt">Ver Portfólio IA</a>
+      <a href="#" class="btn-ghost lang-en">Download CV ↓</a>
+      <a href="#" class="btn-ghost lang-pt">Download CV ↓</a>
+    </div>
+  </div>
+</section>
 
-                <a href="/#experience" class="lang-pt">Trajetória</a>
-                <a href="/#experience" class="lang-en">Experience</a>
+<!-- Approach -->
+<section id="about">
+  <div class="container fade-in">
+    <h2 class="section-title lang-en">Beyond Coordination. Full Ownership.</h2>
+    <h2 class="section-title lang-pt">Além da Coordenação. Responsabilidade Total.</h2>
+    <p class="section-subtitle lang-en">The gap in AI operations isn't talent — it's ownership. I take accountability for delivery, not just coordination.</p>
+    <p class="section-subtitle lang-pt">O gap em operações de IA não é talento — é protagonismo. Eu assumo a responsabilidade pela entrega, não apenas pela coordenação.</p>
+    <div class="philosophy-grid">
+      <div class="feature-card">
+        <h3 class="lang-en">Translating Ambiguity</h3>
+        <h3 class="lang-pt">Traduzindo Ambiguidade</h3>
+        <p class="lang-en">I transform dynamic, fast-changing AI requirements into clear operational processes. I build rubrics, supplementary materials, and practical guides that bridge engineering vision to edge execution.</p>
+        <p class="lang-pt">Transformo requisitos dinâmicos de IA, em constante mudança, em processos operacionais claros. Construo rúbricas, materiais de apoio e guias práticos que conectam a visão de engenharia à execução na ponta.</p>
+      </div>
+      <div class="feature-card">
+        <h3 class="lang-en">Throughput Protection</h3>
+        <h3 class="lang-pt">Proteção de Throughput</h3>
+        <p class="lang-en">With years in manufacturing and critical infrastructure, I treat latency as system failure. I track operational health metrics closely and intervene surgically before delivery targets are compromised.</p>
+        <p class="lang-pt">Com anos em manufatura e infraestrutura crítica, trato latência como falha de sistema. Monitoro métricas de saúde operacional de perto e intervenho cirurgicamente antes que metas de entrega sejam comprometidas.</p>
+      </div>
+      <div class="feature-card">
+        <h3 class="lang-en">Data-Driven Interventions</h3>
+        <h3 class="lang-pt">Intervenções Baseadas em Dados</h3>
+        <p class="lang-en">Instead of accepting static documentation, I systematically diagnose contributor failure patterns. I build targeted feedback loops and focused training that drive down error rates in real time.</p>
+        <p class="lang-pt">Em vez de aceitar documentação estática, diagnostico padrões de falha dos contribuidores de forma sistemática. Crio ciclos de feedback direcionados e treinamentos focados que reduzem taxas de erro em tempo real.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-                <a href="/#contact" class="lang-pt">Contato</a>
-                <a href="/#contact" class="lang-en">Contact</a>
-            </div>
-            <button id="langToggle" class="lang-toggle-btn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round"
-                    style="margin-right: 6px; color: var(--accent-color);">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <line x1="2" y1="12" x2="22" y2="12"></line>
-                    <path
-                        d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
-                    </path>
-                </svg>
-                <span id="langToggleText">PT</span>
-            </button>
+<!-- AI Portfolio -->
+<section id="portfolio">
+  <div class="container fade-in">
+    <h2 class="section-title lang-en">High-Fidelity Pipelines for Frontier AI Labs</h2>
+    <h2 class="section-title lang-pt">Pipelines de Alta Fidelidade para Labs de IA de Fronteira</h2>
+    <p class="section-subtitle lang-en">Led 30+ end-to-end deployments at Scale AI and Pareto AI. Managed complex data supply chains spanning SFT, RLHF, rubric calibration, and AI Safety workflows for frontier models.</p>
+    <p class="section-subtitle lang-pt">Mais de 30 entregas end-to-end na Scale AI e Pareto AI. Gestão de cadeias complexas de dados abrangendo SFT, RLHF, calibração de rúbricas e workflows de AI Safety para modelos de fronteira.</p>
+
+    <div class="portfolio-stats">
+      <div class="stat-item">
+        <h4>30+</h4>
+        <p class="lang-en">Projects Delivered</p>
+        <p class="lang-pt">Projetos Entregues</p>
+      </div>
+      <div class="stat-item">
+        <h4>&lt; 5%</h4>
+        <p class="lang-en">Recurring Error Rate</p>
+        <p class="lang-pt">Taxa de Erro Recorrente</p>
+      </div>
+      <div class="stat-item">
+        <h4>1k+</h4>
+        <p class="lang-en">Experts Orchestrated</p>
+        <p class="lang-pt">Especialistas Orquestrados</p>
+      </div>
+      <div class="stat-item">
+        <a href="education.html" class="edu-link" style="text-decoration:none;color:inherit;display:block;transition:var(--transition)" onmouseover="this.style.opacity='0.7';this.style.transform='translateY(-3px)'" onmouseout="this.style.opacity='1';this.style.transform='translateY(0)'">
+          <h4>40+</h4>
+          <p class="lang-en">Technical Certifications</p>
+          <p class="lang-pt">Certificações Técnicas</p>
+        </a>
+      </div>
+    </div>
+
+    <div class="projects-carousel-wrapper" id="carouselWrapper">
+      <button class="carousel-btn prev" id="btnPrev" aria-label="Previous"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
+      <button class="carousel-btn next" id="btnNext" aria-label="Next"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+      <div class="projects-viewport">
+        <div class="projects-track" id="projectsTrack">
+
+          <div class="project-card">
+            <span class="project-tag lang-en">Hallucination Mitigation Pipelines</span>
+            <span class="project-tag lang-pt">Pipelines de Mitigação de Alucinações</span>
+            <h3 class="lang-en">FACTUALITY &amp; GROUNDING</h3>
+            <h3 class="lang-pt">VERIFICAÇÃO FACTUAL</h3>
+            <p class="lang-en">Structured evaluation workflows to measure and penalize model hallucinations. Designed quality control layers where human annotators audited responses against verifiable sources, ensuring high-fidelity factual alignment for frontier LLMs.</p>
+            <p class="lang-pt">Estruturei fluxos de avaliação para medir e penalizar alucinações de modelos. Implementei camadas de controle de qualidade onde anotadores humanos auditavam respostas contra fontes verificáveis, garantindo alinhamento factual de alta fidelidade para LLMs de fronteira.</p>
+          </div>
+
+          <div class="project-card">
+            <span class="project-tag lang-en">High-Volume Preference Ranking</span>
+            <span class="project-tag lang-pt">Ranqueamento de Preferências em Larga Escala</span>
+            <h3 class="lang-en">RLHF &amp; ALIGNMENT</h3>
+            <h3 class="lang-pt">RLHF E ALINHAMENTO</h3>
+            <p class="lang-en">Orchestrated large-scale human preference data collection to align model outputs with human intent. Managed throughput and strict quality controls across complex ranking flows, translating raw guidelines into actionable directives for expert annotators.</p>
+            <p class="lang-pt">Orquestrei a coleta de dados de preferência humana em larga escala para alinhar as saídas dos modelos à intenção humana. Gerenciei throughput e controles rigorosos de qualidade em fluxos complexos de ranqueamento, traduzindo diretrizes brutas em instruções executáveis para anotadores especialistas.</p>
+          </div>
+
+          <div class="project-card">
+            <span class="project-tag lang-en">Adversarial Red Teaming Operations</span>
+            <span class="project-tag lang-pt">Operações de Red Teaming Adversarial</span>
+            <h3 class="lang-en">AI SAFETY &amp; TRUST</h3>
+            <h3 class="lang-pt">AI SAFETY E CONFIANÇA</h3>
+            <p class="lang-en">Led comprehensive safety evaluations across multiple markets to identify and patch failure vectors. Coordinated stress-testing for bias, toxicity, and harmful responses, hardening generative models before production deployment.</p>
+            <p class="lang-pt">Liderei avaliações abrangentes de segurança em múltiplos mercados para identificar e tratar vetores de falha. Coordenei testes de estresse contra viés, toxicidade e respostas nocivas, fortalecendo modelos generativos antes do deploy em produção.</p>
+          </div>
+
+          <div class="project-card">
+            <span class="project-tag lang-en">Multilingual Model Localization</span>
+            <span class="project-tag lang-pt">Localização Multilíngue de Modelos</span>
+            <h3 class="lang-en">GLOBAL SCALABILITY</h3>
+            <h3 class="lang-pt">ESCALABILIDADE GLOBAL</h3>
+            <p class="lang-en">Executed high-stakes, cross-lingual evaluation rollouts under extreme time pressure. Maintained sub-5% error rates while scaling prompt evaluation and response generation pipelines across multiple time zones and cultural contexts.</p>
+            <p class="lang-pt">Executei lançamentos de avaliação multilíngue de alto impacto sob pressão extrema de prazo. Mantive taxas de erro abaixo de 5% escalando pipelines de avaliação de prompts e geração de respostas em múltiplos fusos horários e contextos culturais.</p>
+          </div>
+
+          <div class="project-card">
+            <span class="project-tag lang-en">Expert-Led Data Annotation</span>
+            <span class="project-tag lang-pt">Anotação de Dados por Especialistas</span>
+            <h3 class="lang-en">DOMAIN-SPECIFIC SFT</h3>
+            <h3 class="lang-pt">SFT POR DOMÍNIO ESPECIALIZADO</h3>
+            <p class="lang-en">Led the onboarding and execution of highly specialized cohorts, including legal professionals and data scientists. Built parallel QA structures to ensure domain-accurate evaluations for complex coding and legal reasoning tasks.</p>
+            <p class="lang-pt">Liderei a integração e operação de grupos altamente especializados, incluindo advogados e cientistas de dados. Criei estruturas paralelas de QA para garantir avaliações precisas em tarefas complexas de raciocínio lógico e jurídico.</p>
+          </div>
+
+          <div class="project-card">
+            <span class="project-tag lang-en">Cross-Modality Training Pipelines</span>
+            <span class="project-tag lang-pt">Pipelines de Treinamento Multimodal</span>
+            <h3 class="lang-en">MULTIMODAL EVALS</h3>
+            <h3 class="lang-pt">AVALIAÇÕES MULTIMODAIS</h3>
+            <p class="lang-en">Directed operational execution for multimodal model improvements spanning image generation, video analysis, and audio workflows. Optimized contributor efficiency and reduced average handling time while maintaining strict adherence to complex formatting guidelines.</p>
+            <p class="lang-pt">Dirigi a execução operacional para melhorias de modelos multimodais, abrangendo geração de imagens, análise de vídeo e fluxos de áudio. Otimizei a eficiência dos contribuidores e reduzi o tempo médio de execução, mantendo aderência rigorosa às diretrizes de formatação.</p>
+          </div>
+
+          <div class="project-card">
+            <span class="project-tag lang-en">Head-to-Head Benchmarking</span>
+            <span class="project-tag lang-pt">Benchmarking Comparativo entre Modelos</span>
+            <h3 class="lang-en">MODEL BENCHMARKING</h3>
+            <h3 class="lang-pt">BENCHMARKING DE MODELOS</h3>
+            <p class="lang-en">Delivered structured model comparison data to establish competitive baselines. Monitored queues and tracked failure modes in real time, ensuring HITL evaluations provided clean, unbiased signals for algorithm updates.</p>
+            <p class="lang-pt">Entreguei dados estruturados de comparação direta entre modelos para estabelecer baselines competitivos. Monitorei filas e rastreei modos de falha em tempo real, garantindo que avaliações HITL fornecessem sinais limpos e imparciais para atualizações algorítmicas.</p>
+          </div>
+
+          <div class="project-card">
+            <span class="project-tag lang-en">Synthetic Prompt Generation</span>
+            <span class="project-tag lang-pt">Geração de Prompts Sintéticos</span>
+            <h3 class="lang-en">DATA DEVELOPMENT</h3>
+            <h3 class="lang-pt">DESENVOLVIMENTO DE DADOS</h3>
+            <p class="lang-en">Managed fine-tuned data development workflows to expand training datasets. Implemented tight feedback loops and focused training interventions, guiding contributors to produce highly specific, edge-case synthetic prompts for model refinement.</p>
+            <p class="lang-pt">Gerenciei fluxos de desenvolvimento de dados para expandir datasets de treinamento. Implementei ciclos curtos de feedback e intervenções de treinamento focadas, guiando contribuidores na produção de prompts sintéticos específicos de edge-case para refinamento de modelos.</p>
+          </div>
+
+          <div class="project-card">
+            <span class="project-tag lang-en">Advanced Rubric Calibration</span>
+            <span class="project-tag lang-pt">Calibração Avançada de Rúbricas</span>
+            <h3 class="lang-en">WORKFLOW ARCHITECTURE</h3>
+            <h3 class="lang-pt">ARQUITETURA DE WORKFLOWS</h3>
+            <p class="lang-en">Translated ambiguous, fast-changing project requirements into structured operations. Escalated recurring edge cases to align grading criteria, building supplemental documentation to improve annotator precision across generalized and specialized tasks.</p>
+            <p class="lang-pt">Traduzi requisitos ambíguos e em constante mudança em operações estruturadas. Escalei edge cases recorrentes para alinhar critérios de avaliação, criando documentação suplementar para melhorar a precisão dos anotadores em tarefas generalistas e especializadas.</p>
+          </div>
+
+          <div class="project-card">
+            <span class="project-tag lang-en">Pipeline Optimization &amp; QA Auditing</span>
+            <span class="project-tag lang-pt">Otimização de Pipeline e Auditoria de QA</span>
+            <h3 class="lang-en">MLOPS &amp; EFFICIENCY</h3>
+            <h3 class="lang-pt">MLOPS E EFICIÊNCIA</h3>
+            <p class="lang-en">Applied MLOps principles to identify and resolve systemic evaluation inconsistencies. By auditing early outputs and building custom QA tracking, recovered significant delivery value and accelerated overall pipeline throughput.</p>
+            <p class="lang-pt">Apliquei princípios de MLOps para identificar e resolver inconsistências sistêmicas de avaliação. Ao auditar entregas iniciais e criar rastreamento próprio de QA, recuperei valor significativo de entrega e acelerei o throughput geral do pipeline.</p>
+          </div>
+
         </div>
-    </header>
+      </div>
+    </div>
+    <div class="carousel-dots" id="carouselDots"></div>
+  </div>
+</section>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container fade-in">
-            <span class="badge lang-pt">AI Project Manager | Generative AI | Technical Operations</span>
-            <span class="badge lang-en">AI Project Manager | Generative AI | Technical Operations</span>
+<!-- Experience -->
+<section id="experience" style="background:var(--surface-color)">
+  <div class="container fade-in">
+    <div class="experience-layout">
+      <div class="experience-intro">
+        <h2 class="section-title lang-en" style="text-align:left;margin-bottom:1.5rem;line-height:1.1">The Foundation of<br>High Availability</h2>
+        <h2 class="section-title lang-pt" style="text-align:left;margin-bottom:1.5rem;line-height:1.1">A Fundação da<br>Alta Disponibilidade</h2>
+        <p class="section-subtitle lang-en" style="text-align:left;margin:0;font-size:1.05rem">Before applying MLOps to AI, I spent 20 years ensuring the real world's critical infrastructure never stopped running.</p>
+        <p class="section-subtitle lang-pt" style="text-align:left;margin:0;font-size:1.05rem">Antes de aplicar MLOps à IA, passei 20 anos garantindo que a infraestrutura crítica do mundo real nunca parasse.</p>
+      </div>
+      <div class="experience-timeline">
+        <div class="timeline">
 
-            <h1 class="lang-pt">Execução de ponta a ponta.<br>Zero tolerância a falhas.</h1>
-            <h1 class="lang-en">End-to-End Execution.<br>Zero Tolerance for Failure.</h1>
+          <div class="timeline-item">
+            <div class="timeline-date">Jan 2026 – Present</div>
+            <div class="timeline-title">Global AI Project Manager @ Pareto AI</div>
+            <p class="timeline-content lang-en">Currently leading end-to-end delivery of global AI data programs for frontier labs. Managing multiple simultaneous workstreams with cross-functional specialist teams, coordinating workflows in highly regulated domains including healthcare, financial services, legal, and cybersecurity. Responsible for configuring ML environments, resolving technical blockers (VMs, access control), maintaining project hygiene, and aligning technical and support teams across time zones.</p>
+            <p class="timeline-content lang-pt">Lidero atualmente a entrega ponta a ponta de programas globais de dados para IA em labs de fronteira. Gerencio múltiplos workstreams simultâneos com equipes multidisciplinares de especialistas, coordenando workflows em domínios altamente regulados como saúde, serviços financeiros, jurídico e cibersegurança. Responsável por configurar ambientes de ML, resolver bloqueios técnicos (VMs, controle de acesso), manter a higiene de projeto e alinhar equipes técnicas e de suporte em múltiplos fusos.</p>
+          </div>
 
-            <p class="lang-pt">Transformando requisitos ambíguos de IA em execução estruturada. Trago 20 anos de
-                experiência em infraestrutura de missão crítica para escalar operações de IA Generativa com
-                confiabilidade absoluta.</p>
-            <p class="lang-en">Turning ambiguous AI requirements into structured execution. I bring 20 years of
-                mission-critical infrastructure experience to scale Generative AI operations with absolute reliability.
-            </p>
+          <div class="timeline-item">
+            <div class="timeline-date">Feb 2024 – Jan 2026</div>
+            <div class="timeline-title">AI Team Lead &amp; Project Manager @ Scale AI</div>
+            <p class="timeline-content lang-en">In a hands-on operational role, led 30+ model and data improvement projects involving RLHF, safety, SFT, and multimodal evaluations (audio, video, image). Built contributor pipelines with 400+ specialists, controlling throughput, routing, and quality auditing. Bridged technical operations and quality control, working with internal teams to resolve blockers and failure patterns. Maintained sub-5% error rates and reduced average handling time through structured coaching and targeted interventions.</p>
+            <p class="timeline-content lang-pt">Em uma atuação hands-on, liderei mais de 30 projetos de melhoria de modelos e dados envolvendo RLHF, safety, SFT e avaliações multimodais (áudio, vídeo e imagem). Estruturei pipelines de contribuidores com 400+ especialistas, controlando throughput, roteamento e auditoria de qualidade. Conectei operações técnicas e controle de qualidade, trabalhando com equipes internas para resolver bloqueios e padrões de falha. Mantive taxas de erro abaixo de 5% e reduzi o tempo médio por tarefa por meio de coaching e intervenções estruturadas.</p>
+          </div>
 
-            <a href="/#portfolio" class="btn lang-pt">Ver Portfólio de IA</a>
-            <a href="/#portfolio" class="btn lang-en">View AI Portfolio</a>
+          <div class="timeline-item">
+            <div class="timeline-date">2004 – 2024</div>
+            <div class="timeline-title">Founder &amp; Director @ FORTH (IT Infrastructure)</div>
+            <p class="timeline-content lang-en">Founded and directed a technology infrastructure firm for 20 years, managing multi-million-dollar contracts and leading teams for Fortune 500 and major industrial clients. Designed and executed Tier III mission-critical data center projects with N+1 redundancy, UPS/generators, HVAC, and power/cooling optimization. Combined physical-layer awareness with logical planning — understanding network latency, power failures, and thermal limits that directly translate to today's high-performance AI training clusters. Maintained executive stakeholder engagement, presenting roadmaps, compliance audits, and delivery status to C-level leaders.</p>
+            <p class="timeline-content lang-pt">Fundei e dirigi uma empresa de infraestrutura de tecnologia por 20 anos, gerenciando contratos multimilionários e liderando equipes para clientes Fortune 500 e grandes indústrias. Projetei e executei data centers de missão crítica padrão Tier III com redundância N+1, UPS/geradores, HVAC e otimização de energia e refrigeração. Combinei conhecimento da camada física com planejamento lógico — entendendo latência de rede, falhas de energia e limites térmicos que se traduzem diretamente nos clusters de treinamento de IA de alta performance de hoje. Mantive relacionamento executivo constante, apresentando roadmaps, auditorias de compliance e status de entrega para líderes C-level.</p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">2023 – 2024</div>
+            <div class="timeline-title">Flagship – Smart City IoT</div>
+            <p class="timeline-content lang-en">Led a US$4M project to deploy over 7,000 intelligent nodes in a sub-GHz mesh network, integrating LED luminaires with remote management and establishing the communication backbone for future urban applications. Architecture included mesh networks, distributed gateways, and remote monitoring of consumption and faults.</p>
+            <p class="timeline-content lang-pt">Liderei um projeto de US$4M para implantar mais de 7.000 nós inteligentes em rede mesh sub-GHz, integrando luminárias LED com telegestão e estabelecendo o backbone de comunicação para futuras aplicações urbanas. A arquitetura incluía redes mesh, gateways distribuídos e monitoramento remoto de consumo e falhas.</p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">2014</div>
+            <div class="timeline-title">Flagship – National AI/Data Infrastructure</div>
+            <p class="timeline-content lang-en">Directed deployment of high-availability base stations across Brazil to support real-time data-link transmissions for aerial imaging during the FIFA World Cup. Ensured zero-latency connectivity between aircraft and command centers through redundant -48V DC circuits and integration with the national fiber backbone.</p>
+            <p class="timeline-content lang-pt">Dirigi a implantação de estações rádio base de alta disponibilidade em todo o Brasil para suportar transmissões de data link em tempo real para imageamento aéreo durante a Copa do Mundo FIFA. Garantia de conectividade sem latência entre aeronaves e centros de comando através de circuitos -48V DC redundantes e integração com o backbone óptico nacional.</p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">2004 – 2013</div>
+            <div class="timeline-title lang-en">Tier III Data Centre @ Yara International</div>
+            <div class="timeline-title lang-pt">Data Center Tier III @ Yara International</div>
+            <p class="timeline-content lang-en">As project lead, coordinated civil and electrical engineering to build a Tier III data center implementing ANSI/TIA-942 standards, N+1 cooling, and dual-conversion UPS systems. Installed anti-static raised floors, cable segregation, OM3/OM4 optical backbone, and led the global migration to IBM with zero downtime.</p>
+            <p class="timeline-content lang-pt">Como líder de projeto, coordenei engenharia civil e elétrica para construir um data center Tier III implementando normas ANSI/TIA-942, climatização N+1 e UPS de dupla conversão. Instalei pisos elevados antiestáticos, segregação de cabos, backbone óptico OM3/OM4 e conduzi a migração global para IBM sem qualquer downtime.</p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">2008 – 2012</div>
+            <div class="timeline-title lang-en">Industrial Optimization @ Nexteer Automotive</div>
+            <div class="timeline-title lang-pt">Otimização Industrial @ Nexteer Automotive</div>
+            <p class="timeline-content lang-en">In a harsh factory environment with dust and vibration, restructured the data center layout, organized cabling, and implemented strict access control. Deployed mesh grounding and lightning protection (SPDA) systems, and built industrial ring-topology networks for resilience.</p>
+            <p class="timeline-content lang-pt">Em ambiente fabril com poeira e vibração, reestruturei o data center, organizei cabeamento e implantei controle de acesso restrito. Implementei malhas de aterramento e sistemas de proteção contra descargas atmosféricas (SPDA) e redes industriais em topologia de anel para garantir resiliência.</p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">2010 – 2024</div>
+            <div class="timeline-title lang-en">Corporate Standardization @ ThyssenKrupp &amp; Forjas Taurus</div>
+            <div class="timeline-title lang-pt">Padronização Corporativa @ ThyssenKrupp &amp; Forjas Taurus</div>
+            <p class="timeline-content lang-en">Standardized infrastructure across dozens of branches, defining installation norms with structured cabling channels, separators, and conduits. Orchestrated hot-swapping of servers and redesigned the communications backbone, migrating radio links to metropolitan fiber networks and implementing advanced physical security (airlocks, dual biometrics, thermal CCTV).</p>
+            <p class="timeline-content lang-pt">Padronizei infraestrutura em dezenas de filiais, definindo normas de instalação com eletrocalhas, canaletas, separadores e eletrodutos. Orquestrei remanejamentos a quente de servidores e redesenhei o backbone de comunicação, migrando links de rádio para redes de fibra metropolitana e implementando segurança física avançada (eclusas, biometria dupla, CFTV térmico).</p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">2013 – 2015</div>
+            <div class="timeline-title lang-en">Critical Infrastructure @ TAP Air Portugal</div>
+            <div class="timeline-title lang-pt">Infraestrutura Crítica @ TAP Air Portugal</div>
+            <p class="timeline-content lang-en">Managed structured cabling and IP telephony in airports, certifying thousands of network points and creating stabilized electrical installations connected to UPS systems for check-in and flight dispatch continuity. Developed contingency plans for power and telecom failures.</p>
+            <p class="timeline-content lang-pt">Gerenciei cabeamento estruturado e telefonia IP em aeroportos, certificando milhares de pontos de rede e criando instalações elétricas estabilizadas conectadas a sistemas de UPS para garantir continuidade de check-in e despacho de voos. Desenvolvi planos de contingência para falhas de energia e telecomunicações.</p>
+          </div>
+
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Value Proposition -->
-    <section id="about" style="background: var(--surface-color);">
-        <div class="container fade-in">
-            <h2 class="section-title lang-pt">Além do gerenciamento.<br>Propriedade real.</h2>
-            <h2 class="section-title lang-en">Beyond Management.<br>True Ownership.</h2>
-
-            <p class="section-subtitle lang-pt">"Você não precisa de um gerente reativo que apenas remova bloqueios. Você precisa de um líder com visão estratégica de negócio, que antecipe gargalos, assuma os riscos e garanta a entrega em escala."</p>
-            <p class="section-subtitle lang-en">You don't need a manager who just flags blockers. You need a project
-                owner who takes the risk, anticipates bottlenecks, and ensures execution at scale.</p>
-
-            <div class="philosophy-grid">
-                <div class="feature-card">
-                    <h3 class="lang-pt">Resolvendo a Ambiguidade</h3>
-                    <h3 class="lang-en">Translating Ambiguity</h3>
-                    <p class="lang-pt">Transformo requisitos de IA dinâmicos e ambíguos em processos operacionais
-                        claros. Construo rubricas, materiais suplementares e guias práticos, preenchendo a lacuna entre
-                        a visão dos engenheiros e a execução local.</p>
-                    <p class="lang-en">I transform dynamic, ambiguous AI requirements into clear operational processes.
-                        I build rubrics, supplementary materials, and practical guides, bridging the gap between
-                        engineering vision and edge execution.</p>
-                </div>
-                <div class="feature-card">
-                    <h3 class="lang-pt">Proteção do Throughput</h3>
-                    <h3 class="lang-en">Throughput Protection</h3>
-                    <p class="lang-pt">Com anos na indústria automobilística e operações de infraestrutura, encaro
-                        atrasos como falhas críticas do sistema. Monitoro de perto métricas de saúde operacionais para
-                        intervir cirurgicamente antes que metas sejam comprometidas.</p>
-                    <p class="lang-en">With years in manufacturing and infrastructure, I treat latency as critical
-                        system failure. I closely track operational health metrics to intervene surgically before
-                        throughput goals are compromised.</p>
-                </div>
-                <div class="feature-card">
-                    <h3 class="lang-pt">Intervenções Baseadas em Dados</h3>
-                    <h3 class="lang-en">Data-Driven Interventions</h3>
-                    <p class="lang-pt">Ao invés de aceitar documentações estáticas, diagnostico sistematicamente padrões
-                        de falha dos contribuidores. Ajusto o feedback e crio treinamentos focados, reduzindo as taxas
-                        de erro significativamente em tempo real.</p>
-                    <p class="lang-en">Instead of accepting static documentation, I systematically diagnose contributor
-                        failure patterns. I loop feedback and create focused training, significantly driving down error
-                        rates in real time.</p>
-                </div>
-            </div>
+<!-- Stack Mapping -->
+<section id="stack">
+  <div class="container fade-in">
+    <h2 class="section-title lang-en">Operational Architecture &amp; Stack Mapping</h2>
+    <h2 class="section-title lang-pt">Arquitetura Operacional e Stack de Ferramentas</h2>
+    <p class="section-subtitle lang-en">Platforms and tools I operate daily across global AI programs.</p>
+    <p class="section-subtitle lang-pt">Plataformas e ferramentas que opero diariamente em programas globais de IA.</p>
+    <div class="marquee-container">
+      <div class="marquee-track">
+        <div class="marquee-content">
+          <span class="tool-text">Agentic Graders</span><span class="tool-text">Jupyter</span><span class="tool-text">Python</span><span class="tool-text">GitHub</span><span class="tool-text">Forte | Pareto AI</span><span class="tool-text">Outlier | Scale AI</span><span class="tool-text">Orchestrator</span><span class="tool-text">Taiga | Anthropic</span><span class="tool-text">SRT | Meta</span><span class="tool-text">RaterHub &amp; CrowdCompute | Google</span><span class="tool-text">Redash</span><span class="tool-text">Airtable</span><span class="tool-text">AWS</span><span class="tool-text">AZURE</span><span class="tool-text">VPN</span><span class="tool-text">VNC</span><span class="tool-text">Metabase</span><span class="tool-text">Linear</span><span class="tool-text">Zendesk</span><span class="tool-text">Slack</span><span class="tool-text">Discourse</span><span class="tool-text">Google Workspace</span><span class="tool-text">Coda</span><span class="tool-text">Loom</span><span class="tool-text">tl;dv</span><span class="tool-text">Zoom</span><span class="tool-text">Miro</span><span class="tool-text">Canva</span>
         </div>
-    </section>
-
-    <!-- AI Portfolio -->
-    <section id="portfolio">
-        <div class="container fade-in">
-            <h2 class="section-title lang-pt">Portfólio de Projetos IA de Alto Impacto</h2>
-            <h2 class="section-title lang-en">High-Impact AI Projects Portfolio</h2>
-
-            <p class="section-subtitle lang-pt">Mais de 30 entregas na Pareto e Scale AI, suportando líderes de mercado
-                com pipelines nas camadas de SFT, RLHF e Segurança da Informação.</p>
-            <p class="section-subtitle lang-en">Over 30 deliveries at Pareto and Scale AI, supporting market leaders
-                with pipelines in SFT, RLHF, and AI Safety.</p>
-
-            <div class="portfolio-stats">
-                <div class="stat-item">
-                    <h4>30+</h4>
-                    <p class="lang-pt">Projetos Liderados</p>
-                    <p class="lang-en">Projects Led</p>
-                </div>
-                <div class="stat-item">
-                    <h4>
-                        < 5%</h4>
-                            <p class="lang-pt">Taxa de Erros Recorrente</p>
-                            <p class="lang-en">Recurring Error Rate</p>
-                </div>
-                <div class="stat-item">
-                    <h4>1k+</h4>
-                    <p class="lang-pt">Especialistas Orquestrados</p>
-                    <p class="lang-en">Experts Orchestrated</p>
-                </div>
-                <div class="stat-item" style="cursor: pointer;">
-                    <a href="education.html" style="text-decoration: none; color: inherit; display: block; transition: var(--transition);" onmouseover="this.style.opacity='0.7'; this.style.transform='translateY(-3px)';" onmouseout="this.style.opacity='1'; this.style.transform='translateY(0)';">
-                        <h4>40+</h4>
-                        <p class="lang-pt" style="color: var(--text-secondary);">Certificações Técnicas IA</p>
-                        <p class="lang-en" style="color: var(--text-secondary);">AI Technical Certifications</p>
-                    </a>
-                </div>
-            </div>
-
-            <div class="projects-carousel-wrapper" id="carouselWrapper">
-                <button class="carousel-btn prev" id="btnPrev" aria-label="Previous">
-                    <svg viewBox="0 0 24 24">
-                        <polyline points="15 18 9 12 15 6"></polyline>
-                    </svg>
-                </button>
-                <button class="carousel-btn next" id="btnNext" aria-label="Next">
-                    <svg viewBox="0 0 24 24">
-                        <polyline points="9 18 15 12 9 6"></polyline>
-                    </svg>
-                </button>
-                <div class="projects-viewport">
-                    <div class="projects-track" id="projectsTrack">
-
-                        <!-- Project 1 -->
-                        <div class="project-card">
-                            <span class="project-tag lang-pt">Mitigação de Alucinações em LLMs</span>
-                            <span class="project-tag lang-en">Hallucination Mitigation Pipelines</span>
-                            <h3 class="lang-pt">AVALIAÇÃO DE FATUALIDADE</h3>
-                            <h3 class="lang-en">FACTUALITY & GROUNDING</h3>
-                            <p class="lang-pt">Estruturei fluxos de avaliação focados em medir e penalizar alucinações
-                                em modelos de fundação. Implementei camadas de controle onde anotadores auditavam
-                                respostas contra fontes verificáveis, garantindo o máximo de precisão factual.</p>
-                            <p class="lang-en">Structured evaluation workflows to measure and penalize model
-                                hallucinations. Designed quality control layers where human annotators audited responses
-                                against verifiable sources, ensuring high-fidelity factual alignment and reliability for
-                                frontier LLMs.</p>
-                        </div>
-
-                        <!-- Project 2 -->
-                        <div class="project-card">
-                            <span class="project-tag lang-pt">Ranqueamento de Preferências em Escala</span>
-                            <span class="project-tag lang-en">High-Volume Preference Ranking</span>
-                            <h3 class="lang-pt">RLHF E ALINHAMENTO</h3>
-                            <h3 class="lang-en">RLHF & ALIGNMENT</h3>
-                            <p class="lang-pt">Orquestrei a coleta massiva de dados de preferência humana para alinhar
-                                as respostas dos modelos. Traduzi diretrizes complexas em instruções acionáveis,
-                                gerenciando a produtividade e a qualidade na geração de sinais precisos de treinamento.
-                            </p>
-                            <p class="lang-en">Orchestrated large-scale human preference data collection to align model
-                                outputs with human intent. Managed throughput and strict quality controls across complex
-                                ranking flows, translating raw guidelines into actionable directives for expert
-                                annotators.</p>
-                        </div>
-
-                        <!-- Project 3 -->
-                        <div class="project-card">
-                            <span class="project-tag lang-pt">Operações Globais de Red Teaming</span>
-                            <span class="project-tag lang-en">Adversarial Red Teaming Operations</span>
-                            <h3 class="lang-pt">IA RESPONSÁVEL E SAFETY</h3>
-                            <h3 class="lang-en">AI SAFETY & TRUST</h3>
-                            <p class="lang-pt">Liderei avaliações de segurança em múltiplos mercados para mapear e
-                                corrigir vulnerabilidades. Coordenei testes de estresse contra vieses e respostas
-                                nocivas, fortalecendo a robustez de modelos gerativos antes de irem para produção.</p>
-                            <p class="lang-en">Led comprehensive safety evaluations across multiple markets to identify
-                                and patch failure vectors. Coordinated stress-testing for bias, toxicity, and harmful
-                                responses, hardening production environments for top-tier generative models.</p>
-                        </div>
-
-                        <!-- Project 4 -->
-                        <div class="project-card">
-                            <span class="project-tag lang-pt">Localização Multilíngue de Modelos</span>
-                            <span class="project-tag lang-en">Multilingual Model Localizations</span>
-                            <h3 class="lang-pt">ESCALABILIDADE GLOBAL</h3>
-                            <h3 class="lang-en">GLOBAL SCALABILITY</h3>
-                            <p class="lang-pt">Executei lançamentos críticos de avaliação multilíngue sob alta pressão
-                                de tempo. Mantive taxas de erro abaixo de 5% enquanto escalava fluxos de testes e
-                                geração de respostas em diversos fusos horários e contextos culturais.</p>
-                            <p class="lang-en">Executed high-stakes, cross-lingual evaluation rollouts under extreme
-                                time pressure. Maintained sub-5% error rates while scaling prompt evaluation and
-                                response generation pipelines across multiple time zones and cultural contexts.</p>
-                        </div>
-
-                        <!-- Project 5 -->
-                        <div class="project-card">
-                            <span class="project-tag lang-pt">Curadoria de Dados por Especialistas</span>
-                            <span class="project-tag lang-en">Expert-Led Data Annotation</span>
-                            <h3 class="lang-pt">SFT ESPECIALIZADO</h3>
-                            <h3 class="lang-en">DOMAIN-SPECIFIC SFT</h3>
-                            <p class="lang-pt">Gerenciei a integração e a operação de profissionais de altíssimo nível,
-                                como advogados e cientistas de dados. Criei estruturas paralelas de controle de
-                                qualidade para garantir avaliações tecnicamente impecáveis em fluxos de raciocínio
-                                lógico.</p>
-                            <p class="lang-en">Supported the onboarding and execution of highly specialized cohorts,
-                                including legal professionals and data scientists. Built parallel QA structures to
-                                ensure domain-accurate evaluations for complex coding and legal reasoning tasks.</p>
-                        </div>
-
-                        <!-- Project 6 -->
-                        <div class="project-card">
-                            <span class="project-tag lang-pt">Pipelines de Treinamento Cross-Modal</span>
-                            <span class="project-tag lang-en">Cross-Modality Training Pipelines</span>
-                            <h3 class="lang-pt">AVALIAÇÕES MULTIMODAIS</h3>
-                            <h3 class="lang-en">MULTIMODAL EVALS</h3>
-                            <p class="lang-pt">Conduzi a execução de projetos voltados para a melhoria de capacidades
-                                multimodais, abrangendo fluxos de imagem, áudio e vídeo. Otimizei a eficiência
-                                operacional da equipe, mantendo rigorosa precisão técnica nas entregas.</p>
-                            <p class="lang-en">Directed operational execution for multi-modal model improvements,
-                                spanning image generation, video analysis, and audio workflows. Optimized contributor
-                                efficiency and reduced average handling time while maintaining strict adherence to
-                                complex formatting guidelines.</p>
-                        </div>
-
-                        <!-- Project 7 -->
-                        <div class="project-card">
-                            <span class="project-tag lang-pt">Testes A/B e Comparação Estática</span>
-                            <span class="project-tag lang-en">Static Comparison & A/B Testing</span>
-                            <h3 class="lang-pt">BENCHMARKING DE MODELOS</h3>
-                            <h3 class="lang-en">MODEL BENCHMARKING</h3>
-                            <p class="lang-pt">Entreguei dados estruturados de comparação direta entre modelos para
-                                estabelecer baselines competitivos. Monitorei filas em tempo real, assegurando que o
-                                Human-in-the-Loop (HITL) fornecesse sinais limpos para atualizações algorítmicas.</p>
-                            <p class="lang-en">Delivered head-to-head model comparison data to establish competitive
-                                baselines. Monitored queues and tracked failure modes in real time, ensuring
-                                human-in-the-loop (HITL) evaluations provided clean, unbiased signals for algorithm
-                                updates.</p>
-                        </div>
-
-                        <!-- Project 8 -->
-                        <div class="project-card">
-                            <span class="project-tag lang-pt">Geração de Prompts Sintéticos</span>
-                            <span class="project-tag lang-en">Synthetic Prompt Generation</span>
-                            <h3 class="lang-pt">DESENVOLVIMENTO DE DADOS</h3>
-                            <h3 class="lang-en">DATA DEVELOPMENT</h3>
-                            <p class="lang-pt">Gerenciei fluxos de criação de dados sintéticos para expandir datasets de
-                                treinamento. Apliquei ciclos de feedback curtos e treinamentos focados para guiar os
-                                anotadores na produção de cenários complexos de uso (edge cases).</p>
-                            <p class="lang-en">Managed fine-tuned data development workflows to expand training
-                                datasets. Implemented tight feedback loops and focused training interventions, guiding
-                                contributors to produce highly specific, edge-case synthetic prompts for model
-                                refinement.</p>
-                        </div>
-
-                        <!-- Project 9 -->
-                        <div class="project-card">
-                            <span class="project-tag lang-pt">Calibragem Avançada de Rúbricas</span>
-                            <span class="project-tag lang-en">Advanced Rubric Calibration</span>
-                            <h3 class="lang-pt">ARQUITETURA DE WORKFLOWS</h3>
-                            <h3 class="lang-en">WORKFLOW ARCHITECTURE</h3>
-                            <p class="lang-pt">Transformei requisitos técnicos ambíguos em operações estruturadas.
-                                Escalei inconsistências em regras de avaliação e desenvolvi documentação de apoio
-                                prático para aumentar a precisão dos anotadores em tarefas de alta complexidade.</p>
-                            <p class="lang-en">Translated ambiguous, fast-changing project requirements into structured
-                                operations. Escalated recurring edge cases to align grading criteria, building
-                                supplemental documentation to improve annotator precision across generalized and
-                                specialized tasks.</p>
-                        </div>
-
-                        <!-- Project 10 -->
-                        <div class="project-card">
-                            <span class="project-tag lang-pt">Otimização de Qualidade e Auditoria</span>
-                            <span class="project-tag lang-en">Pipeline Optimization & QA Auditing</span>
-                            <h3 class="lang-pt">MLOPS E EFICIÊNCIA</h3>
-                            <h3 class="lang-en">MLOPS & EFFICIENCY</h3>
-                            <p class="lang-pt">Apliquei princípios de operações em escala para resolver gargalos
-                                sistêmicos de avaliação. Ao auditar entregas iniciais e criar rastreamento próprio de
-                                QA, identifiquei falhas em processos externos, recuperando valor financeiro e acelerando
-                                o pipeline.</p>
-                            <p class="lang-en">Applied MLOps principles to identify and resolve systemic external
-                                evaluation inconsistencies. By actively auditing early outputs and building custom QA
-                                tracking, recovered significant delivery value and accelerated overall pipeline
-                                throughput.</p>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
+        <div class="marquee-content" aria-hidden="true">
+          <span class="tool-text">Agentic Graders</span><span class="tool-text">Jupyter</span><span class="tool-text">Python</span><span class="tool-text">GitHub</span><span class="tool-text">Forte | Pareto AI</span><span class="tool-text">Outlier | Scale AI</span><span class="tool-text">Orchestrator</span><span class="tool-text">Taiga | Anthropic</span><span class="tool-text">SRT | Meta</span><span class="tool-text">RaterHub &amp; CrowdCompute | Google</span><span class="tool-text">Redash</span><span class="tool-text">Airtable</span><span class="tool-text">AWS</span><span class="tool-text">AZURE</span><span class="tool-text">VPN</span><span class="tool-text">VNC</span><span class="tool-text">Metabase</span><span class="tool-text">Linear</span><span class="tool-text">Zendesk</span><span class="tool-text">Slack</span><span class="tool-text">Discourse</span><span class="tool-text">Google Workspace</span><span class="tool-text">Coda</span><span class="tool-text">Loom</span><span class="tool-text">tl;dv</span><span class="tool-text">Zoom</span><span class="tool-text">Miro</span><span class="tool-text">Canva</span>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Professional History -->
-    <section id="experience">
-        <div class="container fade-in">
-            <div class="experience-layout">
-                <div class="experience-intro">
-                    <h2 class="section-title lang-pt"
-                        style="text-align: left; margin-bottom: 1.5rem; line-height: 1.1;">A Fundação da<br>Alta
-                        Disponibilidade</h2>
-                    <h2 class="section-title lang-en"
-                        style="text-align: left; margin-bottom: 1.5rem; line-height: 1.1;">The Foundation of<br>High
-                        Availability</h2>
-
-                    <p class="section-subtitle lang-pt" style="text-align: left; margin: 0; line-height: 1.6;">Antes de
-                        otimizar inteligências artificiais com MLOps, passei 20 anos garantindo que a infraestrutura
-                        crítica do mundo real não parasse de funcionar.</p>
-                    <p class="section-subtitle lang-en" style="text-align: left; margin: 0; line-height: 1.6;">Before
-                        optimizing artificial intelligence with MLOps, I spent 20 years ensuring the real world's
-                        critical infrastructure never stopped running.</p>
-                </div>
-
-                <div class="experience-timeline">
-                    <div class="timeline">
-
-                        <div class="timeline-item">
-                            <div class="timeline-date">Jan 2026 – Present</div>
-                            <div class="timeline-title lang-pt">Global AI Project Manager @ Pareto AI</div>
-                            <div class="timeline-title lang-en">Global AI Project Manager @ Pareto AI</div>
-                            <p class="timeline-content lang-pt">Atualmente lidero a entrega ponta a ponta de programas
-                                globais de dados para IA. Gerencio múltiplos fluxos de trabalho simultâneos com times
-                                especialistas multidisciplinares coordenando workflows em áreas altamente reguladas como
-                                saúde, serviços financeiros, jurídico e cibersegurança. Sou responsável por configurar
-                                ambientes de machine learning e solucionar problemas técnicos (incluindo máquinas
-                                virtuais e controle de acesso), aplicando frameworks de boas práticas como MLOps
-                                alinhados com as últimas normas técnicas, monitorando filas e alinhando equipes técnicas
-                                e de suporte.</p>
-                            <p class="timeline-content lang-en">I currently lead end-to-end delivery of AI data programs
-                                for top AI labs. I manage multiple simultaneous workstreams with cross-functional teams
-                                and coordinate specialized workflows in highly regulated sectors such as healthcare,
-                                financial services, legal, and cybersecurity. I’m responsible for configuring machine
-                                learning environments and resolving technical issues (including virtual machines and
-                                access control), while maintaining project hygiene, monitoring queues and aligning
-                                technical and support teams.</p>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-date">Feb 2024 – Jan 2026</div>
-                            <div class="timeline-title lang-pt">AI Team Lead & Project Manager @ Scale AI</div>
-                            <div class="timeline-title lang-en">AI Team Lead & Project Manager @ Scale AI</div>
-                            <p class="timeline-content lang-pt">Desempenhei um papel operacional intensivo, liderando
-                                mais de 30 projetos de melhoria de modelos e dados envolvendo RLHF, safety, SFT e
-                                avaliações multimodais (áudio, vídeo e imagem). Estruturei pipelines de contribuidores
-                                com 400+ especialistas, controlando throughput, roteamento e auditoria de qualidade.
-                                Atuei como ponte entre operações técnicas e controle de qualidade, trabalhando com
-                                equipes internas para resolver bloqueios e falhas. Como resultado, mantive taxas de erro
-                                abaixo de 5% e reduzi o tempo médio por tarefa por meio de coaching e intervenções
-                                estruturadas.</p>
-                            <p class="timeline-content lang-en">In a hands-on operational role, I led more than 30
-                                model- and data-improvement projects involving RLHF, safety, SFT and multimodal
-                                evaluations (audio, video and image). I built contributor pipelines with 400+
-                                specialists, controlling throughput, routing and quality auditing. I bridged technical
-                                operations and quality control, working with internal QC and support teams to resolve
-                                blockers and failure patterns.</p>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-date">2004 – 2024</div>
-                            <div class="timeline-title lang-pt">Founder & Director @ FORTH (IT Infrastructure)</div>
-                            <div class="timeline-title lang-en">Founder & Director @ FORTH (IT Infrastructure)</div>
-                            <p class="timeline-content lang-pt">Fundei e conduzi uma empresa de infraestrutura
-                                tecnológica por 20 anos, gerenciando contratos multimilionários e liderando equipes para
-                                clientes da lista Fortune 500 e grandes indústrias. Desenhei e executei projetos de data
-                                centers de missão crítica de padrão Tier III com redundância N+1, UPS/geradores, HVAC e
-                                otimização de energia/cooling. Utilizava profundo entendimento de latência de rede,
-                                falhas de energia e limites térmicos para adequar a infraestrutura física às
-                                necessidades de alta performance de clusters de treinamento de modelos. Também mantinha
-                                relacionamento com executivos, apresentando roadmaps, auditorias de compliance e status
-                                de entrega.</p>
-                            <p class="timeline-content lang-en">I founded and ran a technology infrastructure firm for
-                                20 years, managing multi-million-dollar contracts and leading teams for Fortune 500 and
-                                industrial clients. I designed and executed Tier III mission-critical data centre
-                                projects with N+1 redundancy, UPS/generators, HVAC and power/cooling optimization. I
-                                combined physical-layer awareness with logical planning, understanding network latency,
-                                power failures and thermal limits in high-performance clusters. I also maintained
-                                executive stakeholder engagement, presenting roadmaps, compliance audits and delivery
-                                status to senior leaders.</p>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-date">2023 – 2024</div>
-                            <div class="timeline-title lang-pt">Flagship – Smart City IoT</div>
-                            <div class="timeline-title lang-en">Flagship – Smart City IoT</div>
-                            <p class="timeline-content lang-pt">Conduzi um projeto de US$ 4 M para implantar mais de 7
-                                000 nós inteligentes em rede sub‑GHz, integrando luminárias LED com telegestão e
-                                estabelecendo o backbone de comunicação para futuras aplicações urbanas. A arquitetura
-                                incluía redes mesh, gateways distribuídos e sistemas de monitoramento remoto de consumo
-                                e falhas.</p>
-                            <p class="timeline-content lang-en">I led a US$4 M project to deploy over 7 000 intelligent
-                                nodes in a sub- GHz mesh network, integrating LED luminaires with remote management and
-                                establishing the communication backbone for future urban applications. The architecture
-                                included mesh networks, distributed gateways and remote monitoring of consumption and
-                                faults.</p>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-date">2014</div>
-                            <div class="timeline-title lang-pt">Flagship – National AI/Data Infrastructure</div>
-                            <div class="timeline-title lang-en">Flagship – National AI/Data Infrastructure</div>
-                            <p class="timeline-content lang-pt">Dirigi a implantação de estações rádio base de alta
-                                disponibilidade em todo o Brasil para suportar transmissões de data link em tempo real
-                                durante a Copa do Mundo FIFA, garantindo conectividade sem latência entre aeronaves e
-                                centros de comando através de circuitos -48 V DC redundantes e integração com o backbone
-                                óptico nacional.</p>
-                            <p class="timeline-content lang-en">I directed deployment of high-availability base stations
-                                across Brazil to support real-time data-link transmissions for aerial imaging during the
-                                FIFA World Cup, ensuring zero-latency connectivity between aircraft and command centres
-                                through redundant -48 V DC circuits and integration with the national fibre backbone.
-                            </p>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-date">2004 – 2013</div>
-                            <div class="timeline-title lang-pt">Tier III Data Center @ Yara International</div>
-                            <div class="timeline-title lang-en">Tier III Data Centre @ Yara International</div>
-                            <p class="timeline-content lang-pt">Como líder de projeto, coordenei engenharia civil e
-                                elétrica para construir um data center Tier III, implementando normas ANSI/TIA‑942,
-                                sistemas de climatização N+1 e UPS de dupla conversão. Instalei pisos elevados
-                                antiestáticos, segregação de cabos, backbone óptico OM3/OM4 e conduzi a migração global
-                                para a IBM sem downtime.</p>
-                            <p class="timeline-content lang-en">As project lead I coordinated civil and electrical
-                                engineering to build a Tier III data centre, implementing ANSI/TIA-942 standards, N+1
-                                cooling and dual-conversion UPS systems. I installed anti-static raised floors, cable
-                                segregation and an OM3/OM4 optical backbone, and led the global migration to IBM without
-                                downtime.</p>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-date">2008 – 2012</div>
-                            <div class="timeline-title lang-pt">Otimização Industrial @ Nexteer Automotive</div>
-                            <div class="timeline-title lang-en">Industrial Optimization @ Nexteer Automotive</div>
-                            <p class="timeline-content lang-pt">Em ambiente fabril com poeira e vibração, reestruturei o
-                                data center, organizei cabeamento e implantei sistemas de acesso restrito, incluindo
-                                malhas de aterramento e sistemas de proteção contra descargas atmosféricas (SPDA) e
-                                implementei redes industriais em topologia de anel para garantir resiliência.</p>
-                            <p class="timeline-content lang-en">In a harsh factory environment I restructured the data
-                                centre layout, organized cabling and implemented strict access control. I required mesh
-                                grounding and lightning protection (SPDA) systems and deployed industrial ring-topology
-                                networks for resilience.</p>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-date">2010 – 2024</div>
-                            <div class="timeline-title lang-pt">Padronização Corporativa @ ThyssenKrupp & Forjas Taurus
-                            </div>
-                            <div class="timeline-title lang-en">Corporate Standardization @ ThyssenKrupp & Forjas Taurus
-                            </div>
-                            <p class="timeline-content lang-pt">Padronizei infraestruturas em dezenas de filiais,
-                                definindo normas de instalação com infraestrutura específicas como eletrocalhas,
-                                canaletas, separadores e eletrodutos. Coordenei remanejamentos a quente de servidores e
-                                redesenhei o backbone de comunicação da fabricante de armamentos, migrando links de
-                                rádio para redes de fibra metropolitana e implementando segurança física avançada
-                                (eclusas, biometria dupla, CFTV térmico).</p>
-                            <p class="timeline-content lang-en">I standardized infrastructure across dozens of branches,
-                                defining installation norms with channels, separators and conduits. I orchestrated
-                                hot-swapping of servers and redesigned the communications backbone of the arms
-                                manufacturer, migrating radio links to metropolitan fibre networks and implementing
-                                advanced physical security (locks, dual biometrics, thermal CCTV).</p>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-date">2013 – 2015</div>
-                            <div class="timeline-title lang-pt">Infraestrutura Crítica @ TAP Air Portugal</div>
-                            <div class="timeline-title lang-en">Critical Infrastructure @ TAP Air Portugal</div>
-                            <p class="timeline-content lang-pt">Gerenciei cabeamento estruturado e telefonia IP em
-                                aeroportos, certificando milhares de pontos de rede e criando instalações elétricas
-                                estabilizadas conectadas a sistemas de UPS para garantir continuidade em check-in e
-                                despacho. Desenvolvi planos de contingência para falhas de energia e links de telecom.
-                            </p>
-                            <p class="timeline-content lang-en">I managed structured cabling and IP telephony in
-                                airports, certifying thousands of network points and creating stabilized electrical
-                                installations connected to UPS to ensure continuity for check-in and flight dispatch. I
-                                developed contingency plans for power or telecom failures.</p>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
+<!-- Contact -->
+<section id="contact">
+  <div class="container fade-in">
+    <div class="contact-section">
+      <div class="contact-grid-layout">
+        <div class="contact-info">
+          <h2 class="lang-en">Get in Touch</h2>
+          <h2 class="lang-pt">Vamos Conversar</h2>
+          <p class="main-desc lang-en">Based in Latin America (UTC-3), with strong overlap across ET, PT, and CET time zones. Open to discuss executive roles, high-stakes AI program leadership, and scalable data operations.</p>
+          <p class="main-desc lang-pt">Baseado na América Latina (UTC-3), com boa cobertura nos fusos ET, PT e CET. Aberto a discutir posições executivas, liderança de programas de IA de alto impacto e operações de dados em escala.</p>
+          <div class="disclaimer">
+            <p class="lang-en">Site independently designed and developed by Will Del Valle. Tier-1 Big Tech clients and project names are strictly omitted in compliance with NDAs and global security policies. Official certificates and performance data available for due diligence upon request.</p>
+            <p class="lang-pt">Site projetado e desenvolvido por Will Del Valle. Clientes Big Tech Tier-1 e nomes de projetos foram omitidos em conformidade com NDAs e políticas de segurança globais. Certificações oficiais e dados de desempenho disponíveis para verificação mediante solicitação.</p>
+          </div>
+          <a href="mailto:willan.delvalle@gmail.com" class="contact-btn lang-en">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            Get in Touch
+          </a>
+          <a href="mailto:willan.delvalle@gmail.com" class="contact-btn lang-pt">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            Enviar Mensagem
+          </a>
         </div>
-    </section>
-
-    <!-- Stack Mapping -->
-    <section id="stack" style="background: var(--surface-color);">
-        <div class="container fade-in">
-            <h2 class="section-title">Operational Architecture & Stack Mapping</h2>
-            
-            <div class="marquee-container">
-                <div class="marquee-track">
-                    <div class="marquee-content">
-                        <span class="tool-text">Agentic Graders</span>
-                        <span class="tool-text">Jupyter</span>
-                        <span class="tool-text">Python</span>
-                        <span class="tool-text">GitHub</span>
-                        <span class="tool-text">Forte | Pareto AI</span>
-                        <span class="tool-text">Outlier | Scale AI</span>
-                        <span class="tool-text">Orchestrator</span>
-                        <span class="tool-text">Anthropic Taiga</span>
-                        <span class="tool-text">Meta SRT</span>
-                        <span class="tool-text">Redash</span>
-                        <span class="tool-text">Airtable</span>
-                        <span class="tool-text">AWS</span>
-                        <span class="tool-text">AZURE</span>
-                        <span class="tool-text">VPN</span>
-                        <span class="tool-text">VNC</span>
-                        <span class="tool-text">Metabase</span>
-                        <span class="tool-text">Linear</span>
-                        <span class="tool-text">Zendesk</span>
-                        <span class="tool-text">Slack</span>
-                        <span class="tool-text">Discourse</span>
-                        <span class="tool-text">Google Workspace</span>
-                        <span class="tool-text">Coda</span>
-                        <span class="tool-text">Loom</span>
-                        <span class="tool-text">tl;dv</span>
-                        <span class="tool-text">Zoom</span>
-                        <span class="tool-text">Miro</span>
-                        <span class="tool-text">Canva</span>
-                    </div>
-                    <!-- Duplicate for infinite smooth scroll -->
-                    <div class="marquee-content" aria-hidden="true">
-                        <span class="tool-text">Agentic Graders</span>
-                        <span class="tool-text">Jupyter</span>
-                        <span class="tool-text">Python</span>
-                        <span class="tool-text">GitHub</span>
-                        <span class="tool-text">Forte | Pareto AI</span>
-                        <span class="tool-text">Outlier | Scale AI</span>
-                        <span class="tool-text">Orchestrator</span>
-                        <span class="tool-text">Anthropic Taiga</span>
-                        <span class="tool-text">Meta SRT</span>
-                        <span class="tool-text">Redash</span>
-                        <span class="tool-text">Airtable</span>
-                        <span class="tool-text">AWS</span>
-                        <span class="tool-text">AZURE</span>
-                        <span class="tool-text">VPN</span>
-                        <span class="tool-text">VNC</span>
-                        <span class="tool-text">Metabase</span>
-                        <span class="tool-text">Linear</span>
-                        <span class="tool-text">Zendesk</span>
-                        <span class="tool-text">Slack</span>
-                        <span class="tool-text">Discourse</span>
-                        <span class="tool-text">Google Workspace</span>
-                        <span class="tool-text">Coda</span>
-                        <span class="tool-text">Loom</span>
-                        <span class="tool-text">tl;dv</span>
-                        <span class="tool-text">Zoom</span>
-                        <span class="tool-text">Miro</span>
-                        <span class="tool-text">Canva</span>
-                    </div>
-                </div>
-            </div>
+        <div>
+          <div class="linkedin-wrapper">
+            <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="light" data-type="VERTICAL" data-vanity="willdelvalle" data-version="v1"></div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Contact -->
-    <section id="contact">
-        <div class="container fade-in">
-            <div class="contact-section">
-                <div class="contact-grid-layout">
-                    <div class="contact-info">
-                        <h2 class="lang-pt">Iniciar Contato</h2>
-                        <h2 class="lang-en">Get in Touch</h2>
+<script>
+// LANGUAGE SYSTEM
+function getLang() {
+  const p = new URLSearchParams(window.location.search);
+  return p.get('lang') || localStorage.getItem('lang') || 'en';
+}
+function setLang(lang) {
+  document.body.classList.remove('en','pt');
+  document.body.classList.add(lang);
+  localStorage.setItem('lang', lang);
+  const txt = document.getElementById('langToggleText');
+  if (txt) txt.innerText = lang === 'en' ? 'PT' : 'EN';
+  document.querySelectorAll('.edu-link').forEach(a => {
+    a.href = 'education.html?lang=' + lang;
+  });
+}
+setLang(getLang());
+document.getElementById('langToggle').addEventListener('click', () => {
+  setLang(document.body.classList.contains('pt') ? 'en' : 'pt');
+});
 
-                        <p class="lang-pt main-desc">Baseado na América Latina (UTC-3), com forte sobreposição nos fusos ET, PT e CET. Aberto a discutir posições executivas, gestão de programas de IA de alto risco e operações de dados em escala.</p>
-                        <p class="lang-en main-desc">Based in Latin America (UTC-3), with strong overlap across ET, PT, and CET. Open to discuss executive positions, high-risk AI program management, and scalable data operations.</p>
+// HAMBURGER
+const hamburger = document.getElementById('hamburger');
+const mobileNav = document.getElementById('mobileNav');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  mobileNav.classList.toggle('open');
+  document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+});
+document.querySelectorAll('.mobile-nav-link').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    mobileNav.classList.remove('open');
+    document.body.style.overflow = '';
+  });
+});
 
-                        <div class="disclaimer">
-                            <p class="lang-pt">Site projetado e desenvolvido de forma independente por Will Del Valle.
-                                Clientes Big Tech Tier-1 e nomes de projetos estritamente omitidos em conformidade com
-                                NDAs e políticas de segurança globais. Certificações oficiais e dados de desempenho
-                                pessoal disponíveis sob pedido.</p>
-                            <p class="lang-en">Site independently designed and developed by Will Del Valle. Tier-1 Big
-                                Tech clients and project names are strictly omitted in compliance with NDAs and global
-                                security policies. Official certificates and personal performance data available upon
-                                executive request.</p>
-                        </div>
+// FADE-IN
+const observer = new IntersectionObserver((entries, obs) => {
+  entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);} });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => {
+  observer.observe(el);
+  if(el.getBoundingClientRect().top <= window.innerHeight) el.classList.add('visible');
+});
 
-                        <a href="mailto:willan.delvalle@gmail.com" class="btn btn-primary lang-pt">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                style="margin-top:-2px;">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
-                                </path>
-                                <polyline points="22,6 12,13 2,6"></polyline>
-                            </svg>
-                            Enviar Briefing
-                        </a>
-                        <a href="mailto:willan.delvalle@gmail.com" class="btn btn-primary lang-en">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                style="margin-top:-2px;">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
-                                </path>
-                                <polyline points="22,6 12,13 2,6"></polyline>
-                            </svg>
-                            Get in Touch
-                        </a>
-                    </div>
+// SMOOTH SCROLL
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', function(e) {
+    const h = this.getAttribute('href');
+    if(h==='#') return;
+    const t = document.querySelector(h);
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}
+  });
+});
 
-                    <div class="contact-social">
-                        <div class="linkedin-wrapper">
-                            <!-- LinkedIn Profile Badge -->
-                            <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium"
-                                data-theme="light" data-type="VERTICAL" data-vanity="willdelvalle" data-version="v1">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+// CAROUSEL
+document.addEventListener('DOMContentLoaded', () => {
+  const track = document.getElementById('projectsTrack');
+  const dotsEl = document.getElementById('carouselDots');
+  const cards = document.querySelectorAll('#projectsTrack .project-card');
+  const btnPrev = document.getElementById('btnPrev');
+  const btnNext = document.getElementById('btnNext');
+  if(!track || !cards.length) return;
 
-    <!-- Scripts -->
-    <script>
-        // Language Toggle System
-        const langToggle = document.getElementById('langToggle');
-        const langToggleText = document.getElementById('langToggleText');
-        langToggle.addEventListener('click', () => {
-            if (document.body.classList.contains('pt')) {
-                document.body.classList.remove('pt');
-                document.body.classList.add('en');
-                if (langToggleText) langToggleText.innerText = 'PT';
-            } else {
-                document.body.classList.remove('en');
-                document.body.classList.add('pt');
-                if (langToggleText) langToggleText.innerText = 'EN';
-            }
-        });
+  const total = cards.length;
+  let cur = 0;
 
-        // Scroll Animation Observer
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.15
-        };
+  function perView() {
+    if(window.innerWidth >= 1024) return 3;
+    if(window.innerWidth >= 768) return 2;
+    return 1;
+  }
+  function maxSlide() { return Math.max(0, total - perView()); }
 
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
+  function renderDots() {
+    const n = maxSlide() + 1;
+    dotsEl.innerHTML = '';
+    for(let i=0;i<n;i++){
+      const d = document.createElement('button');
+      d.className = 'dot' + (i===cur?' active':'');
+      d.setAttribute('aria-label','Slide '+(i+1));
+      d.addEventListener('click', ()=>{cur=i;update();});
+      dotsEl.appendChild(d);
+    }
+  }
+  function updateDots() {
+    dotsEl.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('active',i===cur));
+  }
+  function update() {
+    cur = Math.max(0, Math.min(cur, maxSlide()));
+    const w = cards[0].offsetWidth;
+    const g = parseFloat(window.getComputedStyle(track).gap)||32;
+    track.style.transform = `translateX(-${cur*(w+g)}px)`;
+    updateDots();
+  }
 
-        document.querySelectorAll('.fade-in').forEach(elem => {
-            observer.observe(elem);
-            // Pre-calculate to avoid visibility bug at the top of the viewport
-            const rect = elem.getBoundingClientRect();
-            if (rect.top <= (window.innerHeight || document.documentElement.clientHeight)) {
-                elem.classList.add('visible');
-            }
-        });
+  btnPrev.addEventListener('click', ()=>{ cur = cur<=0 ? maxSlide() : cur-1; update(); });
+  btnNext.addEventListener('click', ()=>{ cur = cur>=maxSlide() ? 0 : cur+1; update(); });
 
-        // Smooth Scroll for anchored links
-        document.querySelectorAll('a[href^="/#"], a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                let href = this.getAttribute('href');
-                let targetHash = href.startsWith('/#') ? href.replace('/', '') : href;
-                
-                // Identify if user is on the main landing page
-                const isHome = window.location.pathname === '/' || window.location.pathname === '/index.html' || window.location.pathname.endsWith('V9.html') || window.location.pathname.endsWith('V8.html');
-                
-                if (isHome) {
-                    const targetElement = document.querySelector(targetHash);
-                    if (targetElement) {
-                        e.preventDefault();
-                        targetElement.scrollIntoView({
-                            behavior: 'smooth'
-                        });
-                    }
-                }
-            });
-        });
+  // Swipe
+  let tx=0;
+  const vp = track.parentElement;
+  vp.addEventListener('touchstart', e=>{tx=e.touches[0].clientX;},{passive:true});
+  vp.addEventListener('touchend', e=>{
+    const d = tx - e.changedTouches[0].clientX;
+    if(Math.abs(d)>50){if(d>0)btnNext.click();else btnPrev.click();}
+  },{passive:true});
 
-        // Projects Carousel Logic
-        document.addEventListener('DOMContentLoaded', () => {
-            const track = document.getElementById('projectsTrack');
-            const wrapper = document.getElementById('carouselWrapper');
-            const cards = document.querySelectorAll('#projectsTrack .project-card');
-            const btnPrev = document.getElementById('btnPrev');
-            const btnNext = document.getElementById('btnNext');
-
-            if (!track || cards.length === 0) return;
-
-            const totalCards = cards.length;
-            let currentSlide = 0;
-            let isPaused = false;
-            let autoPlayInterval;
-
-            function getCardsPerView() {
-                if (window.innerWidth >= 1024) return 3;
-                if (window.innerWidth >= 768) return 2;
-                return 1;
-            }
-
-            function updateSlider() {
-                const cardsPerView = getCardsPerView();
-                const maxSlide = Math.max(0, totalCards - cardsPerView);
-
-                if (currentSlide > maxSlide) {
-                    currentSlide = maxSlide;
-                }
-                if (currentSlide < 0) {
-                    currentSlide = 0;
-                }
-
-                const cardWidth = cards[0].offsetWidth;
-                const gap = parseFloat(window.getComputedStyle(track).gap) || 0;
-
-                const moveAmount = currentSlide * (cardWidth + gap);
-                track.style.transform = `translateX(-${moveAmount}px)`;
-            }
-
-            function nextSlide(auto = true) {
-                if (auto && isPaused) return;
-                const cardsPerView = getCardsPerView();
-                const maxSlide = Math.max(0, totalCards - cardsPerView);
-
-                currentSlide++;
-                if (currentSlide > maxSlide) {
-                    currentSlide = 0; // Wrap around
-                }
-                updateSlider();
-            }
-
-            function prevSlide() {
-                const cardsPerView = getCardsPerView();
-                const maxSlide = Math.max(0, totalCards - cardsPerView);
-
-                currentSlide--;
-                if (currentSlide < 0) {
-                    currentSlide = maxSlide; // Wrap around
-                }
-                updateSlider();
-            }
-
-            autoPlayInterval = setInterval(() => nextSlide(true), 3000);
-
-            cards.forEach(card => {
-                card.addEventListener('click', () => {
-                    isPaused = true;
-                    wrapper.classList.add('is-paused');
-                });
-            });
-
-            if (btnPrev) {
-                btnPrev.addEventListener('click', () => {
-                    isPaused = true;
-                    wrapper.classList.add('is-paused');
-                    prevSlide();
-                });
-            }
-
-            if (btnNext) {
-                btnNext.addEventListener('click', () => {
-                    isPaused = true;
-                    wrapper.classList.add('is-paused');
-                    nextSlide(false);
-                });
-            }
-
-            window.addEventListener('resize', () => {
-                updateSlider();
-            });
-
-            // Initial render
-            setTimeout(updateSlider, 100);
-        });
-    </script>
+  window.addEventListener('resize', ()=>{renderDots();update();});
+  renderDots();
+  setTimeout(update, 100);
+});
+</script>
 </body>
-
 </html>
