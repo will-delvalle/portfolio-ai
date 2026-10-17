@@ -27,6 +27,9 @@ header{position:fixed;top:0;width:100%;background:rgba(250,250,250,0.88);backdro
 .logo{font-weight:700;font-size:1.15rem;color:var(--accent-color);text-decoration:none;letter-spacing:-0.01em}
 .back{color:var(--text-secondary);text-decoration:none;font-size:0.95rem;font-weight:500;transition:var(--transition)}
 .back:hover{color:var(--accent-color)}
+.nav-right{display:flex;align-items:center;gap:1.25rem}
+.lang-btn{background:rgba(0,0,0,0.05);border:none;padding:0.45rem 0.9rem;border-radius:30px;cursor:pointer;font:inherit;font-weight:600;font-size:0.8rem;color:var(--text-primary);transition:var(--transition)}
+.lang-btn:hover{background:rgba(0,0,0,0.1)}
 
 .intro{padding:9rem 0 3rem}
 .eyebrow{font-size:0.78rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent-color);margin-bottom:1rem}
@@ -85,25 +88,28 @@ h1{font-size:3.5rem;line-height:1.08;letter-spacing:-0.03em;max-width:16ch}
 <header>
   <div class="container nav">
     <a href="/" class="logo">Will Del Valle</a>
-    <a href="/#portfolio" class="back">&larr; Back to portfolio</a>
+    <div class="nav-right">
+      <a href="/#portfolio" class="back" data-i="back"></a>
+      <button class="lang-btn" id="langBtn" aria-label="Toggle language"></button>
+    </div>
   </div>
 </header>
 
 <main class="container">
   <section class="intro">
-    <div class="eyebrow">AI Project Portfolio</div>
-    <h1>The projects behind the numbers.</h1>
-    <p class="lead">AI data and model-evaluation projects I managed and delivered at Scale AI and Pareto AI. Client and internal project names are omitted under NDA; each entry explains what the project was, how it worked and what it was for.</p>
+    <div class="eyebrow" data-i="eyebrow"></div>
+    <h1 data-i="h1"></h1>
+    <p class="lead" data-i="lead"></p>
     <div class="stats">
-      <div><h4 id="s-total">40+</h4><p>Projects &amp; workstreams</p></div>
-      <div><h4 id="s-scale">&nbsp;</h4><p>At Scale AI</p></div>
-      <div><h4 id="s-pareto">&nbsp;</h4><p>At Pareto AI</p></div>
-      <div><h4 id="s-areas">&nbsp;</h4><p>Areas of work</p></div>
+      <div><h4>40+</h4><p data-i="s1"></p></div>
+      <div><h4 id="s-scale"></h4><p data-i="s2"></p></div>
+      <div><h4 id="s-pareto"></h4><p data-i="s3"></p></div>
+      <div><h4 id="s-areas"></h4><p data-i="s4"></p></div>
     </div>
   </section>
 
-  <div class="filters" id="filters" role="toolbar" aria-label="Filter by area"></div>
-    <div class="grid" id="grid"></div>
+  <div class="filters" id="filters" role="toolbar"></div>
+  <div class="grid" id="grid"></div>
 </main>
 
 <div id="layer">
@@ -116,41 +122,70 @@ h1{font-size:3.5rem;line-height:1.08;letter-spacing:-0.03em;max-width:16ch}
 
 <script src="/projects-data.js"></script>
 <script>
-const ROLE=window.PROJECT_ROLES, AREAS=window.PROJECT_AREAS, P=window.PROJECTS;
+const W=window, AREAS=W.PROJECT_AREAS, P=W.PROJECTS;
+const UI={
+ en:{back:'&larr; Back to portfolio',eyebrow:'AI Project Portfolio',h1:'The projects behind the numbers.',
+  lead:'AI data and model-evaluation projects I managed and delivered at Scale AI and Pareto AI. Client and internal project names are omitted under NDA; each entry explains what the project was, how it worked and what it was for.',
+  s1:'Projects &amp; workstreams',s2:'At Scale AI',s3:'At Pareto AI',s4:'Areas of work',all:'All',filter:'Filter by area',
+  what:'What it was',how:'How it worked',why:'What it was for',plat:'Platforms',role:'My role',toggle:'PT',title:'AI Project Portfolio | Will Del Valle'},
+ pt:{back:'&larr; Voltar ao portfólio',eyebrow:'Portfólio de projetos de IA',h1:'Os projetos por trás dos números.',
+  lead:'Projetos de dados e avaliação de modelos de IA que gerenciei e entreguei na Scale AI e na Pareto AI. Por contratos de confidencialidade (NDA), não cito nomes de clientes nem de projetos; cada item explica o que era o projeto, como funcionava e para que servia.',
+  s1:'Projetos e frentes',s2:'Na Scale AI',s3:'Na Pareto AI',s4:'Áreas de atuação',all:'Todos',filter:'Filtrar por área',
+  what:'O que era',how:'Como funcionava',why:'Para que servia',plat:'Plataformas',role:'Meu papel',toggle:'EN',title:'Portfólio de projetos de IA | Will Del Valle'}
+};
 const $=s=>document.querySelector(s);
-const esc=t=>t.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
-let active='All';
+const esc=t=>String(t).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+let active='All', lang='en';
+try{lang=new URLSearchParams(location.search).get('lang')||localStorage.getItem('lang')||'en';}catch(e){}
+if(lang!=='pt')lang='en';
 
+const area=a=>lang==='pt'?(W.PROJECT_AREAS_PT[a]||a):a;
+const tag=t=>lang==='pt'?(W.PROJECT_TAGS_PT[t]||t):t;
+const f=(p,k)=>lang==='pt'&&W.PROJECTS_PT[p.id]&&W.PROJECTS_PT[p.id][k]?W.PROJECTS_PT[p.id][k]:p[k];
+const role=p=>f(p,'role')||(lang==='pt'?W.PROJECT_ROLES_PT:W.PROJECT_ROLES)[p.co];
+const meta=p=>`<div class="meta"><span class="co">${p.co}</span>${p.tags.map(t=>`<span class="tag">${esc(tag(t))}</span>`).join('')}</div>`;
+
+function renderStatic(){
+  const u=UI[lang];
+  document.documentElement.lang=lang==='pt'?'pt-BR':'en';
+  document.title=u.title;
+  document.querySelectorAll('[data-i]').forEach(e=>e.innerHTML=u[e.dataset.i]);
+  $('#langBtn').textContent=u.toggle;
+  $('#filters').setAttribute('aria-label',u.filter);
+}
 function renderFilters(){
   const counts={All:P.length};AREAS.forEach(a=>counts[a]=P.filter(p=>p.area===a).length);
   $('#filters').innerHTML=['All',...AREAS].filter(a=>counts[a]).map(a=>
-    `<button class="chip" aria-pressed="${a===active}" data-a="${a}">${esc(a)}<span>${counts[a]}</span></button>`).join('');
+    `<button class="chip" aria-pressed="${a===active}" data-a="${a}">${esc(a==='All'?UI[lang].all:area(a))}<span>${counts[a]}</span></button>`).join('');
 }
 function renderGrid(){
   $('#grid').innerHTML=P.filter(p=>active==='All'||p.area===active).map(p=>`
     <button class="card" data-id="${p.id}">
-      <span class="area">${esc(p.area)}</span>
-      <h3>${esc(p.title)}</h3>
-      <p>${esc(p.line)}</p>
-      <div class="meta"><span class="co">${p.co}</span>${p.tags.map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div>
+      <span class="area">${esc(area(p.area))}</span>
+      <h3>${esc(f(p,'title'))}</h3>
+      <p>${esc(f(p,'line'))}</p>
+      ${meta(p)}
     </button>`).join('');
 }
+let openId=null;
 function openP(id,push=true){
-  const p=P.find(x=>x.id===id);if(!p)return;
+  const p=P.find(x=>x.id===id);if(!p)return;openId=id;const u=UI[lang];
   $('#d-body').innerHTML=`
-    <div class="area">${esc(p.area)}</div>
-    <h2 id="d-title">${esc(p.title)}</h2>
-    <div class="meta"><span class="co">${p.co}</span>${p.tags.map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div>
-    <h5>What it was</h5><p>${esc(p.what)}</p>
-    <h5>How it worked</h5><p>${esc(p.how)}</p>
-    <h5>What it was for</h5><p>${esc(p.why)}</p>
-    ${p.platforms?`<h5>Platforms</h5><p>${esc(p.platforms)}</p>`:''}
-    <div class="role"><h5 style="margin-top:0">My role</h5><p>${esc(p.role||ROLE[p.co])}</p></div>`;
+    <div class="area">${esc(area(p.area))}</div>
+    <h2 id="d-title">${esc(f(p,'title'))}</h2>
+    ${meta(p)}
+    <h5>${u.what}</h5><p>${esc(f(p,'what'))}</p>
+    <h5>${u.how}</h5><p>${esc(f(p,'how'))}</p>
+    <h5>${u.why}</h5><p>${esc(f(p,'why'))}</p>
+    ${p.platforms?`<h5>${u.plat}</h5><p>${esc(p.platforms)}</p>`:''}
+    <div class="role"><h5 style="margin-top:0">${u.role}</h5><p>${esc(role(p))}</p></div>`;
   document.body.classList.add('open');document.body.style.overflow='hidden';
   if(push)history.replaceState(null,'','#'+id);
   $('#close').focus();
 }
-function closeP(){document.body.classList.remove('open');document.body.style.overflow='';history.replaceState(null,'',location.pathname);}
+function closeP(){openId=null;document.body.classList.remove('open');document.body.style.overflow='';history.replaceState(null,'',location.pathname+location.search);}
+function renderAll(){renderStatic();renderFilters();renderGrid();if(openId)openP(openId,false);}
+$('#langBtn').addEventListener('click',()=>{lang=lang==='pt'?'en':'pt';try{localStorage.setItem('lang',lang);}catch(e){}renderAll();});
 $('#filters').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;active=b.dataset.a;renderFilters();renderGrid();});
 $('#grid').addEventListener('click',e=>{const c=e.target.closest('.card');if(c)openP(c.dataset.id);});
 $('#scrim').addEventListener('click',closeP);$('#close').addEventListener('click',closeP);
@@ -158,7 +193,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeP();});
 $('#s-scale').textContent=P.filter(p=>p.co==='Scale AI').length;
 $('#s-pareto').textContent=P.filter(p=>p.co==='Pareto AI').length;
 $('#s-areas').textContent=AREAS.length;
-renderFilters();renderGrid();
+renderAll();
 if(location.hash)openP(location.hash.slice(1),false);
 </script>
 </body>
