@@ -22,14 +22,6 @@
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg-color);color:var(--text-primary);line-height:1.6;-webkit-font-smoothing:antialiased}
 .container{max-width:1200px;margin:0 auto;padding:0 2rem}
-header{position:fixed;top:0;width:100%;background:rgba(250,250,250,0.88);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--border-color);z-index:100;padding:1rem 0}
-.nav{display:flex;justify-content:space-between;align-items:center}
-.logo{font-weight:700;font-size:1.15rem;color:var(--accent-color);text-decoration:none;letter-spacing:-0.01em}
-.back{color:var(--text-secondary);text-decoration:none;font-size:0.95rem;font-weight:500;transition:var(--transition)}
-.back:hover{color:var(--accent-color)}
-.nav-right{display:flex;align-items:center;gap:1.25rem}
-.lang-btn{background:rgba(0,0,0,0.05);border:none;padding:0.45rem 0.9rem;border-radius:30px;cursor:pointer;font:inherit;font-weight:600;font-size:0.8rem;color:var(--text-primary);transition:var(--transition)}
-.lang-btn:hover{background:rgba(0,0,0,0.1)}
 
 .intro{padding:9rem 0 3rem}
 .eyebrow{font-size:0.78rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent-color);margin-bottom:1rem}
@@ -82,15 +74,79 @@ h1{font-size:3.5rem;line-height:1.08;letter-spacing:-0.03em;max-width:16ch}
   .chip{white-space:nowrap}
   .drawer{padding:2rem 1.25rem}
 }
+
+/* HEADER */
+header{position:fixed;top:0;width:100%;background:rgba(250,250,250,0.88);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--border-color);z-index:1000;padding:1rem 0}
+.nav-content{display:flex;justify-content:space-between;align-items:center}
+.logo{font-weight:700;font-size:1.15rem;color:var(--accent-color);text-decoration:none;letter-spacing:-0.01em}
+.nav-right{display:flex;align-items:center;gap:1.25rem}
+.nav-links{display:flex;gap:2rem;align-items:center}
+.nav-links a{text-decoration:none;color:var(--text-secondary);font-size:0.9rem;font-weight:500;transition:var(--transition)}
+.nav-links a:hover{color:var(--text-primary)}
+.lang-toggle-btn{background:rgba(0,0,0,0.05);border:none;padding:0.45rem 0.9rem;border-radius:30px;cursor:pointer;font-family:inherit;font-weight:600;font-size:0.8rem;color:var(--text-primary);transition:var(--transition);display:flex;align-items:center;gap:5px;white-space:nowrap}
+.lang-toggle-btn:hover{background:rgba(0,0,0,0.1);transform:scale(1.05)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{display:block;width:24px;height:2px;background:var(--text-primary);border-radius:2px;transition:var(--transition)}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* MOBILE NAV */
+.mobile-nav{display:none;position:fixed;top:0;right:0;width:100%;height:100%;background:rgba(8,8,8,0.97);backdrop-filter:blur(20px);z-index:999;flex-direction:column;justify-content:center;align-items:center;gap:2.5rem;transform:translateX(100%);transition:transform 0.4s cubic-bezier(0.16,1,0.3,1)}
+.mobile-nav.open{transform:translateX(0)}
+.mobile-nav a{text-decoration:none;color:#FFFFFF;font-size:1.75rem;font-weight:600;letter-spacing:-0.02em;opacity:0.85;transition:var(--transition)}
+.mobile-nav a:hover{opacity:1}
+@media(max-width:768px){
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .mobile-nav{display:flex}
+}
+
+body.pt .lang-en{display:none!important}
+body.en .lang-pt{display:none!important}
+.scrim{z-index:1050!important}.drawer{z-index:1100!important}
+.nav-links a.active{color:var(--text-primary)}
 </style>
 </head>
-<body>
+<body class="en">
+<!-- Mobile Nav Overlay -->
+<nav class="mobile-nav" id="mobileNav">
+  <a href="/#about" class="lang-en mobile-nav-link">Approach</a>
+  <a href="/#about" class="lang-pt mobile-nav-link">Abordagem</a>
+  <a href="/projects.html" class="lang-en mobile-nav-link">AI Portfolio</a>
+  <a href="/projects.html" class="lang-pt mobile-nav-link">Portfólio de IA</a>
+  <a href="/education.html" class="lang-en mobile-nav-link edu-link">Education</a>
+  <a href="/education.html" class="lang-pt mobile-nav-link edu-link">Formação</a>
+  <a href="/experience.html" class="lang-en mobile-nav-link">Experience</a>
+  <a href="/experience.html" class="lang-pt mobile-nav-link">Trajetória</a>
+  <a href="/#contact" class="lang-en mobile-nav-link">Contact</a>
+  <a href="/#contact" class="lang-pt mobile-nav-link">Contato</a>
+</nav>
+
+<!-- Header -->
 <header>
-  <div class="container nav">
+  <div class="container nav-content">
     <a href="/" class="logo">Will Del Valle</a>
     <div class="nav-right">
-      <a href="/#portfolio" class="back" data-i="back"></a>
-      <button class="lang-btn" id="langBtn" aria-label="Toggle language"></button>
+      <nav class="nav-links">
+        <a href="/#about" class="lang-en">Approach</a>
+        <a href="/#about" class="lang-pt">Abordagem</a>
+        <a href="/projects.html" class="lang-en active">AI Portfolio</a>
+        <a href="/projects.html" class="lang-pt active">Portfólio de IA</a>
+        <a href="/education.html" class="lang-en edu-link">Education</a>
+        <a href="/education.html" class="lang-pt edu-link">Formação</a>
+        <a href="/experience.html" class="lang-en">Experience</a>
+        <a href="/experience.html" class="lang-pt">Trajetória</a>
+        <a href="/#contact" class="lang-en">Contact</a>
+        <a href="/#contact" class="lang-pt">Contato</a>
+      </nav>
+      <button id="langToggle" class="lang-toggle-btn" aria-label="Toggle language">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-color)"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+        <span id="langToggleText">PT</span>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </div>
 </header>
@@ -150,7 +206,9 @@ function renderStatic(){
   document.documentElement.lang=lang==='pt'?'pt-BR':'en';
   document.title=u.title;
   document.querySelectorAll('[data-i]').forEach(e=>e.innerHTML=u[e.dataset.i]);
-  $('#langBtn').textContent=u.toggle;
+  document.body.classList.remove('en','pt');document.body.classList.add(lang);
+  $('#langToggleText').textContent=u.toggle;
+  document.querySelectorAll('.edu-link').forEach(a=>a.href='/education.html?lang='+lang);
   $('#filters').setAttribute('aria-label',u.filter);
 }
 function renderFilters(){
@@ -185,7 +243,7 @@ function openP(id,push=true){
 }
 function closeP(){openId=null;document.body.classList.remove('open');document.body.style.overflow='';history.replaceState(null,'',location.pathname+location.search);}
 function renderAll(){renderStatic();renderFilters();renderGrid();if(openId)openP(openId,false);}
-$('#langBtn').addEventListener('click',()=>{lang=lang==='pt'?'en':'pt';try{localStorage.setItem('lang',lang);}catch(e){}renderAll();});
+$('#langToggle').addEventListener('click',()=>{lang=lang==='pt'?'en':'pt';try{localStorage.setItem('lang',lang);}catch(e){}renderAll();});
 $('#filters').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;active=b.dataset.a;renderFilters();renderGrid();});
 $('#grid').addEventListener('click',e=>{const c=e.target.closest('.card');if(c)openP(c.dataset.id);});
 $('#scrim').addEventListener('click',closeP);$('#close').addEventListener('click',closeP);
@@ -193,6 +251,9 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeP();});
 $('#s-scale').textContent=P.filter(p=>p.co==='Scale AI').length;
 $('#s-pareto').textContent=P.filter(p=>p.co==='Pareto AI').length;
 $('#s-areas').textContent=AREAS.length;
+const hb=$('#hamburger'),mn=$('#mobileNav');
+hb.addEventListener('click',()=>{hb.classList.toggle('open');mn.classList.toggle('open');document.body.style.overflow=mn.classList.contains('open')?'hidden':'';});
+document.querySelectorAll('.mobile-nav-link').forEach(l=>l.addEventListener('click',()=>{hb.classList.remove('open');mn.classList.remove('open');document.body.style.overflow='';}));
 renderAll();
 if(location.hash)openP(location.hash.slice(1),false);
 </script>
