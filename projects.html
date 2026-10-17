@@ -36,7 +36,7 @@ h1{font-size:3.5rem;line-height:1.08;letter-spacing:-0.03em;max-width:16ch}
 .stats h4{font-size:2.25rem;font-weight:600;letter-spacing:-0.02em;color:#D97706}
 .stats p{color:var(--text-secondary);font-size:0.92rem}
 
-.filters{display:flex;flex-wrap:wrap;gap:0.5rem;margin:1rem 0 2rem;position:sticky;top:64px;padding:1rem 0;background:var(--bg-color);z-index:5}
+.filters{display:flex;flex-wrap:wrap;gap:0.5rem;margin:1rem 0 1.5rem;position:sticky;top:64px;padding:1rem 0;background:var(--bg-color);z-index:5}
 .chip{border:1px solid var(--border-color);background:var(--surface-color);color:var(--text-primary);font:inherit;font-size:0.88rem;font-weight:500;padding:0.5rem 1rem;border-radius:999px;cursor:pointer;transition:var(--transition)}
 .chip span{color:var(--text-secondary);margin-left:0.35rem;font-weight:400}
 .chip:hover{border-color:var(--accent-color)}
@@ -95,16 +95,15 @@ h1{font-size:3.5rem;line-height:1.08;letter-spacing:-0.03em;max-width:16ch}
     <h1>The projects behind the numbers.</h1>
     <p class="lead">AI data and model-evaluation projects I managed and delivered at Scale AI and Pareto AI. Client and internal project names are omitted under NDA; each entry explains what the project was, how it worked and what it was for.</p>
     <div class="stats">
-      <div><h4>40+</h4><p>Projects &amp; workstreams</p></div>
-      <div><h4>41</h4><p>At Scale AI</p></div>
-      <div><h4>4</h4><p>At Pareto AI</p></div>
-      <div><h4>7</h4><p>Areas of work</p></div>
+      <div><h4 id="s-total">40+</h4><p>Projects &amp; workstreams</p></div>
+      <div><h4 id="s-scale">&nbsp;</h4><p>At Scale AI</p></div>
+      <div><h4 id="s-pareto">&nbsp;</h4><p>At Pareto AI</p></div>
+      <div><h4 id="s-areas">&nbsp;</h4><p>Areas of work</p></div>
     </div>
   </section>
 
   <div class="filters" id="filters" role="toolbar" aria-label="Filter by area"></div>
-  <p class="note">Sample: 9 of 45 catalogued projects.</p>
-  <div class="grid" id="grid"></div>
+    <div class="grid" id="grid"></div>
 </main>
 
 <div id="layer">
@@ -115,70 +114,9 @@ h1{font-size:3.5rem;line-height:1.08;letter-spacing:-0.03em;max-width:16ch}
   </aside>
 </div>
 
+<script src="/projects-data.js"></script>
 <script>
-const ROLE = {
-  'Scale AI': 'Project Manager, AI Data Operations & Quality. Owned delivery planning, contributor pipeline, throughput, QA and reviewer calibration.',
-  'Pareto AI': 'Project Manager. Owned delivery planning, expert onboarding, QA workflows and stakeholder alignment.'
-};
-const AREAS = ['LLM Evaluation & Preferences','Safety & Trust','Multimodal','Factuality & Grounding','Rubrics & Benchmarks','Agents & Domain Experts','Data & Privacy'];
-const P = [
- {id:'legal-agent-eval',area:'Agents & Domain Experts',co:'Pareto AI',tags:['Text','Agents','Legal'],
-  title:'Legal AI Agent Evaluation',
-  line:'Realistic U.S. legal tasks to evaluate AI assistants and the graders that judge them.',
-  what:'A multimillion-dollar program built around the daily work of U.S. legal practice: legal research, memos, filings, contract review and document analysis.',
-  how:'Attorneys defined instructions, supporting documents and criteria for legal reasoning, grounding, tool use and output quality. Multiple runs, human review and side-by-side comparisons also exposed incorrect automated grading.',
-  why:'Tasks, evaluations and human preferences to build more reliable legal AI assistants.',
-  role:'Senior Project Manager (program lead). Owned delivery planning, coordination of supporting PMs, attorneys and QA, budget tracking and risk across 2,000+ task deliveries.'},
- {id:'data-science-agents',area:'Agents & Domain Experts',co:'Pareto AI',tags:['Text','Agents','MCP tools'],
-  title:'Data Science Agent Evaluation',
-  line:'Hard, verifiable data-science problems for AI agents working with files and MCP tools.',
-  what:'Professional problems that required reasoning, file handling and computational tools to reach a correct result.',
-  how:'Each task combined a request, input data, a rubric and an output verifier. Correct and plausibly wrong human runs tested whether the verifier could tell real success from convincing failure; agent runs exposed limitations and ambiguities.',
-  why:'Difficult, verifiable tasks for evaluating and developing AI agents.'},
- {id:'emotional-distress-safety',area:'Safety & Trust',co:'Scale AI',tags:['Text','Image','Multi-turn'],
-  title:'Emotional Distress Conversation Safety',
-  line:'Multi-turn safety evaluation of how AI responds to people in crisis.',
-  what:'Realistic conversations involving emotional distress, including suicide and self-harm risk, across text, images and files.',
-  how:'Each turn was rated for intent, behavior, refusal, policy violation and quality, showing exactly where a response stayed safe or started to degrade.',
-  why:'Strengthening careful, de-escalating support and avoiding content that increases risk. This is AI behavior evaluation, not clinical care.'},
- {id:'election-integrity',area:'Safety & Trust',co:'Scale AI',tags:['Text','Search','Brazil'],
-  title:'Election Information Integrity',
-  line:'Testing AI assistants and AI search across the Brazilian election cycle.',
-  what:'Evaluation phases covering neutrality, synthetic manipulation of public figures, factual accuracy, timeliness and gender-based political violence.',
-  how:'Testing intensified during the voting window, including comparisons across equivalent inputs. Deliverables logged conversations, evidence and ratings for grounding, hallucination and civic risk.',
-  why:'Catching responses that could misinform voters.'},
- {id:'voice-vision-live',area:'Multimodal',co:'Scale AI',tags:['Voice','Camera','Real-time'],
-  title:'Real-Time Voice & Vision Assistant Testing',
-  line:'Live smartphone sessions testing how an assistant listens, talks and sees.',
-  what:'Goal-oriented conversations with a multimodal assistant over voice, camera and screen sharing, in different noise conditions.',
-  how:'Sessions were evaluated for audio understanding, natural speech, interruptions, turn-taking and visual understanding. Each failure was classified, justified and time-stamped.',
-  why:'Finding real interaction problems such as cut-off speech, lag, replying to the wrong speaker or misreading what the camera shows.'},
- {id:'multi-image-sft',area:'Multimodal',co:'Scale AI',tags:['Image','SFT','Multi-turn'],
-  title:'Multi-Image Visual Understanding',
-  line:'Supervised conversations where the model reasons over several images and turns.',
-  what:'Multi-turn conversations in which the request, and sometimes the entire question, came through one or more images.',
-  how:'Contributors built related requests, evaluated model responses and wrote ideal answers grounded in the images and the accumulated context.',
-  why:'Supervised multimodal data to improve joint reading of visual evidence and consistency across a conversation.'},
- {id:'preference-ranking',area:'LLM Evaluation & Preferences',co:'Scale AI',tags:['Text','RLHF'],
-  title:'Human Preference Ranking',
-  line:'Side-by-side comparison of model responses to build audited preference data.',
-  what:'Annotators compared model responses to the same request and chose the one that served the user better, with a written justification.',
-  how:'Each comparison weighed conversation history, factual quality, language, relevance and instruction-following. Reviewers checked that the final ranking matched the evidence, separating minor slips from real quality inversions.',
-  why:'Audited human-preference data used to evaluate and align language models.'},
- {id:'research-grounded',area:'Factuality & Grounding',co:'Scale AI',tags:['Text','Citations'],
-  title:'Research-Grounded Answer Reliability',
-  line:'Claim-by-claim verification of assistant answers against their sources.',
-  what:'Evaluation of assistant answers that rely on web research and cited sources.',
-  how:'Answers were broken into individual claims, checked against the references and, when needed, verified with extra research. Reviewers flagged weak citations, outdated facts, numerical hallucinations, missing transparency and unsafe advice.',
-  why:'Making source-backed answers trustworthy: helpful, honest and safe.'},
- {id:'multilingual-rubrics',area:'Rubrics & Benchmarks',co:'Scale AI',tags:['Text','Multilingual'],
-  title:'Multilingual Evaluation Rubrics',
-  line:'Verifiable, weighted rubrics built from real user needs across languages.',
-  what:'Tests grounded in the real needs of users in different languages, each paired with a purpose-built rubric.',
-  how:'Contributors wrote the prompt, examined model responses and built criteria that were verifiable, independent and weighted by importance, covering task fulfilment, faithfulness to sources, language and localization.',
-  why:'Reproducible evaluation that explains exactly why one response is better than another.'}
-];
-
+const ROLE=window.PROJECT_ROLES, AREAS=window.PROJECT_AREAS, P=window.PROJECTS;
 const $=s=>document.querySelector(s);
 const esc=t=>t.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
 let active='All';
@@ -206,6 +144,7 @@ function openP(id,push=true){
     <h5>What it was</h5><p>${esc(p.what)}</p>
     <h5>How it worked</h5><p>${esc(p.how)}</p>
     <h5>What it was for</h5><p>${esc(p.why)}</p>
+    ${p.platforms?`<h5>Platforms</h5><p>${esc(p.platforms)}</p>`:''}
     <div class="role"><h5 style="margin-top:0">My role</h5><p>${esc(p.role||ROLE[p.co])}</p></div>`;
   document.body.classList.add('open');document.body.style.overflow='hidden';
   if(push)history.replaceState(null,'','#'+id);
@@ -216,6 +155,9 @@ $('#filters').addEventListener('click',e=>{const b=e.target.closest('.chip');if(
 $('#grid').addEventListener('click',e=>{const c=e.target.closest('.card');if(c)openP(c.dataset.id);});
 $('#scrim').addEventListener('click',closeP);$('#close').addEventListener('click',closeP);
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeP();});
+$('#s-scale').textContent=P.filter(p=>p.co==='Scale AI').length;
+$('#s-pareto').textContent=P.filter(p=>p.co==='Pareto AI').length;
+$('#s-areas').textContent=AREAS.length;
 renderFilters();renderGrid();
 if(location.hash)openP(location.hash.slice(1),false);
 </script>
