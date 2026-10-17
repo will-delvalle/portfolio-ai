@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Project Portfolio | Will Del Valle</title>
+<meta name="description" content="AI data and model-evaluation projects led and delivered by Will Del Valle at Scale AI and Pareto AI.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='10' fill='%230055B3'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg-color:#FAFAFA;--surface-color:#FFFFFF;--text-primary:#111111;--text-secondary:#6B7280;
+  --accent-color:#0055B3;--accent-light:rgba(0,85,179,0.08);--border-color:rgba(0,0,0,0.06);
+  --shadow-sm:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.02);
+  --shadow-md:0 10px 25px rgba(0,0,0,0.06),0 4px 10px rgba(0,0,0,0.04);
+  --shadow-lg:0 20px 50px rgba(0,0,0,0.10);
+  --transition:all 0.35s cubic-bezier(0.16,1,0.3,1);
+  --radius-md:20px;--radius-lg:28px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg-color);color:var(--text-primary);line-height:1.6;-webkit-font-smoothing:antialiased}
+.container{max-width:1200px;margin:0 auto;padding:0 2rem}
+header{position:fixed;top:0;width:100%;background:rgba(250,250,250,0.88);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--border-color);z-index:100;padding:1rem 0}
+.nav{display:flex;justify-content:space-between;align-items:center}
+.logo{font-weight:700;font-size:1.15rem;color:var(--accent-color);text-decoration:none;letter-spacing:-0.01em}
+.back{color:var(--text-secondary);text-decoration:none;font-size:0.95rem;font-weight:500;transition:var(--transition)}
+.back:hover{color:var(--accent-color)}
+
+.intro{padding:9rem 0 3rem}
+.eyebrow{font-size:0.78rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent-color);margin-bottom:1rem}
+h1{font-size:3.5rem;line-height:1.08;letter-spacing:-0.03em;max-width:16ch}
+.lead{margin-top:1.25rem;font-size:1.15rem;color:var(--text-secondary);max-width:62ch}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:3rem;border-top:1px solid var(--border-color);padding-top:2rem}
+.stats h4{font-size:2.25rem;font-weight:600;letter-spacing:-0.02em;color:#D97706}
+.stats p{color:var(--text-secondary);font-size:0.92rem}
+
+.filters{display:flex;flex-wrap:wrap;gap:0.5rem;margin:1rem 0 2rem;position:sticky;top:64px;padding:1rem 0;background:var(--bg-color);z-index:5}
+.chip{border:1px solid var(--border-color);background:var(--surface-color);color:var(--text-primary);font:inherit;font-size:0.88rem;font-weight:500;padding:0.5rem 1rem;border-radius:999px;cursor:pointer;transition:var(--transition)}
+.chip span{color:var(--text-secondary);margin-left:0.35rem;font-weight:400}
+.chip:hover{border-color:var(--accent-color)}
+.chip[aria-pressed="true"]{background:var(--accent-color);border-color:var(--accent-color);color:#fff}
+.chip[aria-pressed="true"] span{color:rgba(255,255,255,0.75)}
+
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;padding-bottom:6rem}
+.card{text-align:left;font:inherit;color:inherit;background:var(--surface-color);border:1px solid var(--border-color);border-radius:var(--radius-md);padding:1.75rem;box-shadow:var(--shadow-sm);cursor:pointer;transition:var(--transition);display:flex;flex-direction:column;gap:0.6rem;min-height:220px}
+.card:hover,.card:focus-visible{box-shadow:var(--shadow-md);transform:translateY(-3px);outline:none}
+.card .area{font-size:0.72rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--accent-color)}
+.card h3{font-size:1.15rem;font-weight:600;letter-spacing:-0.01em;line-height:1.3}
+.card p{color:var(--text-secondary);font-size:0.95rem;line-height:1.55;flex:1}
+.meta{display:flex;flex-wrap:wrap;gap:0.4rem;align-items:center;margin-top:0.5rem}
+.meta .co{font-size:0.8rem;font-weight:600;color:var(--text-primary);margin-right:0.35rem}
+.tag{font-size:0.72rem;font-weight:500;padding:0.2rem 0.6rem;border-radius:999px;background:var(--accent-light);color:var(--accent-color)}
+.more{font-size:0.85rem;font-weight:600;color:var(--accent-color)}
+
+.scrim{position:fixed;inset:0;background:rgba(17,17,17,0.25);opacity:0;pointer-events:none;transition:opacity .3s;z-index:200}
+.drawer{position:fixed;top:0;right:0;height:100%;width:min(560px,100%);background:var(--surface-color);box-shadow:var(--shadow-lg);transform:translateX(100%);transition:transform .45s cubic-bezier(0.16,1,0.3,1);z-index:201;overflow-y:auto;padding:2.5rem}
+.open .scrim{opacity:1;pointer-events:auto}
+.open .drawer{transform:none}
+.close{position:absolute;top:1.25rem;right:1.25rem;width:40px;height:40px;border-radius:50%;border:1px solid var(--border-color);background:var(--surface-color);cursor:pointer;font-size:1.2rem;color:var(--text-secondary)}
+.drawer .area{font-size:0.75rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--accent-color);margin-top:1rem}
+.drawer h2{font-size:1.9rem;line-height:1.15;letter-spacing:-0.02em;margin:0.5rem 0 1rem}
+.drawer .meta{margin:0 0 2rem}
+.drawer h5{font-size:0.75rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--text-secondary);margin:1.75rem 0 0.5rem}
+.drawer p{font-size:1rem;line-height:1.7;color:var(--text-primary)}
+.drawer .role{background:var(--bg-color);border-radius:16px;padding:1.25rem 1.5rem;margin-top:2rem}
+.drawer .role p{color:var(--text-secondary)}
+.note{font-size:0.82rem;color:var(--text-secondary);margin-top:-1rem;margin-bottom:2rem}
+
+@media(max-width:1024px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:700px){
+  .container{padding:0 1rem}
+  .intro{padding-top:7rem}
+  h1{font-size:2.4rem}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .grid{grid-template-columns:1fr}
+  .filters{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
+  .chip{white-space:nowrap}
+  .drawer{padding:2rem 1.25rem}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a href="/" class="logo">Will Del Valle</a>
+    <a href="/#portfolio" class="back">&larr; Back to portfolio</a>
+  </div>
+</header>
+
+<main class="container">
+  <section class="intro">
+    <div class="eyebrow">AI Project Portfolio</div>
+    <h1>The projects behind the numbers.</h1>
+    <p class="lead">AI data and model-evaluation projects I managed and delivered at Scale AI and Pareto AI. Client and internal project names are omitted under NDA; each entry explains what the project was, how it worked and what it was for.</p>
+    <div class="stats">
+      <div><h4>40+</h4><p>Projects &amp; workstreams</p></div>
+      <div><h4>41</h4><p>At Scale AI</p></div>
+      <div><h4>4</h4><p>At Pareto AI</p></div>
+      <div><h4>7</h4><p>Areas of work</p></div>
+    </div>
+  </section>
+
+  <div class="filters" id="filters" role="toolbar" aria-label="Filter by area"></div>
+  <p class="note">Sample: 9 of 45 catalogued projects.</p>
+  <div class="grid" id="grid"></div>
+</main>
+
+<div id="layer">
+  <div class="scrim" id="scrim"></div>
+  <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="d-title">
+    <button class="close" id="close" aria-label="Close">&times;</button>
+    <div id="d-body"></div>
+  </aside>
+</div>
+
+<script>
+const ROLE = {
+  'Scale AI': 'Project Manager, AI Data Operations & Quality. Owned delivery planning, contributor pipeline, throughput, QA and reviewer calibration.',
+  'Pareto AI': 'Project Manager. Owned delivery planning, expert onboarding, QA workflows and stakeholder alignment.'
+};
+const AREAS = ['LLM Evaluation & Preferences','Safety & Trust','Multimodal','Factuality & Grounding','Rubrics & Benchmarks','Agents & Domain Experts','Data & Privacy'];
+const P = [
+ {id:'legal-agent-eval',area:'Agents & Domain Experts',co:'Pareto AI',tags:['Text','Agents','Legal'],
+  title:'Legal AI Agent Evaluation',
+  line:'Realistic U.S. legal tasks to evaluate AI assistants and the graders that judge them.',
+  what:'A multimillion-dollar program built around the daily work of U.S. legal practice: legal research, memos, filings, contract review and document analysis.',
+  how:'Attorneys defined instructions, supporting documents and criteria for legal reasoning, grounding, tool use and output quality. Multiple runs, human review and side-by-side comparisons also exposed incorrect automated grading.',
+  why:'Tasks, evaluations and human preferences to build more reliable legal AI assistants.',
+  role:'Senior Project Manager (program lead). Owned delivery planning, coordination of supporting PMs, attorneys and QA, budget tracking and risk across 2,000+ task deliveries.'},
+ {id:'data-science-agents',area:'Agents & Domain Experts',co:'Pareto AI',tags:['Text','Agents','MCP tools'],
+  title:'Data Science Agent Evaluation',
+  line:'Hard, verifiable data-science problems for AI agents working with files and MCP tools.',
+  what:'Professional problems that required reasoning, file handling and computational tools to reach a correct result.',
+  how:'Each task combined a request, input data, a rubric and an output verifier. Correct and plausibly wrong human runs tested whether the verifier could tell real success from convincing failure; agent runs exposed limitations and ambiguities.',
+  why:'Difficult, verifiable tasks for evaluating and developing AI agents.'},
+ {id:'emotional-distress-safety',area:'Safety & Trust',co:'Scale AI',tags:['Text','Image','Multi-turn'],
+  title:'Emotional Distress Conversation Safety',
+  line:'Multi-turn safety evaluation of how AI responds to people in crisis.',
+  what:'Realistic conversations involving emotional distress, including suicide and self-harm risk, across text, images and files.',
+  how:'Each turn was rated for intent, behavior, refusal, policy violation and quality, showing exactly where a response stayed safe or started to degrade.',
+  why:'Strengthening careful, de-escalating support and avoiding content that increases risk. This is AI behavior evaluation, not clinical care.'},
+ {id:'election-integrity',area:'Safety & Trust',co:'Scale AI',tags:['Text','Search','Brazil'],
+  title:'Election Information Integrity',
+  line:'Testing AI assistants and AI search across the Brazilian election cycle.',
+  what:'Evaluation phases covering neutrality, synthetic manipulation of public figures, factual accuracy, timeliness and gender-based political violence.',
+  how:'Testing intensified during the voting window, including comparisons across equivalent inputs. Deliverables logged conversations, evidence and ratings for grounding, hallucination and civic risk.',
+  why:'Catching responses that could misinform voters.'},
+ {id:'voice-vision-live',area:'Multimodal',co:'Scale AI',tags:['Voice','Camera','Real-time'],
+  title:'Real-Time Voice & Vision Assistant Testing',
+  line:'Live smartphone sessions testing how an assistant listens, talks and sees.',
+  what:'Goal-oriented conversations with a multimodal assistant over voice, camera and screen sharing, in different noise conditions.',
+  how:'Sessions were evaluated for audio understanding, natural speech, interruptions, turn-taking and visual understanding. Each failure was classified, justified and time-stamped.',
+  why:'Finding real interaction problems such as cut-off speech, lag, replying to the wrong speaker or misreading what the camera shows.'},
+ {id:'multi-image-sft',area:'Multimodal',co:'Scale AI',tags:['Image','SFT','Multi-turn'],
+  title:'Multi-Image Visual Understanding',
+  line:'Supervised conversations where the model reasons over several images and turns.',
+  what:'Multi-turn conversations in which the request, and sometimes the entire question, came through one or more images.',
+  how:'Contributors built related requests, evaluated model responses and wrote ideal answers grounded in the images and the accumulated context.',
+  why:'Supervised multimodal data to improve joint reading of visual evidence and consistency across a conversation.'},
+ {id:'preference-ranking',area:'LLM Evaluation & Preferences',co:'Scale AI',tags:['Text','RLHF'],
+  title:'Human Preference Ranking',
+  line:'Side-by-side comparison of model responses to build audited preference data.',
+  what:'Annotators compared model responses to the same request and chose the one that served the user better, with a written justification.',
+  how:'Each comparison weighed conversation history, factual quality, language, relevance and instruction-following. Reviewers checked that the final ranking matched the evidence, separating minor slips from real quality inversions.',
+  why:'Audited human-preference data used to evaluate and align language models.'},
+ {id:'research-grounded',area:'Factuality & Grounding',co:'Scale AI',tags:['Text','Citations'],
+  title:'Research-Grounded Answer Reliability',
+  line:'Claim-by-claim verification of assistant answers against their sources.',
+  what:'Evaluation of assistant answers that rely on web research and cited sources.',
+  how:'Answers were broken into individual claims, checked against the references and, when needed, verified with extra research. Reviewers flagged weak citations, outdated facts, numerical hallucinations, missing transparency and unsafe advice.',
+  why:'Making source-backed answers trustworthy: helpful, honest and safe.'},
+ {id:'multilingual-rubrics',area:'Rubrics & Benchmarks',co:'Scale AI',tags:['Text','Multilingual'],
+  title:'Multilingual Evaluation Rubrics',
+  line:'Verifiable, weighted rubrics built from real user needs across languages.',
+  what:'Tests grounded in the real needs of users in different languages, each paired with a purpose-built rubric.',
+  how:'Contributors wrote the prompt, examined model responses and built criteria that were verifiable, independent and weighted by importance, covering task fulfilment, faithfulness to sources, language and localization.',
+  why:'Reproducible evaluation that explains exactly why one response is better than another.'}
+];
+
+const $=s=>document.querySelector(s);
+const esc=t=>t.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+let active='All';
+
+function renderFilters(){
+  const counts={All:P.length};AREAS.forEach(a=>counts[a]=P.filter(p=>p.area===a).length);
+  $('#filters').innerHTML=['All',...AREAS].filter(a=>counts[a]).map(a=>
+    `<button class="chip" aria-pressed="${a===active}" data-a="${a}">${esc(a)}<span>${counts[a]}</span></button>`).join('');
+}
+function renderGrid(){
+  $('#grid').innerHTML=P.filter(p=>active==='All'||p.area===active).map(p=>`
+    <button class="card" data-id="${p.id}">
+      <span class="area">${esc(p.area)}</span>
+      <h3>${esc(p.title)}</h3>
+      <p>${esc(p.line)}</p>
+      <div class="meta"><span class="co">${p.co}</span>${p.tags.map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div>
+    </button>`).join('');
+}
+function openP(id,push=true){
+  const p=P.find(x=>x.id===id);if(!p)return;
+  $('#d-body').innerHTML=`
+    <div class="area">${esc(p.area)}</div>
+    <h2 id="d-title">${esc(p.title)}</h2>
+    <div class="meta"><span class="co">${p.co}</span>${p.tags.map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div>
+    <h5>What it was</h5><p>${esc(p.what)}</p>
+    <h5>How it worked</h5><p>${esc(p.how)}</p>
+    <h5>What it was for</h5><p>${esc(p.why)}</p>
+    <div class="role"><h5 style="margin-top:0">My role</h5><p>${esc(p.role||ROLE[p.co])}</p></div>`;
+  document.body.classList.add('open');document.body.style.overflow='hidden';
+  if(push)history.replaceState(null,'','#'+id);
+  $('#close').focus();
+}
+function closeP(){document.body.classList.remove('open');document.body.style.overflow='';history.replaceState(null,'',location.pathname);}
+$('#filters').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;active=b.dataset.a;renderFilters();renderGrid();});
+$('#grid').addEventListener('click',e=>{const c=e.target.closest('.card');if(c)openP(c.dataset.id);});
+$('#scrim').addEventListener('click',closeP);$('#close').addEventListener('click',closeP);
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeP();});
+renderFilters();renderGrid();
+if(location.hash)openP(location.hash.slice(1),false);
+</script>
+</body>
+</html>
